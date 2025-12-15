@@ -13,19 +13,14 @@ export async function POST(req: Request) {
   const { data } = await axios.get(cleanUrl);
   const $ = cheerio.load(data);
 
+  // Grabbing values
   const link = $('a[href*="linkedin.com/company"]').first();
-  let companyName = link.text();
-  let postingLink = cleanUrl;
-
+  const companyName = link.text();
+  const postingLink = cleanUrl;
   const jobPosting = $("h3").first().text();
-
   const location = $("span").eq(5).text();
 
-  console.log("COMPANY: ", companyName);
-  console.log("LINK: ", postingLink);
-  console.log("JOB POSTING: ", jobPosting);
-  console.log("LOCATION: ", location);
-
+  // Return object
   return NextResponse.json({
     companyName: companyName,
     jobPosting: jobPosting,
