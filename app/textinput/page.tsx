@@ -29,6 +29,7 @@ export default function TextboxWithButton() {
   };
 
   const googleTest = async () => {
+    console.log("GOOGLE TEST");
     const res = await fetch("/api/googleAuth", {
       method: "POST",
       headers: {
