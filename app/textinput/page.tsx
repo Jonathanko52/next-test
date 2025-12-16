@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { google } from "googleapis";
 
 export default function TextboxWithButton() {
   const [value, setValue] = useState("");
@@ -25,6 +26,16 @@ export default function TextboxWithButton() {
     setJobPosting(data.jobPosting);
     setLocation(data.location);
     setPostingLink(data.postingLink);
+  };
+
+  const googleTest = async () => {
+    const res = await fetch("/api/googleAuth", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ value }),
+    });
   };
 
   return (
@@ -54,6 +65,16 @@ export default function TextboxWithButton() {
           }}
           onClick={handleSubmit}>
           Submit
+        </button>
+        <button
+          style={{
+            width: "600px",
+            height: "40px",
+            fontSize: "1.2em",
+            marginLeft: "2em",
+          }}
+          onClick={googleTest}>
+          Google Auth
         </button>
       </div>
       <br></br>
