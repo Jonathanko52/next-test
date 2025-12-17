@@ -4,8 +4,6 @@ import { NextResponse } from "next/server";
 import { google } from "googleapis";
 
 export async function POST(req: Request) {
-  // Optional: read dynamic range from request
-
   // Credentials
   const rawCreds = process.env.GOOGLE_SERVICE_ACCOUNT_JSON;
   if (!rawCreds) throw new Error("GOOGLE_SERVICE_ACCOUNT_JSON missing");
