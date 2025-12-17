@@ -22,15 +22,21 @@ export async function POST(req: Request) {
   // Calling spreadsheet and using range
   const body = await req.json().catch(() => ({}));
 
-  const resOne = await sheets.spreadsheets.values.get({
+  // Making a call to find the first empty row.
+  const resReading = await sheets.spreadsheets.values.get({
     spreadsheetId: "1DcNybZwq7WrXw-AwWCGpPzQf6mDYKAbm1Co3U882gGQ",
     range: `${"Jobs"}!${"A"}:${"A"}`,
   });
 
-  const values = resOne.data.values?.flat() || []; // flatten to 1D array
+  // resReading.data.values
+  // returns a 2d array that represents the sheet. As columns are designated from A - A.
+  //[  [ 'Job Posting Source', 'Company' ],  [ 'LinkedIn', 'IBM' ],]
+  const values = resReading.data.values?.flat() || []; // flatten to 1D array
+
   // First empty row = number of filled rows + 1
   const firstOpenRow = values.length + 1;
-  //Set Date
+
+  //Set Date in the response object
   body.value[3] = getCurrentDateMMDDYY();
 
   const res = await sheets.spreadsheets.values.append({
