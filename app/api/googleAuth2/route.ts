@@ -23,12 +23,40 @@ export async function POST(req: Request) {
 
   // Calling spreadsheet and using range
   const body = await req.json().catch(() => ({}));
-  const range = body.range || "Jobs!A2:B2";
-  const res = await sheets.spreadsheets.values.get({
+
+  const resOne = await sheets.spreadsheets.values.get({
     spreadsheetId: "1DcNybZwq7WrXw-AwWCGpPzQf6mDYKAbm1Co3U882gGQ",
-    range,
+    range: `${"Jobs"}!${"A"}:${"A"}`,
   });
 
-  console.log("TEST", res.data.values);
-  return res.data.values || [];
+  const values = resOne.data.values?.flat() || []; // flatten to 1D array
+  // First empty row = number of filled rows + 1
+  const firstOpenRow = values.length + 1;
+  console.log("DATA", body.value);
+  console.log("ROW", firstOpenRow);
+
+  //Set Date
+  body.value[3] = getCurrentDateMMDDYY();
+
+  const res = await sheets.spreadsheets.values.append({
+    spreadsheetId: "1DcNybZwq7WrXw-AwWCGpPzQf6mDYKAbm1Co3U882gGQ",
+    valueInputOption: "USER_ENTERED",
+    range: `Jobs!A${firstOpenRow}:F${firstOpenRow}`,
+    requestBody: { values: [body.value] },
+  });
+
+  return new Response(JSON.stringify(res.data), {
+    status: 200,
+    headers: { "Content-Type": "application/json" },
+  });
+}
+
+function getCurrentDateMMDDYY() {
+  const today = new Date();
+
+  const month = String(today.getMonth() + 1).padStart(2, "0"); // months are 0-indexed
+  const day = String(today.getDate()).padStart(2, "0");
+  const year = String(today.getFullYear()).slice(-2); // last 2 digits
+
+  return `${month}/${day}/${year}`;
 }

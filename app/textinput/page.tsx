@@ -28,9 +28,20 @@ export default function TextboxWithButton() {
     setPostingLink(data.postingLink);
   };
 
-  const googleTest = async () => {
-    console.log("GOOGLE TEST");
-    const res = await fetch("/api/googleAuth", {
+  // const googleTest = async () => {
+  //   const res = await fetch("/api/googleAuth", {
+  //     method: "POST",
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //     },
+  //     body: JSON.stringify({ value }),
+  //   });
+  // };
+
+  const googleTest2 = async () => {
+    let value = ["LinkedIn", companyName, jobPosting, 4, location, postingLink];
+
+    const res = await fetch("/api/googleAuth2", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -39,14 +50,23 @@ export default function TextboxWithButton() {
     });
   };
 
-  const googleTest2 = async () => {
-    const res = await fetch("/api/googleAuth2", {
+  const linkedInCall = async () => {
+    const res = await fetch("/api/example", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({ value }),
     });
+
+    const data = await res.json();
+
+    return {
+      companyName: data.companyName,
+      jobPosting: data.jobPosting,
+      location: data.location,
+      postingLink: data.postingLink,
+    };
   };
 
   return (
@@ -75,9 +95,9 @@ export default function TextboxWithButton() {
             marginLeft: "2em",
           }}
           onClick={handleSubmit}>
-          Submit
+          Parse
         </button>
-        <button
+        {/* <button
           style={{
             width: "600px",
             height: "40px",
@@ -86,7 +106,8 @@ export default function TextboxWithButton() {
           }}
           onClick={googleTest}>
           Google Auth
-        </button>
+        </button> */}
+        <br></br>
         <button
           style={{
             width: "600px",
@@ -95,7 +116,7 @@ export default function TextboxWithButton() {
             marginLeft: "2em",
           }}
           onClick={googleTest2}>
-          Google Read
+          Submit to sheet
         </button>
       </div>
       <br></br>
