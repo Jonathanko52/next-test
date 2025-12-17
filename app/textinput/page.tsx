@@ -39,6 +39,16 @@ export default function TextboxWithButton() {
     });
   };
 
+  const googleTest2 = async () => {
+    const res = await fetch("/api/googleAuth2", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ value }),
+    });
+  };
+
   return (
     <div>
       <div style={{ display: "flex", gap: "0.5rem", alignItems: "center" }}>
@@ -76,6 +86,16 @@ export default function TextboxWithButton() {
           }}
           onClick={googleTest}>
           Google Auth
+        </button>
+        <button
+          style={{
+            width: "600px",
+            height: "40px",
+            fontSize: "1.2em",
+            marginLeft: "2em",
+          }}
+          onClick={googleTest2}>
+          Google Read
         </button>
       </div>
       <br></br>
