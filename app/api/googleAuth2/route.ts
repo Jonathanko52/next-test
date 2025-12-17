@@ -32,9 +32,6 @@ export async function POST(req: Request) {
   const values = resOne.data.values?.flat() || []; // flatten to 1D array
   // First empty row = number of filled rows + 1
   const firstOpenRow = values.length + 1;
-  console.log("DATA", body.value);
-  console.log("ROW", firstOpenRow);
-
   //Set Date
   body.value[3] = getCurrentDateMMDDYY();
 

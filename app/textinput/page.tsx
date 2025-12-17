@@ -5,11 +5,11 @@ import { google } from "googleapis";
 
 export default function TextboxWithButton() {
   const [value, setValue] = useState("");
-  const [response, setResponse] = useState<string | null>(null);
   const [companyName, setCompanyName] = useState<string | null>(null);
   const [jobPosting, setJobPosting] = useState<string | null>(null);
   const [location, setLocation] = useState<string | null>(null);
   const [postingLink, setPostingLink] = useState<string | null>(null);
+  const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = async () => {
     const res = await fetch("/api/example", {
@@ -21,7 +21,7 @@ export default function TextboxWithButton() {
     });
 
     const data = await res.json();
-
+    setSubmitted(false);
     setCompanyName(data.companyName);
     setJobPosting(data.jobPosting);
     setLocation(data.location);
@@ -48,6 +48,15 @@ export default function TextboxWithButton() {
       },
       body: JSON.stringify({ value }),
     });
+
+    if (res.status == 200) {
+      setValue("");
+      setCompanyName("");
+      setJobPosting("");
+      setLocation("");
+      setPostingLink("");
+      setSubmitted(true);
+    }
   };
 
   const linkedInCall = async () => {
@@ -108,6 +117,7 @@ export default function TextboxWithButton() {
           Google Auth
         </button> */}
         <br></br>
+        <br></br>
         <button
           style={{
             width: "600px",
@@ -126,14 +136,26 @@ export default function TextboxWithButton() {
           height: "40px",
           fontSize: "1.2em",
         }}>
-        {companyName && <span style={{ padding: "2em" }}> {companyName} </span>}
-        <br></br> <br></br>
-        {jobPosting && <span style={{ padding: "2em" }}> {jobPosting} </span>}
-        <br></br> <br></br>
-        {location && <span style={{ padding: "2em" }}> {location} </span>}
-        <br></br> <br></br>
-        {postingLink && <span style={{ padding: "2em" }}> {postingLink} </span>}
-        <br></br>
+        {submitted ? (
+          <span>Successfully submitted!</span>
+        ) : (
+          <div>
+            {companyName && (
+              <span style={{ padding: "2em" }}> {companyName} </span>
+            )}
+            <br></br> <br></br>
+            {jobPosting && (
+              <span style={{ padding: "2em" }}> {jobPosting} </span>
+            )}
+            <br></br> <br></br>
+            {location && <span style={{ padding: "2em" }}> {location} </span>}
+            <br></br> <br></br>
+            {postingLink && (
+              <span style={{ padding: "2em" }}> {postingLink} </span>
+            )}
+            <br></br>
+          </div>
+        )}
       </div>
     </div>
   );
