@@ -34,6 +34,8 @@ export async function POST(req: Request) {
   const values = resReading.data.values?.flat() || []; // flatten to 1D array
 
   // First empty row = number of filled rows + 1
+  console.log("ROW", values.length);
+  console.log("ROW CONTENT", values[values.length - 1]);
   const firstOpenRow = values.length + 1;
 
   // Set Date in the response object

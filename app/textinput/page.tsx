@@ -38,10 +38,10 @@ export default function TextboxWithButton() {
   //   });
   // };
 
-  const googleTest2 = async () => {
+  const sheetsPost = async () => {
     let value = ["LinkedIn", companyName, jobPosting, 4, location, postingLink];
 
-    const res = await fetch("/api/googleAuth2", {
+    const res = await fetch("/api/sheetsPost", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -125,7 +125,7 @@ export default function TextboxWithButton() {
             fontSize: "1.2em",
             marginLeft: "2em",
           }}
-          onClick={googleTest2}>
+          onClick={sheetsPost}>
           Submit to sheet
         </button>
       </div>
