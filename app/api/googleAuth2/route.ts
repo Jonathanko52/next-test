@@ -22,7 +22,7 @@ export async function POST(req: Request) {
   // Calling spreadsheet and using range
   const body = await req.json().catch(() => ({}));
 
-  // Making a call to find the first empty row.
+  // Making a call to find the first empty row
   const resReading = await sheets.spreadsheets.values.get({
     spreadsheetId: "1DcNybZwq7WrXw-AwWCGpPzQf6mDYKAbm1Co3U882gGQ",
     range: `${"Jobs"}!${"A"}:${"A"}`,
@@ -36,9 +36,10 @@ export async function POST(req: Request) {
   // First empty row = number of filled rows + 1
   const firstOpenRow = values.length + 1;
 
-  //Set Date in the response object
+  // Set Date in the response object
   body.value[3] = getCurrentDateMMDDYY();
 
+  // Call to append the job posting
   const res = await sheets.spreadsheets.values.append({
     spreadsheetId: "1DcNybZwq7WrXw-AwWCGpPzQf6mDYKAbm1Co3U882gGQ",
     valueInputOption: "USER_ENTERED",
@@ -46,18 +47,20 @@ export async function POST(req: Request) {
     requestBody: { values: [body.value] },
   });
 
+  // Return response
   return new Response(JSON.stringify(res.data), {
     status: 200,
     headers: { "Content-Type": "application/json" },
   });
 }
 
+// Get date helper function
 function getCurrentDateMMDDYY() {
   const today = new Date();
 
-  const month = String(today.getMonth() + 1).padStart(2, "0"); // months are 0-indexed
+  const month = String(today.getMonth() + 1).padStart(2, "0");
   const day = String(today.getDate()).padStart(2, "0");
-  const year = String(today.getFullYear()).slice(-2); // last 2 digits
+  const year = String(today.getFullYear()).slice(-2);
 
   return `${month}/${day}/${year}`;
 }

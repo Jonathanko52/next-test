@@ -135,24 +135,19 @@ export default function TextboxWithButton() {
           width: "600px",
           height: "40px",
           fontSize: "1.2em",
+          padding: "2em",
         }}>
         {submitted ? (
           <span>Successfully submitted!</span>
         ) : (
           <div>
-            {companyName && (
-              <span style={{ padding: "2em" }}> {companyName} </span>
-            )}
+            {companyName && <span> {companyName} </span>}
             <br></br> <br></br>
-            {jobPosting && (
-              <span style={{ padding: "2em" }}> {jobPosting} </span>
-            )}
+            {jobPosting && <span> {jobPosting} </span>}
             <br></br> <br></br>
-            {location && <span style={{ padding: "2em" }}> {location} </span>}
+            {location && <span> {location} </span>}
             <br></br> <br></br>
-            {postingLink && (
-              <span style={{ padding: "2em" }}> {postingLink} </span>
-            )}
+            {postingLink && <span> {postingLink} </span>}
             <br></br>
           </div>
         )}
