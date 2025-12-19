@@ -31,10 +31,12 @@ export async function POST(req: Request) {
   // resReading.data.values
   // returns a 2d array that represents the sheet. As columns are designated from A - A.
   //[  [ 'Job Posting Source', 'Company' ],  [ 'LinkedIn', 'IBM' ],]
-  const values = resReading.data.values?.flat() || []; // flatten to 1D array
 
-  // First empty row = number of filled rows + 1
-  const firstOpenRow = values.length + 1;
+  const firstOpenRow = resReading.data.values?.length
+    ? resReading.data.values.length + 1
+    : 0;
+
+  const values = resReading.data.values?.flat() || []; // flatten to 1D array
 
   // Set Date in the response object
   body.value[3] = getCurrentDateMMDDYY();
@@ -52,8 +54,6 @@ export async function POST(req: Request) {
     status: 200,
     headers: { "Content-Type": "application/json" },
   });
-
-  return;
 }
 
 // Get date helper function

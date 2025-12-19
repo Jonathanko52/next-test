@@ -12,7 +12,7 @@ export default function TextboxWithButton() {
   const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = async () => {
-    const res = await fetch("/api/example", {
+    const res = await fetch("/api/linkedInGet", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -27,16 +27,6 @@ export default function TextboxWithButton() {
     setLocation(data.location);
     setPostingLink(data.postingLink);
   };
-
-  // const googleTest = async () => {
-  //   const res = await fetch("/api/googleAuth", {
-  //     method: "POST",
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //     },
-  //     body: JSON.stringify({ value }),
-  //   });
-  // };
 
   const sheetsPost = async () => {
     let value = ["LinkedIn", companyName, jobPosting, 4, location, postingLink];
@@ -106,17 +96,7 @@ export default function TextboxWithButton() {
           onClick={handleSubmit}>
           Parse
         </button>
-        {/* <button
-          style={{
-            width: "600px",
-            height: "40px",
-            fontSize: "1.2em",
-            marginLeft: "2em",
-          }}
-          onClick={googleTest}>
-          Google Auth
-        </button> */}
-        <br></br>
+
         <br></br>
         <button
           style={{
