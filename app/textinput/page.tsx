@@ -49,8 +49,8 @@ export default function TextboxWithButton() {
     }
   };
 
-  const linkedInCall = async () => {
-    const res = await fetch("/api/example", {
+  const test = async () => {
+    const res = await fetch("/api/getAndPost", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -107,6 +107,17 @@ export default function TextboxWithButton() {
           }}
           onClick={sheetsPost}>
           Submit to sheet
+        </button>
+        <br></br>
+        <button
+          style={{
+            width: "600px",
+            height: "40px",
+            fontSize: "1.2em",
+            marginLeft: "2em",
+          }}
+          onClick={test}>
+          TEST
         </button>
       </div>
       <br></br>
