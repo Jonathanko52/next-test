@@ -4,7 +4,7 @@ import { NextResponse } from "next/server";
 
 export async function POST(req: Request) {
   const { value } = await req.json();
-
+  console.log("FIRST");
   // Clean URL
   const url = new URL(value);
   const cleanUrl = `${url.origin}${url.pathname}`;

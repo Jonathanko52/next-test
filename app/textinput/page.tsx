@@ -50,7 +50,7 @@ export default function TextboxWithButton() {
   };
 
   const test = async () => {
-    const res = await fetch("/api/getAndPost", {
+    const resOne = await fetch("/api/linkedInGet", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -58,14 +58,26 @@ export default function TextboxWithButton() {
       body: JSON.stringify({ value }),
     });
 
-    const data = await res.json();
+    const dataOne = await resOne.json();
 
-    return {
-      companyName: data.companyName,
-      jobPosting: data.jobPosting,
-      location: data.location,
-      postingLink: data.postingLink,
-    };
+    console.log(dataOne);
+
+    const resTwo = await fetch("/api/moddedSheetsPost", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ dataOne }),
+    });
+
+    // if (res.status == 200) {
+    //   setValue("");
+    //   setCompanyName("");
+    //   setJobPosting("");
+    //   setLocation("");
+    //   setPostingLink("");
+    //   setSubmitted(true);
+    // }
   };
 
   return (
@@ -96,7 +108,6 @@ export default function TextboxWithButton() {
           onClick={linkedInGet}>
           Parse
         </button>
-
         <br></br>
         <button
           style={{
