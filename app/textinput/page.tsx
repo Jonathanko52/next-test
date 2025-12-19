@@ -11,7 +11,7 @@ export default function TextboxWithButton() {
   const [postingLink, setPostingLink] = useState<string | null>(null);
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = async () => {
+  const linkedInGet = async () => {
     const res = await fetch("/api/linkedInGet", {
       method: "POST",
       headers: {
@@ -93,7 +93,7 @@ export default function TextboxWithButton() {
             fontSize: "1.2em",
             marginLeft: "2em",
           }}
-          onClick={handleSubmit}>
+          onClick={linkedInGet}>
           Parse
         </button>
 
