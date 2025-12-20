@@ -60,8 +60,6 @@ export default function TextboxWithButton() {
 
     const dataOne = await resOne.json();
 
-    console.log(dataOne);
-
     const resTwo = await fetch("/api/moddedSheetsPost", {
       method: "POST",
       headers: {
@@ -109,6 +107,8 @@ export default function TextboxWithButton() {
           Parse
         </button>
         <br></br>
+        <br></br>
+
         <button
           style={{
             width: "600px",
@@ -120,6 +120,8 @@ export default function TextboxWithButton() {
           Submit to sheet
         </button>
         <br></br>
+        <br></br>
+
         <button
           style={{
             width: "600px",
