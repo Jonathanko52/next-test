@@ -68,14 +68,13 @@ export default function TextboxWithButton() {
       body: JSON.stringify({ dataOne }),
     });
 
-    // if (res.status == 200) {
-    //   setValue("");
-    //   setCompanyName("");
-    //   setJobPosting("");
-    //   setLocation("");
-    //   setPostingLink("");
-    //   setSubmitted(true);
-    // }
+    if (resTwo.status == 200) {
+      setValue("");
+      setCompanyName("");
+      setJobPosting("");
+      setLocation("");
+      setPostingLink("");
+    }
   };
 
   return (
