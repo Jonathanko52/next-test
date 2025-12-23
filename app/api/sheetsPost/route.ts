@@ -28,10 +28,6 @@ export async function POST(req: Request) {
     range: `${"Jobs"}!${"A"}:${"A"}`,
   });
 
-  // resReading.data.values
-  // returns a 2d array that represents the sheet. As columns are designated from A - A.
-  //[  [ 'Job Posting Source', 'Company' ],  [ 'LinkedIn', 'IBM' ],]
-
   const firstOpenRow = resReading.data.values?.length
     ? resReading.data.values.length + 1
     : 0;
