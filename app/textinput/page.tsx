@@ -49,7 +49,7 @@ export default function TextboxWithButton() {
     }
   };
 
-  const test = async () => {
+  const scrapeAndSubmit = async () => {
     const resOne = await fetch("/api/linkedInGet", {
       method: "POST",
       headers: {
@@ -129,8 +129,8 @@ export default function TextboxWithButton() {
             fontSize: "1.2em",
             marginLeft: "2em",
           }}
-          onClick={test}>
-          TEST
+          onClick={scrapeAndSubmit}>
+          Scrape and submit
         </button>
       </div>
       <br></br>
