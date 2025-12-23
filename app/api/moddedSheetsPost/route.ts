@@ -38,9 +38,9 @@ export async function POST(req: Request) {
     ? resReading.data.values.length + 1
     : 0;
 
-  const values = resReading.data.values?.flat() || []; // flatten to 1D array
+  const values = resReading.data.values?.flat() || [];
 
-  console.log("BODY", body);
+  const postingLinkAsHyperlink = `=HYPERLINK("${body.dataOne.postingLink}", "Link")`;
 
   const spreadSheetArray = [
     "LinkedIn",
@@ -48,10 +48,8 @@ export async function POST(req: Request) {
     body.dataOne.jobPosting,
     getCurrentDateMMDDYY(),
     body.dataOne.location,
-    body.dataOne.postingLink,
+    postingLinkAsHyperlink,
   ];
-
-  console.log(spreadSheetArray);
 
   // Call to append the job posting
   const res = await sheets.spreadsheets.values.append({
