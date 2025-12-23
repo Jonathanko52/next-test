@@ -69,8 +69,10 @@ export default function TextboxWithButton() {
     });
 
     if (resTwo.status == 200) {
+      console.log(dataOne);
       setValue("");
-      setCompanyName("");
+      setSubmitted(true);
+      setCompanyName(dataOne.companyName);
       setJobPosting("");
       setLocation("");
       setPostingLink("");
@@ -141,7 +143,11 @@ export default function TextboxWithButton() {
           padding: "2em",
         }}>
         {submitted ? (
-          <span>Successfully submitted!</span>
+          <div>
+            <span>Successfully submitted!</span>
+            <br></br>
+            <span>to: {companyName} </span>
+          </div>
         ) : (
           <div>
             {companyName && <span> {companyName} </span>}
