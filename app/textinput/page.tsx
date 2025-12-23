@@ -69,7 +69,6 @@ export default function TextboxWithButton() {
     });
 
     if (resTwo.status == 200) {
-      console.log(dataOne);
       setValue("");
       setSubmitted(true);
       setCompanyName(dataOne.companyName);
@@ -97,7 +96,7 @@ export default function TextboxWithButton() {
         />
       </div>
       <div>
-        <button
+        {/* <button
           style={{
             width: "600px",
             height: "40px",
@@ -121,7 +120,7 @@ export default function TextboxWithButton() {
           Submit to sheet
         </button>
         <br></br>
-        <br></br>
+        <br></br> */}
 
         <button
           style={{
