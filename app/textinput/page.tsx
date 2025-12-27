@@ -96,32 +96,6 @@ export default function TextboxWithButton() {
         />
       </div>
       <div>
-        {/* <button
-          style={{
-            width: "600px",
-            height: "40px",
-            fontSize: "1.2em",
-            marginLeft: "2em",
-          }}
-          onClick={linkedInGet}>
-          Parse
-        </button>
-        <br></br>
-        <br></br>
-
-        <button
-          style={{
-            width: "600px",
-            height: "40px",
-            fontSize: "1.2em",
-            marginLeft: "2em",
-          }}
-          onClick={sheetsPost}>
-          Submit to sheet
-        </button>
-        <br></br>
-        <br></br> */}
-
         <button
           style={{
             width: "600px",
