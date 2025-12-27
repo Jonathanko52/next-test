@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { google } from "googleapis";
 
 export default function TextboxWithButton() {
   const [value, setValue] = useState("");
@@ -10,44 +9,6 @@ export default function TextboxWithButton() {
   const [location, setLocation] = useState<string | null>(null);
   const [postingLink, setPostingLink] = useState<string | null>(null);
   const [submitted, setSubmitted] = useState(false);
-
-  const linkedInGet = async () => {
-    const res = await fetch("/api/linkedInGet", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ value }),
-    });
-
-    const data = await res.json();
-    setSubmitted(false);
-    setCompanyName(data.companyName);
-    setJobPosting(data.jobPosting);
-    setLocation(data.location);
-    setPostingLink(data.postingLink);
-  };
-
-  const sheetsPost = async () => {
-    let value = ["LinkedIn", companyName, jobPosting, 4, location, postingLink];
-
-    const res = await fetch("/api/sheetsPost", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ value }),
-    });
-
-    if (res.status == 200) {
-      setValue("");
-      setCompanyName("");
-      setJobPosting("");
-      setLocation("");
-      setPostingLink("");
-      setSubmitted(true);
-    }
-  };
 
   const scrapeAndSubmit = async () => {
     const resOne = await fetch("/api/linkedInGet", {
