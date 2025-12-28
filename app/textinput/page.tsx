@@ -23,6 +23,10 @@ export default function TextboxWithButton() {
     //Convert the retrieved data into Json
     const dataOne = await resOne.json();
 
+    if (resOne.status == 200) {
+      console.log(resOne.json());
+    }
+
     //Second call. Send data to google sheets to be written.
     const resTwo = await fetch("/api/moddedSheetsPost", {
       method: "POST",
