@@ -11,6 +11,7 @@ export default function TextboxWithButton() {
   const [submitted, setSubmitted] = useState(false);
 
   const scrapeAndSubmit = async () => {
+    //First call. Retrieve the company name, position, link and such from linkedin.
     const resOne = await fetch("/api/linkedInGet", {
       method: "POST",
       headers: {
@@ -19,6 +20,7 @@ export default function TextboxWithButton() {
       body: JSON.stringify({ value }),
     });
 
+    //
     const dataOne = await resOne.json();
 
     const resTwo = await fetch("/api/moddedSheetsPost", {
