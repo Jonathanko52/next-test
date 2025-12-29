@@ -47,6 +47,8 @@ export default function TextboxWithButton() {
     }
   };
 
+  const test = async () => {};
+
   return (
     <div>
       <div style={{ display: "flex", gap: "0.5rem", alignItems: "center" }}>
