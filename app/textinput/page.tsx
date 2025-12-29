@@ -36,15 +36,15 @@ export default function TextboxWithButton() {
       body: JSON.stringify({ dataOne }),
     });
 
-    // //If successful, resets all values on page.
-    // if (resTwo.status == 200) {
-    //   setValue("");
-    //   setSubmitted(true);
-    //   setCompanyName(dataOne.companyName);
-    //   setJobPosting("");
-    //   setLocation("");
-    //   setPostingLink("");
-    // }
+    //If successful, resets all values on page.
+    if (resTwo.status == 200) {
+      setValue("Successfully submitted!");
+      setSubmitted(true);
+      setCompanyName(dataOne.companyName);
+      setJobPosting(dataOne.jobPosting);
+      setLocation(dataOne.location);
+      setPostingLink("");
+    }
   };
 
   const test = async () => {
@@ -60,7 +60,6 @@ export default function TextboxWithButton() {
     //Convert the retrieved data into Json
     const dataOne = await resOne.json();
 
-    console.log("TEST");
     setSubmitted(false);
     setCompanyName(dataOne.companyName);
     setJobPosting(dataOne.jobPosting);
