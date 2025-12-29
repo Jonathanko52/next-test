@@ -23,9 +23,9 @@ export default function TextboxWithButton() {
     //Convert the retrieved data into Json
     const dataOne = await resOne.json();
 
-    if (resOne.status == 200) {
-      console.log(resOne.json());
-    }
+    setCompanyName(dataOne.companyName);
+    setJobPosting(dataOne.jobPosting);
+    setLocation(dataOne.location);
 
     //Second call. Send data to google sheets to be written.
     const resTwo = await fetch("/api/moddedSheetsPost", {
@@ -36,18 +36,36 @@ export default function TextboxWithButton() {
       body: JSON.stringify({ dataOne }),
     });
 
-    //If successful, resets all values on page.
-    if (resTwo.status == 200) {
-      setValue("");
-      setSubmitted(true);
-      setCompanyName(dataOne.companyName);
-      setJobPosting("");
-      setLocation("");
-      setPostingLink("");
-    }
+    // //If successful, resets all values on page.
+    // if (resTwo.status == 200) {
+    //   setValue("");
+    //   setSubmitted(true);
+    //   setCompanyName(dataOne.companyName);
+    //   setJobPosting("");
+    //   setLocation("");
+    //   setPostingLink("");
+    // }
   };
 
-  const test = async () => {};
+  const test = async () => {
+    //First call. Retrieve the company name, position, link and such from linkedin.
+    const resOne = await fetch("/api/linkedInGet", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ value }),
+    });
+
+    //Convert the retrieved data into Json
+    const dataOne = await resOne.json();
+
+    console.log("TEST");
+    setSubmitted(false);
+    setCompanyName(dataOne.companyName);
+    setJobPosting(dataOne.jobPosting);
+    setLocation(dataOne.location);
+  };
 
   return (
     <div>
@@ -76,6 +94,16 @@ export default function TextboxWithButton() {
           }}
           onClick={scrapeAndSubmit}>
           Scrape and submit
+        </button>
+        <button
+          style={{
+            width: "600px",
+            height: "40px",
+            fontSize: "1.2em",
+            marginLeft: "2em",
+          }}
+          onClick={test}>
+          TEST
         </button>
       </div>
       <br></br>
