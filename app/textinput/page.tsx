@@ -39,7 +39,7 @@ export default function TextboxWithButton() {
     //If successful, resets all values on page.
     if (resTwo.status == 200) {
       setValue("Successfully submitted!");
-      setSubmitted(true);
+      setSubmitted(false);
       setCompanyName(dataOne.companyName);
       setJobPosting(dataOne.jobPosting);
       setLocation(dataOne.location);
