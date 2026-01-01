@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { Button } from "@/app/ui/button";
 
 export default function TextboxWithButton() {
   const [value, setValue] = useState("");
@@ -84,28 +85,31 @@ export default function TextboxWithButton() {
         />
       </div>
       <div>
-        <button
+        <Button
+          className="bg-success justify-center"
           style={{
             width: "600px",
             height: "40px",
             fontSize: "1.2em",
+            margin: "1em",
             marginLeft: "2em",
           }}
           onClick={scrapeAndSubmit}>
           Scrape and submit
-        </button>
-        <button
+        </Button>
+        <Button
           type="button"
-          className="bg-success"
+          className="bg-success justify-center"
           style={{
             width: "600px",
             height: "40px",
             fontSize: "1.2em",
+            margin: "1em",
             marginLeft: "2em",
           }}
           onClick={test}>
           TEST
-        </button>
+        </Button>
       </div>
       <br></br>
       <div
