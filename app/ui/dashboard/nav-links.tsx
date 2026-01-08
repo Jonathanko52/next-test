@@ -24,7 +24,6 @@ const links = [
 export default function NavLinks() {
   const pathname = usePathname();
   console.log("PATHNAME", pathname);
-  console.log("HREF", link.href);
   return (
     <>
       {links.map((link) => {
