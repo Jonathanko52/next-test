@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { Button } from "@/app/ui/button";
 
-export default function TextboxWithButton() {
+export default function TodoMain() {
   const [value, setValue] = useState("");
   const [companyName, setCompanyName] = useState<string | null>(null);
   const [jobPosting, setJobPosting] = useState<string | null>(null);
