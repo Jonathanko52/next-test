@@ -11,7 +11,7 @@ export default function TodoMain() {
   const [postingLink, setPostingLink] = useState<string | null>(null);
   const [submitted, setSubmitted] = useState(false);
 
-  const scrapeAndSubmit = async () => {
+  const mainWindow = async () => {
     //First call. Retrieve the company name, position, link and such from linkedin.
     const resOne = await fetch("/api/linkedInGet", {
       method: "POST",
@@ -69,75 +69,8 @@ export default function TodoMain() {
 
   return (
     <div>
-      <div style={{ display: "flex", gap: "0.5rem", alignItems: "center" }}>
-        <input
-          type="text"
-          value={value}
-          onChange={(e) => setValue(e.target.value)}
-          placeholder="Enter text"
-          style={{
-            width: "600px",
-            height: "40px",
-            fontSize: "16px",
-            padding: "0 12px",
-            margin: "2em",
-          }}
-        />
-      </div>
-      <div>
-        <Button
-          className="bg-success justify-center"
-          style={{
-            width: "600px",
-            height: "40px",
-            fontSize: "1.2em",
-            margin: "1em",
-            marginLeft: "2em",
-          }}
-          onClick={scrapeAndSubmit}>
-          Scrape and submit
-        </Button>
-        <Button
-          type="button"
-          className="bg-success justify-center"
-          style={{
-            width: "600px",
-            height: "40px",
-            fontSize: "1.2em",
-            margin: "1em",
-            marginLeft: "2em",
-          }}
-          onClick={test}>
-          TEST
-        </Button>
-      </div>
-      <br></br>
       <div
-        style={{
-          width: "600px",
-          height: "40px",
-          fontSize: "1.2em",
-          padding: "2em",
-        }}>
-        {submitted ? (
-          <div>
-            <span>Successfully submitted!</span>
-            <br></br>
-            <span>to: {companyName} </span>
-          </div>
-        ) : (
-          <div>
-            {companyName && <span> {companyName} </span>}
-            <br></br> <br></br>
-            {jobPosting && <span> {jobPosting} </span>}
-            <br></br> <br></br>
-            {location && <span> {location} </span>}
-            <br></br> <br></br>
-            {postingLink && <span> {postingLink} </span>}
-            <br></br>
-          </div>
-        )}
-      </div>
+        style={{ display: "flex", gap: "0.5rem", alignItems: "center" }}></div>
     </div>
   );
 }
