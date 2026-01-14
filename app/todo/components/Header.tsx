@@ -3,10 +3,10 @@
 import { useState } from "react";
 import { Button } from "@/app/ui/button";
 
-export default function TodoHeader() {
-  const [postingLink, setPostingLink] = useState<string | null>(null);
-
-  const test = async () => {};
-
-  return <div></div>;
+export default function DashboardHeader() {
+  return (
+    <header className="h-14 border-b px-4 flex items-center">
+      <h1 className="font-semibold">HEADER</h1>
+    </header>
+  );
 }

@@ -1,12 +1,13 @@
-"use client";
+import Link from "next/link";
 
-import { useState } from "react";
-import { Button } from "@/app/ui/button";
-
-export default function TodoChatWindow() {
-  const [postingLink, setPostingLink] = useState<string | null>(null);
-
-  const test = async () => {};
-
-  return <div></div>;
+export default function Sidebar() {
+  return (
+    <aside className="w-64 border-r p-4">
+      <nav className="space-y-2">
+        <Link href="/dashboard">Dashboard</Link>
+        <Link href="/dashboard/reports">Reports</Link>
+        <Link href="/dashboard/settings">Settings</Link>
+      </nav>
+    </aside>
+  );
 }

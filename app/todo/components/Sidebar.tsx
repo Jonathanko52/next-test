@@ -1,13 +1,13 @@
-"use client";
+import Link from "next/link";
 
-import { useState } from "react";
-import { Button } from "@/app/ui/button";
-
-export default function TodoSidebar() {
+export default function Sidebar() {
   return (
-    <div>
-      <div
-        style={{ display: "flex", gap: "0.5rem", alignItems: "center" }}></div>
-    </div>
+    <aside className="w-64 border-r p-4">
+      <nav className="space-y-2">
+        <Link href="/dashboard">Dashboard</Link>
+        <Link href="/dashboard/reports">Reports</Link>
+        <Link href="/dashboard/settings">Settings</Link>
+      </nav>
+    </aside>
   );
 }
