@@ -1,6 +1,4 @@
-import Link from "next/link";
-
-export default function Sidebar() {
+export default function RightSidebar() {
   return (
     <aside className="w-64 border-r p-4">
       Ideally some kind of chat window
