@@ -12,10 +12,12 @@ export default function TodoMain() {
   //todoitem structure:
   /*
   {
-  
-
-
-
+    priority: 1~99  
+    taskHeader: text
+    taskText: text
+    taskState:
+      Uncompleted, coompleted, partial-completed, canceled?
+    subTasks: []
   }
   */
 
