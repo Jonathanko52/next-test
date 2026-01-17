@@ -9,6 +9,7 @@ export default function TodoMain() {
 
   const displayToDo = () => {};
   const changeStateOfItem = () => {};
+  const submitToDoList = () => {};
 
   const test = async () => {};
 
@@ -22,6 +23,10 @@ export default function TodoMain() {
     taskState:
       Uncompleted, coompleted, partial-completed, canceled?
     subTasks: []
+    taskrepeatability:
+      Oneoff,
+      Rollover,
+      Weekly: [0,1,2,3,4,5,6]
   }
   */
 
