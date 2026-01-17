@@ -9,5 +9,15 @@ export default function TodoMain() {
 
   const test = async () => {};
 
+  //todoitem structure:
+  /*
+  {
+  
+
+
+
+  }
+  */
+
   return <div></div>;
 }
