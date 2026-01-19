@@ -27,6 +27,7 @@ export default function TodoMain() {
       Oneoff,
       Rollover,
       Weekly: [0,1,2,3,4,5,6]
+    task test
   }
   */
 
