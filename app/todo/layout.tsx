@@ -12,7 +12,11 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const [rightOpen, setRightOpen] = useState(true);
+  const [rightSidebarOpen, setRightSidebarOpen] = useState(true);
+
+  const toggleRightSidebar = () => {
+    setRightSidebarOpen(!rightSidebarOpen);
+  };
 
   return (
     <html lang="en">
@@ -25,9 +29,12 @@ export default function RootLayout({
             <Sidebar />
           </div>
           <main className="col-start-2 row-start-2 p-4">{children}</main>
-          <div className="col-start-3 row-span-2">
-            <RightSidebar />
-          </div>
+          <button onClick={toggleRightSidebar}>RightSidebar</button>
+          {rightSidebarOpen ? (
+            <div className="col-start-3 row-span-2">
+              <RightSidebar />
+            </div>
+          ) : null}
         </div>
       </body>
     </html>
