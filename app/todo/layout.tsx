@@ -28,6 +28,8 @@ export default function RootLayout({
     setRightSidebarOpen(false);
   };
 
+  console.log("CHILDREN", children.props);
+
   return (
     <html lang="en">
       <body className={`${inter.className} antialiased`}>
