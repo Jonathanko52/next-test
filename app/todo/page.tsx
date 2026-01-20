@@ -4,7 +4,17 @@ import { useState } from "react";
 import { Button } from "@/app/ui/button";
 
 export default function TodoMain() {
-  const [todoItems, setToDoItems] = useState([]);
+  const [todoItems, setToDoItems] = useState([
+    {
+      id: 0,
+      priority: 1,
+      taskHeader: "HEADER",
+      taskText: "TEXT TEST",
+      taskState: "Completed",
+      subTasks: [],
+      taskrepeatability: "Oneoff",
+    },
+  ]);
   const [companyName, setCompanyName] = useState<string | null>(null);
 
   const displayToDo = () => {};
@@ -27,7 +37,6 @@ export default function TodoMain() {
       Oneoff,
       Rollover,
       Weekly: [0,1,2,3,4,5,6]
-    task test
   }
   */
 
