@@ -4,7 +4,9 @@ import "@/app/ui/global.css";
 import { inter } from "@/app/ui/fonts";
 import Sidebar from "./components/Sidebar";
 import RightSidebar from "./components/RightSidebar";
+import TextboxWithButton from "./../textinput/page";
 import Header from "./components/Header";
+import { Button } from "@/app/ui/button";
 import { useState } from "react";
 
 export default function RootLayout({
@@ -13,9 +15,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   const [rightSidebarOpen, setRightSidebarOpen] = useState(true);
+  const [jobScraperOpen, setJobScraperOpen] = useState(true);
 
   const toggleRightSidebar = () => {
     setRightSidebarOpen(!rightSidebarOpen);
+  };
+
+  const toggleScraperSidebar = () => {
+    setJobScraperOpen(!jobScraperOpen);
   };
 
   return (
@@ -29,9 +36,33 @@ export default function RootLayout({
             <Sidebar />
           </div>
           <main className="col-start-2 row-start-2 p-4">{children}</main>
-          <button onClick={toggleRightSidebar}>RightSidebar</button>
+          <Button
+            className="bg-success justify-center"
+            style={{
+              width: "200px",
+              height: "40px",
+              fontSize: "1.2em",
+              margin: "1em",
+              marginLeft: "2em",
+            }}
+            onClick={toggleRightSidebar}>
+            RightSidebar
+          </Button>
+          <Button
+            className="bg-success justify-center"
+            style={{
+              width: "200px",
+              height: "40px",
+              fontSize: "1.2em",
+              margin: "1em",
+              marginLeft: "2em",
+            }}
+            onClick={toggleScraperSidebar}>
+            Job Scraper
+          </Button>
           {rightSidebarOpen ? (
             <div className="col-start-3 row-span-2">
+              <TextboxWithButton />
               <RightSidebar />
             </div>
           ) : null}

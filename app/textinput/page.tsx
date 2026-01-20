@@ -88,7 +88,7 @@ export default function TextboxWithButton() {
         <Button
           className="bg-success justify-center"
           style={{
-            width: "600px",
+            width: "200px",
             height: "40px",
             fontSize: "1.2em",
             margin: "1em",
@@ -101,7 +101,7 @@ export default function TextboxWithButton() {
           type="button"
           className="bg-success justify-center"
           style={{
-            width: "600px",
+            width: "200px",
             height: "40px",
             fontSize: "1.2em",
             margin: "1em",
