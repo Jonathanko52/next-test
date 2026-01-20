@@ -37,31 +37,34 @@ export default function RootLayout({
           <div className="col-start-1 row-span-2">
             <Sidebar />
           </div>
-          <main className="col-start-2 row-start-2 p-4">{children}</main>
-          <Button
-            className="bg-success justify-center"
-            style={{
-              width: "200px",
-              height: "40px",
-              fontSize: "1.2em",
-              margin: "1em",
-              marginLeft: "2em",
-            }}
-            onClick={toggleRightSidebar}>
-            RightSidebar
-          </Button>
-          <Button
-            className="bg-success justify-center"
-            style={{
-              width: "200px",
-              height: "40px",
-              fontSize: "1.2em",
-              margin: "1em",
-              marginLeft: "2em",
-            }}
-            onClick={toggleScraperSidebar}>
-            Job Scraper
-          </Button>
+          <main className="col-start-2 row-start-2 p-4">
+            {children}{" "}
+            <Button
+              className="bg-success justify-center"
+              style={{
+                width: "200px",
+                height: "40px",
+                fontSize: "1.2em",
+                margin: "1em",
+                marginLeft: "2em",
+              }}
+              onClick={toggleRightSidebar}>
+              RightSidebar
+            </Button>
+            <Button
+              className="bg-success justify-center"
+              style={{
+                width: "200px",
+                height: "40px",
+                fontSize: "1.2em",
+                margin: "1em",
+                marginLeft: "2em",
+              }}
+              onClick={toggleScraperSidebar}>
+              Job Scraper
+            </Button>
+          </main>
+
           {jobScraperOpen ? (
             <div className="col-start-3 row-span-2">
               <TextboxWithButton />
