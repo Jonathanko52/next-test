@@ -6,6 +6,7 @@ import Sidebar from "./components/Sidebar";
 import RightSidebar from "./components/RightSidebar";
 import TextboxWithButton from "./../textinput/page";
 import Header from "./components/Header";
+import GoalsWindow from "./components/GoalsWindow";
 import { Button } from "@/app/ui/button";
 import { useState } from "react";
 
@@ -38,7 +39,8 @@ export default function RootLayout({
             <Sidebar />
           </div>
           <main className="col-start-2 row-start-2 p-4">
-            {children}{" "}
+            <GoalsWindow></GoalsWindow>
+            {children}
             <Button
               className="bg-success justify-center"
               style={{
