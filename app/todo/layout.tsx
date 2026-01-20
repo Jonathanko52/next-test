@@ -14,15 +14,17 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const [rightSidebarOpen, setRightSidebarOpen] = useState(true);
-  const [jobScraperOpen, setJobScraperOpen] = useState(true);
+  const [rightSidebarOpen, setRightSidebarOpen] = useState(false);
+  const [jobScraperOpen, setJobScraperOpen] = useState(false);
 
   const toggleRightSidebar = () => {
     setRightSidebarOpen(!rightSidebarOpen);
+    setJobScraperOpen(false);
   };
 
   const toggleScraperSidebar = () => {
     setJobScraperOpen(!jobScraperOpen);
+    setRightSidebarOpen(false);
   };
 
   return (
@@ -60,9 +62,13 @@ export default function RootLayout({
             onClick={toggleScraperSidebar}>
             Job Scraper
           </Button>
-          {rightSidebarOpen ? (
+          {jobScraperOpen ? (
             <div className="col-start-3 row-span-2">
               <TextboxWithButton />
+            </div>
+          ) : null}
+          {rightSidebarOpen ? (
+            <div className="col-start-3 row-span-2">
               <RightSidebar />
             </div>
           ) : null}
