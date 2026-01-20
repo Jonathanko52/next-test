@@ -6,7 +6,6 @@ import Sidebar from "./components/Sidebar";
 import RightSidebar from "./components/RightSidebar";
 import TextboxWithButton from "./../textinput/page";
 import Header from "./components/Header";
-import GoalsWindow from "./components/GoalsWindow";
 import { Button } from "@/app/ui/button";
 import { useState } from "react";
 
@@ -17,6 +16,17 @@ export default function RootLayout({
 }) {
   const [rightSidebarOpen, setRightSidebarOpen] = useState(false);
   const [jobScraperOpen, setJobScraperOpen] = useState(false);
+  const [toDoItemList, setToDoItemList] = useState([
+    {
+      id: 1,
+      priority: 1,
+      taskHeader: "TASK HEADER",
+      taskText: "TASK TEXT \n",
+      taskState: "Uncompleted",
+      subTasks: [],
+      taskrepeatability: "Oneoff",
+    },
+  ]);
 
   const toggleRightSidebar = () => {
     setRightSidebarOpen(!rightSidebarOpen);
@@ -27,8 +37,6 @@ export default function RootLayout({
     setJobScraperOpen(!jobScraperOpen);
     setRightSidebarOpen(false);
   };
-
-  console.log("CHILDREN", children.props);
 
   return (
     <html lang="en">
@@ -41,7 +49,6 @@ export default function RootLayout({
             <Sidebar />
           </div>
           <main className="col-start-2 row-start-2 p-4">
-            <GoalsWindow></GoalsWindow>
             {children}
             <Button
               className="bg-success justify-center"
