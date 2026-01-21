@@ -16,6 +16,7 @@ export default function RootLayout({
 }) {
   const [rightSidebarOpen, setRightSidebarOpen] = useState(false);
   const [jobScraperOpen, setJobScraperOpen] = useState(false);
+  const [buttonDiv, setButtonDiv] = useState(false);
   const [toDoItemList, setToDoItemList] = useState([
     {
       id: 1,
@@ -27,7 +28,6 @@ export default function RootLayout({
       taskrepeatability: "Oneoff",
     },
   ]);
-  const [buttonDiv, setButtonDiv] = useState(false);
 
   const toggleRightSidebar = () => {
     setRightSidebarOpen(!rightSidebarOpen);
@@ -38,6 +38,10 @@ export default function RootLayout({
     setJobScraperOpen(!jobScraperOpen);
     setRightSidebarOpen(false);
   };
+
+  const toggleButtonDiv = () = {
+
+  }
 
   return (
     <html lang="en">
@@ -51,34 +55,35 @@ export default function RootLayout({
           </div>
           <main className="col-start-2 row-start-2 p-4">
             {children}
-            <div>
-              <Button
-                className="bg-success justify-center"
-                style={{
-                  width: "200px",
-                  height: "40px",
-                  fontSize: "1.2em",
-                  margin: "1em",
-                  marginLeft: "2em",
-                }}
-                onClick={toggleRightSidebar}>
-                RightSidebar
-              </Button>
-              <Button
-                className="bg-success justify-center"
-                style={{
-                  width: "200px",
-                  height: "40px",
-                  fontSize: "1.2em",
-                  margin: "1em",
-                  marginLeft: "2em",
-                }}
-                onClick={toggleScraperSidebar}>
-                Job Scraper
-              </Button>
-            </div>
+            {buttonDiv ? (
+              <div>
+                <Button
+                  className="bg-success justify-center"
+                  style={{
+                    width: "200px",
+                    height: "40px",
+                    fontSize: "1.2em",
+                    margin: "1em",
+                    marginLeft: "2em",
+                  }}
+                  onClick={toggleRightSidebar}>
+                  RightSidebar
+                </Button>
+                <Button
+                  className="bg-success justify-center"
+                  style={{
+                    width: "200px",
+                    height: "40px",
+                    fontSize: "1.2em",
+                    margin: "1em",
+                    marginLeft: "2em",
+                  }}
+                  onClick={toggleScraperSidebar}>
+                  Job Scraper
+                </Button>
+              </div>
+            ) : null}
           </main>
-
           {jobScraperOpen ? (
             <div className="col-start-3 row-span-2">
               <TextboxWithButton />
