@@ -27,6 +27,7 @@ export default function RootLayout({
       taskrepeatability: "Oneoff",
     },
   ]);
+  const [buttonDiv, setButtonDiv] = useState(false);
 
   const toggleRightSidebar = () => {
     setRightSidebarOpen(!rightSidebarOpen);
@@ -50,30 +51,32 @@ export default function RootLayout({
           </div>
           <main className="col-start-2 row-start-2 p-4">
             {children}
-            <Button
-              className="bg-success justify-center"
-              style={{
-                width: "200px",
-                height: "40px",
-                fontSize: "1.2em",
-                margin: "1em",
-                marginLeft: "2em",
-              }}
-              onClick={toggleRightSidebar}>
-              RightSidebar
-            </Button>
-            <Button
-              className="bg-success justify-center"
-              style={{
-                width: "200px",
-                height: "40px",
-                fontSize: "1.2em",
-                margin: "1em",
-                marginLeft: "2em",
-              }}
-              onClick={toggleScraperSidebar}>
-              Job Scraper
-            </Button>
+            <div>
+              <Button
+                className="bg-success justify-center"
+                style={{
+                  width: "200px",
+                  height: "40px",
+                  fontSize: "1.2em",
+                  margin: "1em",
+                  marginLeft: "2em",
+                }}
+                onClick={toggleRightSidebar}>
+                RightSidebar
+              </Button>
+              <Button
+                className="bg-success justify-center"
+                style={{
+                  width: "200px",
+                  height: "40px",
+                  fontSize: "1.2em",
+                  margin: "1em",
+                  marginLeft: "2em",
+                }}
+                onClick={toggleScraperSidebar}>
+                Job Scraper
+              </Button>
+            </div>
           </main>
 
           {jobScraperOpen ? (
