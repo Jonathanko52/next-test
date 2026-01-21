@@ -106,12 +106,60 @@ export default function RootLayout({
           ) : null}
           {jobScraperOpen ? (
             <div className="col-start-3 row-span-2">
-              <TextboxWithButton />
+              <TextboxWithButton />{" "}
+              <Button
+                className="bg-success justify-center"
+                style={{
+                  width: "200px",
+                  height: "40px",
+                  fontSize: "1.2em",
+                  margin: "1em",
+                  marginLeft: "2em",
+                }}
+                onClick={toggleRightSidebar}>
+                RightSidebar
+              </Button>
+              <Button
+                className="bg-success justify-center"
+                style={{
+                  width: "200px",
+                  height: "40px",
+                  fontSize: "1.2em",
+                  margin: "1em",
+                  marginLeft: "2em",
+                }}
+                onClick={toggleScraperSidebar}>
+                Job Scraper
+              </Button>
             </div>
           ) : null}
           {rightSidebarOpen ? (
             <div className="col-start-3 row-span-2">
-              <RightSidebar />
+              <RightSidebar />{" "}
+              <Button
+                className="bg-success justify-center"
+                style={{
+                  width: "200px",
+                  height: "40px",
+                  fontSize: "1.2em",
+                  margin: "1em",
+                  marginLeft: "2em",
+                }}
+                onClick={toggleRightSidebar}>
+                RightSidebar
+              </Button>
+              <Button
+                className="bg-success justify-center"
+                style={{
+                  width: "200px",
+                  height: "40px",
+                  fontSize: "1.2em",
+                  margin: "1em",
+                  marginLeft: "2em",
+                }}
+                onClick={toggleScraperSidebar}>
+                Job Scraper
+              </Button>
             </div>
           ) : null}
         </div>
