@@ -7,8 +7,7 @@ import RightSidebar from "./components/RightSidebar";
 import TextboxWithButton from "./../textinput/page";
 import Header from "./components/Header";
 import { Button } from "@/app/ui/button";
-import { createContext, useContext, useState, ReactNode } from "react";
-const StateContext = createContext<any>(undefined);
+import { useState } from "react";
 
 export default function RootLayout({
   children,
