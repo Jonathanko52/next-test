@@ -2,8 +2,11 @@
 
 import { useState } from "react";
 import { Button } from "@/app/ui/button";
+import { useGlobalState } from "@/app/context/StateContext";
 
 export default function TodoMain() {
+  const { setIsActive, isActive } = useGlobalState();
+  console.log("TEST", isActive);
   //todoitem structure:
   /*
   {
