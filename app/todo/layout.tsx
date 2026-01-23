@@ -9,7 +9,6 @@ import Header from "./components/Header";
 import { Button } from "@/app/ui/button";
 import { useState } from "react";
 import { StateProvider } from "@/app/context/StateContext";
-import { useGlobalState } from "@/app/context/StateContext";
 
 export default function RootLayout({
   children,
