@@ -23,6 +23,26 @@ export default function TodoMain() {
       Weekly: [0,1,2,3,4,5,6]
   }
   */
+  let items = isActive
 
-  return <div></div>;
+  return (<div>
+    {items.length > 0 ? (
+      items.map((item) =>{
+        <div>
+            (item.id}
+            (item.priority}
+            (item.taskHeader}
+            (item.taskText}
+            (item.taskState}
+            (item.subTasks}
+            (item.taskrepeatability}
+        </div>}
+    )}
+
+    ): null}
+  
+  
+  
+  
+  </div>);
 }
