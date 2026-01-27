@@ -5,10 +5,19 @@ import { createContext, useContext, useState, ReactNode } from "react";
 const StateContext = createContext<any>(undefined);
 
 export function StateProvider({ children }: { children: ReactNode }) {
-  const [activeTab, setActiveTab] = useState("home");
-
+  const [toDoItemList, setToDoItemList] = useState([
+    {
+      id: 1,
+      priority: 1,
+      taskHeader: "TASK HEADER",
+      taskText: "TASK TEXT \n",
+      taskState: "Uncompleted",
+      subTasks: [],
+      taskrepeatability: "Oneoff",
+    },
+  ]);
   return (
-    <StateContext.Provider value={{ activeTab, setActiveTab }}>
+    <StateContext.Provider value={{ toDoItemList, setToDoItemList }}>
       {children}
     </StateContext.Provider>
   );
