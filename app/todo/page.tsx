@@ -6,7 +6,7 @@ import { useGlobalState } from "@/app/context/StateContext";
 
 export default function TodoMain() {
   const { toDoItemList, setToDoItemList } = useGlobalState();
-  console.log("TEST", toDoItemList);
+  console.log(toDoItemList);
   //todoitem structure:
   /*
   {
@@ -23,7 +23,6 @@ export default function TodoMain() {
       Weekly: [0,1,2,3,4,5,6]
   }
   */
-  const items = [];
 
   return (
     <div
@@ -34,8 +33,18 @@ export default function TodoMain() {
         margin: "1em",
         marginLeft: "2em",
       }}>
-      {items.length > 0 ? (
-        <div>Items Present in todo</div>
+      {toDoItemList.length > 0 ? (
+        toDoItemList.map((item) => (
+          <div>
+            <p>{item.id}</p>
+            <p>{item.priority}</p>
+            <p>{item.taskHeader}</p>
+            <p>{item.taskText}</p>
+            <p>{item.taskState}</p>
+            <p>{item.subTasks}</p>
+            <p>{item.taskrepeatability}</p>
+          </div>
+        ))
       ) : (
         <div>No Items in todo</div>
       )}
