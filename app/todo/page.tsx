@@ -23,26 +23,15 @@ export default function TodoMain() {
       Weekly: [0,1,2,3,4,5,6]
   }
   */
-  let items = isActive
+  const items = [];
 
-  return (<div>
-    {items.length > 0 ? (
-      items.map((item) =>{
-        <div>
-            (item.id}
-            (item.priority}
-            (item.taskHeader}
-            (item.taskText}
-            (item.taskState}
-            (item.subTasks}
-            (item.taskrepeatability}
-        </div>}
-    )}
-
-    ): null}
-  
-  
-  
-  
-  </div>);
+  return (
+    <div>
+      {items.length > 0 ? (
+        <div>Items Present in todo</div>
+      ) : (
+        <div>No Items in todo</div>
+      )}
+    </div>
+  );
 }
