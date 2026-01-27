@@ -26,7 +26,14 @@ export default function TodoMain() {
   const items = [];
 
   return (
-    <div>
+    <div
+      style={{
+        width: "200px",
+        height: "40px",
+        fontSize: "1.2em",
+        margin: "1em",
+        marginLeft: "2em",
+      }}>
       {items.length > 0 ? (
         <div>Items Present in todo</div>
       ) : (
