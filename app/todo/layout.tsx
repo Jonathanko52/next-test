@@ -18,17 +18,6 @@ export default function RootLayout({
   const [rightSidebarOpen, setRightSidebarOpen] = useState(false);
   const [jobScraperOpen, setJobScraperOpen] = useState(false);
   const [buttonDiv, setButtonDiv] = useState(true);
-  const [toDoItemList, setToDoItemList] = useState([
-    {
-      id: 1,
-      priority: 1,
-      taskHeader: "TASK HEADER",
-      taskText: "TASK TEXT \n",
-      taskState: "Uncompleted",
-      subTasks: [],
-      taskrepeatability: "Oneoff",
-    },
-  ]);
 
   const toggleRightSidebar = () => {
     if (rightSidebarOpen) {
@@ -108,7 +97,7 @@ export default function RootLayout({
             ) : null}
             {jobScraperOpen ? (
               <div className="col-start-3 row-span-2">
-                <TextboxWithButton />{" "}
+                <TextboxWithButton />
                 <Button
                   className="bg-success justify-center"
                   style={{
