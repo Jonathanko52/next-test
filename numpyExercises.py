@@ -23,3 +23,16 @@ np.array(list(ascii_uppercase))
 # Alternative
 
 np.array([chr(i) for i in range(ord('A'), ord('Z') + 1)])
+
+# 5. How would you create a ten-element NumPy array object of all zeros?
+print(np.zeros(10))
+
+# 6. How would you find the data type given in #4.
+# 7. What is the data type for #4?
+
+# You can find the data type of a NumPy array using the dtype attribute.  
+# In the case of np.zeros and similar functions, the data type is dtype('float64')
+# For example
+
+df = np.zeros(10)
+df.dtype
