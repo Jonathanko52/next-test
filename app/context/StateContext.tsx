@@ -2,10 +2,20 @@
 
 import { createContext, useContext, useState, ReactNode } from "react";
 
+interface ToDoItem {
+  id: number;
+  priority: number;
+  taskHeader: string;
+  taskText: string;
+  taskState: string; //"pending" | "completed" | "in-progress";
+  subTasks: string[]; // Or another interface if subtasks are objects
+  taskrepeatability: string;
+}
+
 const StateContext = createContext<any>(undefined);
 
 export function StateProvider({ children }: { children: ReactNode }) {
-  const [toDoItemList, setToDoItemList] = useState([
+  const [toDoItemList, setToDoItemList] = useState<ToDoItem[]>([
     {
       id: 1,
       priority: 1,

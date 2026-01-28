@@ -6,7 +6,6 @@ import { useGlobalState } from "@/app/context/StateContext";
 
 export default function TodoMain() {
   const { toDoItemList, setToDoItemList } = useGlobalState();
-  console.log(toDoItemList);
   //todoitem structure:
   /*
   {
@@ -35,8 +34,8 @@ export default function TodoMain() {
       }}>
       {toDoItemList.length > 0 ? (
         toDoItemList.map((item) => (
-          <div>
-            <p>{item.id}</p>
+          <div key={item.id}>
+            {/* Added key prop for React performance */} <p>{item.id}</p>
             <p>{item.priority}</p>
             <p>{item.taskHeader}</p>
             <p>{item.taskText}</p>
