@@ -43,4 +43,8 @@ np.ones(10)
 
 # 9. How could you create a ten-element array of random integers between 1 and 5 (inclusive)?
 
-print(np.random.randint(1, 6, 10))
+np.random.randint(1, 6, 10)
+
+# 10. How can you create a normal distribution of 10 numbers, centered on 5?
+
+print(np.random.normal(5, 1, 10))
