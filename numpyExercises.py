@@ -51,4 +51,13 @@ np.random.normal(5, 1, 10)
 
 # 11. What code would create an array of 10 random numbers between zero and one?
 
-print(np.random.rand(10))
+np.random.rand(10)
+
+# 12. Consider the code: np.ones((3,5)). Does this A) create an array of three arrays containing 
+# five elements each or B) create an array of five arrays containing three elements each?
+
+# Answer: Three arrats, 5 values each.
+
+# Needs to be a tuple?
+
+print(np.ones((3,5)))
