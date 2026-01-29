@@ -25,7 +25,7 @@ np.array(list(ascii_uppercase))
 np.array([chr(i) for i in range(ord('A'), ord('Z') + 1)])
 
 # 5. How would you create a ten-element NumPy array object of all zeros?
-print(np.zeros(10))
+np.zeros(10)
 
 # 6. How would you find the data type given in #4.
 # 7. What is the data type for #4?
@@ -36,3 +36,11 @@ print(np.zeros(10))
 
 df = np.zeros(10)
 df.dtype
+
+# 8. What function would return the same number of elements, but of all ones?
+
+np.ones(10)
+
+# 9. How could you create a ten-element array of random integers between 1 and 5 (inclusive)?
+
+print(np.random.randint(1, 6, 10))
