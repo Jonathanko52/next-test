@@ -47,4 +47,8 @@ np.random.randint(1, 6, 10)
 
 # 10. How can you create a normal distribution of 10 numbers, centered on 5?
 
-print(np.random.normal(5, 1, 10))
+np.random.normal(5, 1, 10)
+
+# 11. What code would create an array of 10 random numbers between zero and one?
+
+print(np.random.rand(10))
