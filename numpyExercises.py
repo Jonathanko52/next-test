@@ -79,3 +79,11 @@ original_array = np.arange(1, 13)
 new_array = original_array.reshape(3, 4)
 print(repr(new_array))
 
+# 16. Given new_array from the last exercise, and the code x = new_array, you run the code:
+
+x = new_array
+x[0,0] = 42
+print (x[0,0])
+print(new_array[0,0])
+
+# New variable still points to old array
