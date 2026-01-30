@@ -62,10 +62,13 @@ np.random.rand(10)
 
 np.ones((3,5))
 
-# Consider an array named “myarray” that is displayed as in the block below. 
+# 13. Consider an array named “myarray” that is displayed as in the block below. 
 # What value does the code myarray[1,2] return? A) 10 B) 7.
 myarray = np.array([[ 1,  2,  3,  4],
        [ 5,  6,  7,  8],
        [ 9, 10, 11, 12]])
 
-print(myarray[1,2])
+print(myarray.ndim)
+
+# 14. ndim is dimensions of array.
+
