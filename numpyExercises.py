@@ -77,14 +77,12 @@ myarray.ndim
 
 original_array = np.arange(1, 13)
 new_array = original_array.reshape(3, 4)
-print(repr(new_array))
 
 # 16. Given new_array from the last exercise, and the code x = new_array, you run the code:
 
 x = new_array
 x[0,0] = 42
-print (x[0,0])
-print(new_array[0,0])
+
 
 # New variable still points to old array
 
@@ -95,3 +93,15 @@ values = np.random.randint(1, 11, (3,4))
 # 18. How could you create an array of the same size and shape as #17, filled with 64-bit integer zeros?
 
 zeros = np.zeros(dtype=np.int64, shape=(3,4))
+
+# 19. Given this code:
+
+z_list = [z for z in range(0,5)]
+y_list = [z_list for y in range(0,4)]
+x_list = [y_list for x in range(0,3)]
+
+x_array = np.array(x_list)
+
+# Three dimensional array. ( 3 2-d arrays, each with 4 arrays with 5 elements)
+
+# 20.
