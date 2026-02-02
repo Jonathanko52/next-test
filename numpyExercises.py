@@ -104,4 +104,6 @@ x_array = np.array(x_list)
 
 # Three dimensional array. ( 3 2-d arrays, each with 4 arrays with 5 elements)
 
-# 20.
+# 20. Given x_array from #19, what is the value for x_array.ndim?
+
+# Number of dimensions. Should return 3.
