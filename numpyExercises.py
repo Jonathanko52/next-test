@@ -107,3 +107,20 @@ x_array = np.array(x_list)
 # 20. Given x_array from #19, what is the value for x_array.ndim?
 
 # Number of dimensions. Should return 3.
+
+# 21. Given an array, named "arr”, that looks like:
+
+
+'''
+[[0, 1, 2],
+       [3, 4, 5]]
+
+display an array that looks like:
+
+[[0, 3],
+       [1, 4],
+       [2, 5]]
+'''
+
+# arr.transpose() swaps dimensions of an array.
+
