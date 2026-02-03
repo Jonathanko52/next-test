@@ -122,3 +122,11 @@ display an array that looks like:
        [2, 5]]
 '''
 
+four_by_five = np.array([[ 1,  2,  3,  4,  5],
+       [ 6,  7,  8,  9, 10],
+       [11, 12, 13, 14, 15],
+       [16, 17, 18, 19, 20]])
+
+# 22. Write a statement that prints the first row. (It will be a five-element array).
+print()
+
