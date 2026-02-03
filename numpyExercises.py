@@ -122,5 +122,3 @@ display an array that looks like:
        [2, 5]]
 '''
 
-# arr.transpose() swaps dimensions of an array.
-
