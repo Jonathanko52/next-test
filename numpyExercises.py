@@ -128,5 +128,8 @@ four_by_five = np.array([[ 1,  2,  3,  4,  5],
        [16, 17, 18, 19, 20]])
 
 # 22. Write a statement that prints the first row. (It will be a five-element array).
-print(four_by_five[0])
+four_by_five[0]
 
+# 23. Write an expression to print the last row. (It will be a five-element array).
+
+four_by_five[-1]
