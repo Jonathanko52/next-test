@@ -160,4 +160,6 @@ one_dim * 2
 
 one_dim + np.arange(5, 0, -1)
 
-print(np.arange(5, 0,0.5))
+# 30. How many zeros are in the array returned by one_dim - one_dim ?
+
+# one_dim - one_dim = array of same length, but all 0's
