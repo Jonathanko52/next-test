@@ -145,3 +145,7 @@ four_by_five[-1]
 # 26. How could you display the first column? It will be a (four-element array ending with 16.)
 
 four_by_five[:,0]
+
+# 27. What does print(four_by_five[:, 3:]) display
+
+four_by_five[:, 3:]
