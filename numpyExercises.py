@@ -148,4 +148,4 @@ four_by_five[:,0]
 
 # 27. What does print(four_by_five[:, 3:]) display
 
-four_by_five[:, 3:]
+print(four_by_five[:,3:])
