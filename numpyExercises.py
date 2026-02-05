@@ -133,3 +133,7 @@ four_by_five[0]
 # 23. Write an expression to print the last row. (It will be a five-element array).
 
 four_by_five[-1]
+
+# 24. What does print(four_by_five[2,3]) display?
+
+# Output: 14. 3rd array, 4th index.
