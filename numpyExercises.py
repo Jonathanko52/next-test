@@ -1,5 +1,5 @@
 import numpy as np
-
+import re
 # 1. Using a NumPy function, how would you create a one-dimensional NumPy array of the numbers from 10 to 100, counting by 10?
 
 np.arange(10,110,10)
@@ -163,3 +163,27 @@ one_dim + np.arange(5, 0, -1)
 # 30. How many zeros are in the array returned by one_dim - one_dim ?
 
 # one_dim - one_dim = array of same length, but all 0's
+
+
+value = "13 parrots seized at Indira Gandhi International Airport - 1 arrested"
+value2 = "41 pieces of rhino horns and abalone seized at O.R Tambo International Airport warehouse"
+def test(value):
+       if 'airport' in value.lower():
+              if 'at the' in value.lower():
+                     after_marker = value.lower().split('at the', 1)[1]
+
+              elif 'at' in value.lower():
+                     after_marker = value.lower().split('at', 1)[1]
+              elif 'in the' in value.lower():
+                     after_marker = value.lower().split('in the', 1)[1]
+              elif 'in' in value.lower():
+                     after_marker = value.lower().split('in', 1)[1]
+              else:
+                     return "Manual Check"
+              airport = re.split(r'[^\w\s]', after_marker)[0].strip()
+              return airport.title()
+       else:
+              return "No airport mentioned"
+       
+print(test(value))
+print(test(value2))
