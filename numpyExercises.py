@@ -183,3 +183,13 @@ one_dim + np.arange(5, 0, -1)
 # 33. What is the result of this expression: -one_dim
 
 # Turns all values into negatives.
+
+# 34. np.absolute take the absolute value of each element. Given that, what would the result be of the following expression:
+
+# np.absolute(-(one_dim[3:])
+
+# Absolute value of last two?
+
+# print(np.absolute(-(one_dim[3:])))
+
+# Got it right. [4,5]
