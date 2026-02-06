@@ -179,3 +179,7 @@ one_dim + np.arange(5, 0, -1)
 
 # print((one_dim > 4) | (one_dim == 1))
 # print((one_dim > 4) & (one_dim == 1))
+
+# 33. What is the result of this expression: -one_dim
+
+# Turns all values into negatives.
