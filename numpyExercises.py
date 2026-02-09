@@ -193,3 +193,10 @@ one_dim + np.arange(5, 0, -1)
 # print(np.absolute(-(one_dim[3:])))
 
 # Got it right. [4,5]
+
+# 35. This exercise shows the use of one of NumPy’s sequence functions, which operate on the whole array rather than per element. 
+# What is returned by one_dim.sum() ?
+
+# numbers = [x for x in range(1,6)]
+# print(sum(numbers))
+# # Output 15
