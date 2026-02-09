@@ -216,3 +216,11 @@ one_dim + np.arange(5, 0, -1)
 # print(np.around(np.cos(arr), 0))
 
 # Around na dround are actually the same. Not sure why we have both.
+
+# 38. You’re asked to save the following two arrays as is to a file, 
+# “data.npz”. The arrays should be named as they are here in the file. How could you do it?
+
+people = np.array(["John", "Jennifer", "Helen", "Miryam"])
+languages = np.array([2, 2, 1, 1])
+
+np.savez("data.npz", people=people, languages=languages)
