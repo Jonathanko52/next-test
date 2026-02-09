@@ -231,3 +231,7 @@ one_dim + np.arange(5, 0, -1)
 # arrays = np.load("data.npz")
 # people2 = arrays["people"]
 # languages2 = arrays["languages"]
+
+# 40. Given
+# arr = np.arange(1,13).reshape(3,4)
+# How could you save it to a CSV file, “myarray.csv”.
