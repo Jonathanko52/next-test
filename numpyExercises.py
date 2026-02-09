@@ -200,3 +200,15 @@ one_dim + np.arange(5, 0, -1)
 # numbers = [x for x in range(1,6)]
 # print(sum(numbers))
 # # Output 15
+
+# 36. Break out those pictures of the unit circle for this one, for some trigonometry so simple an ex-history major can do it – 
+# well at least I can on a good day.
+
+arr = np.array([0., .5, 1.0, 1.5, 2.0]) * np.pi
+
+# What does the following display:
+
+print(np.int32(np.sin(arr)))
+
+
+
