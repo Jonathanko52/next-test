@@ -235,3 +235,10 @@ one_dim + np.arange(5, 0, -1)
 # 40. Given
 # arr = np.arange(1,13).reshape(3,4)
 # How could you save it to a CSV file, “myarray.csv”.
+
+# arr = np.arange(1,13).reshape(3,4)
+# np.savetxt("myarray.csv", arr, delimiter=",")
+
+# 41. Given the CSV file saved in 40, how could you load it back into a variable, arr2?
+
+# arr2 = np.loadtxt("myarray.csv", delimiter=",")
