@@ -220,7 +220,14 @@ one_dim + np.arange(5, 0, -1)
 # 38. You’re asked to save the following two arrays as is to a file, 
 # “data.npz”. The arrays should be named as they are here in the file. How could you do it?
 
-people = np.array(["John", "Jennifer", "Helen", "Miryam"])
-languages = np.array([2, 2, 1, 1])
+# people = np.array(["John", "Jennifer", "Helen", "Miryam"])
+# languages = np.array([2, 2, 1, 1])
 
-np.savez("data.npz", people=people, languages=languages)
+# np.savez("data.npz", people=people, languages=languages)
+
+# 39. Assuming you saved the file, “data.npz”, in 38, how could you
+#  reload the arrays into two new variables: people2 and languages2?
+
+# arrays = np.load("data.npz")
+# people2 = arrays["people"]
+# languages2 = arrays["languages"]
