@@ -204,7 +204,7 @@ one_dim + np.arange(5, 0, -1)
 # 36. Break out those pictures of the unit circle for this one, for some trigonometry so simple an ex-history major can do it – 
 # well at least I can on a good day.
 
-arr = np.array([0., .5, 1.0, 1.5, 2.0]) * np.pi
+# arr = np.array([0., .5, 1.0, 1.5, 2.0]) * np.pi
 
 # # What does the following display:
 
@@ -213,4 +213,6 @@ arr = np.array([0., .5, 1.0, 1.5, 2.0]) * np.pi
 
 # 37. For the defined above in #36, what are the values for:
 
-print(np.around(np.cos(arr), 0))
+# print(np.around(np.cos(arr), 0))
+
+# Around na dround are actually the same. Not sure why we have both.
