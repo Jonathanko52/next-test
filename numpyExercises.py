@@ -262,3 +262,12 @@ lumberjack
 # print(step1)
 # step2 = np.char.add(step1, ["*"])
 # print(step2)
+
+# 45. The function, np.where, can be used to create an array of indexes that can be used to index 
+# into the original array to subset an array based on a condition. If passed only a condition, it 
+# returns a set that array in the first value of a tuple, and we need to ignore the second (empty) 
+# condition. We can then use the indexes returned to get an array of the elements themselves.
+
+# search_results, = np.where(np.char.str_len(lumberjack) >=5)
+# print(search_results)
+# print(lumberjack[search_results])
