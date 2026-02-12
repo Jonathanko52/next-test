@@ -252,4 +252,6 @@ lumberjack
 # array(["I'm", 'a', 'lumberjack', 'and', "I'm", 'OK', 'I', 'sleep', 'all',
 #        'night', 'and', 'I', 'work', 'all', 'day'], dtype='<U10')
 
-# 43. 
+# 43. What would you expect the value of print(np.char.capitalize(lumberjack)[2]) to display?
+
+# lumberjack, of course.
