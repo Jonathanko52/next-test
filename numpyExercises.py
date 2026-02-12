@@ -255,3 +255,10 @@ lumberjack
 # 43. What would you expect the value of print(np.char.capitalize(lumberjack)[2]) to display?
 
 # lumberjack, of course.
+
+# 44. How could you surround each string with an initial and final asterisk character (*)?
+
+# step1 = np.char.add(["*"], lumberjack)
+# print(step1)
+# step2 = np.char.add(step1, ["*"])
+# print(step2)
