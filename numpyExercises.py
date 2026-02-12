@@ -242,3 +242,14 @@ one_dim + np.arange(5, 0, -1)
 # 41. Given the CSV file saved in 40, how could you load it back into a variable, arr2?
 
 # arr2 = np.loadtxt("myarray.csv", delimiter=",")
+
+# STRING STUFF
+
+lumberjack = np.array("I'm a lumberjack and I'm OK I sleep all night and I work all day".split(" "))
+lumberjack
+
+# Output
+# array(["I'm", 'a', 'lumberjack', 'and', "I'm", 'OK', 'I', 'sleep', 'all',
+#        'night', 'and', 'I', 'work', 'all', 'day'], dtype='<U10')
+
+# 43. 
