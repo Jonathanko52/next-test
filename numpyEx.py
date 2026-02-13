@@ -25,11 +25,7 @@ import re
 
 # 10. How can you create a normal distribution of 10 numbers, centered on 5?
 
-np.random.normal(5, 1, 10)
-
 # 11. What code would create an array of 10 random numbers between zero and one?
-
-np.random.rand(10)
 
 # 12. Consider the code: np.ones((3,5)). Does this A) create an array of three arrays containing 
 # five elements each or B) create an array of five arrays containing three elements each?
@@ -38,57 +34,25 @@ np.random.rand(10)
 
 # Needs to be a tuple?
 
-np.ones((3,5))
-
 # 13. Consider an array named “myarray” that is displayed as in the block below. 
 # What value does the code myarray[1,2] return? A) 10 B) 7.
-myarray = np.array([[ 1,  2,  3,  4],
-       [ 5,  6,  7,  8],
-       [ 9, 10, 11, 12]])
 
 # 14. ndim is dimensions of array.
-
-myarray.ndim
 
 # 15.An array of three arrays of four elements each like this has twelve elements, of course. 
 # How could you create a new array consisting of two arrays of six elements each?
 
-original_array = np.arange(1, 13)
-new_array = original_array.reshape(3, 4)
-
 # 16. Given new_array from the last exercise, and the code x = new_array, you run the code:
-
-x = new_array
-x[0,0] = 42
-
-
-# New variable still points to old array
 
 # 17. How could you create a two-dimensional, 3 x 4 array (three arrays of four elements each) with random numbers from 1 to 10?
 
-values = np.random.randint(1, 11, (3,4))
-
 # 18. How could you create an array of the same size and shape as #17, filled with 64-bit integer zeros?
-
-zeros = np.zeros(dtype=np.int64, shape=(3,4))
 
 # 19. Given this code:
 
-z_list = [z for z in range(0,5)]
-y_list = [z_list for y in range(0,4)]
-x_list = [y_list for x in range(0,3)]
-
-x_array = np.array(x_list)
-
-# Three dimensional array. ( 3 2-d arrays, each with 4 arrays with 5 elements)
-
 # 20. Given x_array from #19, what is the value for x_array.ndim?
 
-# Number of dimensions. Should return 3.
-
 # 21. Given an array, named "arr”, that looks like:
-
-
 '''
 [[0, 1, 2],
        [3, 4, 5]]
@@ -100,29 +64,15 @@ display an array that looks like:
        [2, 5]]
 '''
 
-four_by_five = np.array([[ 1,  2,  3,  4,  5],
-       [ 6,  7,  8,  9, 10],
-       [11, 12, 13, 14, 15],
-       [16, 17, 18, 19, 20]])
-
 # 22. Write a statement that prints the first row. (It will be a five-element array).
-four_by_five[0]
 
 # 23. Write an expression to print the last row. (It will be a five-element array).
 
-four_by_five[-1]
-
 # 24. What does print(four_by_five[2,3]) display?
-
-# Output: 14. 3rd array, 4th index.
 
 # 25. What does print(four_by_five[3,2]) display?
 
-# Output 18
-
 # 26. How could you display the first column? It will be a (four-element array ending with 16.)
-
-four_by_five[:,0]
 
 # 27. What does print(four_by_five[:, 3:]) display
 
