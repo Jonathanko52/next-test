@@ -99,61 +99,29 @@ display an array that looks like:
 
 # 37. For the defined above in #36, what are the values for:
 
-# print(np.around(np.cos(arr), 0))
-
-# Around na dround are actually the same. Not sure why we have both.
-
 # 38. You’re asked to save the following two arrays as is to a file, 
 # “data.npz”. The arrays should be named as they are here in the file. How could you do it?
 
-# people = np.array(["John", "Jennifer", "Helen", "Miryam"])
-# languages = np.array([2, 2, 1, 1])
-
-# np.savez("data.npz", people=people, languages=languages)
-
 # 39. Assuming you saved the file, “data.npz”, in 38, how could you
 #  reload the arrays into two new variables: people2 and languages2?
-
-# arrays = np.load("data.npz")
-# people2 = arrays["people"]
-# languages2 = arrays["languages"]
 
 # 40. Given
 # arr = np.arange(1,13).reshape(3,4)
 # How could you save it to a CSV file, “myarray.csv”.
 
-# arr = np.arange(1,13).reshape(3,4)
-# np.savetxt("myarray.csv", arr, delimiter=",")
-
 # 41. Given the CSV file saved in 40, how could you load it back into a variable, arr2?
 
-# arr2 = np.loadtxt("myarray.csv", delimiter=",")
 
 # STRING STUFF
 
 lumberjack = np.array("I'm a lumberjack and I'm OK I sleep all night and I work all day".split(" "))
 lumberjack
 
-# Output
-# array(["I'm", 'a', 'lumberjack', 'and', "I'm", 'OK', 'I', 'sleep', 'all',
-#        'night', 'and', 'I', 'work', 'all', 'day'], dtype='<U10')
 
 # 43. What would you expect the value of print(np.char.capitalize(lumberjack)[2]) to display?
 
-# lumberjack, of course.
 
 # 44. How could you surround each string with an initial and final asterisk character (*)?
 
-# step1 = np.char.add(["*"], lumberjack)
-# print(step1)
-# step2 = np.char.add(step1, ["*"])
-# print(step2)
 
 # 45. The function, np.where, can be used to create an array of indexes that can be used to index 
-# into the original array to subset an array based on a condition. If passed only a condition, it 
-# returns a set that array in the first value of a tuple, and we need to ignore the second (empty) 
-# condition. We can then use the indexes returned to get an array of the elements themselves.
-
-# search_results, = np.where(np.char.str_len(lumberjack) >=5)
-# print(search_results)
-# print(lumberjack[search_results])
