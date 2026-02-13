@@ -76,68 +76,26 @@ display an array that looks like:
 
 # 27. What does print(four_by_five[:, 3:]) display
 
-four_by_five[:,3:]
-
-one_dim = np.arange(1,6)
-
 # 28. What would be displayed by print(one_dim * 2)
-
-one_dim * 2
 
 # 29. What would be returned by this expression: one_dim + np.arange(5, 0, -1) ?
 
-one_dim + np.arange(5, 0, -1)
-
 # 30. How many zeros are in the array returned by one_dim - one_dim ?
 
-# one_dim - one_dim = array of same length, but all 0's
-
 # 31. What is the result of one_dim > 2 ?
-
-# print(one_dim)
-# print(one_dim > 2)
-
 # [1 2 3 4 5]
 # [False False  True  True  True]
 
 # 32. For NumPy arrays, logical operations are done with the operators “&” and “|”, rather than the usual Python “and” and “or”. Given that, what would be the result of this expression?
 # (one_dim > 4) | (one_dim == 1)
 
-# | does the work of || in numpy. & does the work of &&
-
-# print((one_dim > 4) | (one_dim == 1))
-# print((one_dim > 4) & (one_dim == 1))
-
 # 33. What is the result of this expression: -one_dim
-
-# Turns all values into negatives.
 
 # 34. np.absolute take the absolute value of each element. Given that, what would the result be of the following expression:
 
-# np.absolute(-(one_dim[3:])
-
-# Absolute value of last two?
-
-# print(np.absolute(-(one_dim[3:])))
-
-# Got it right. [4,5]
-
 # 35. This exercise shows the use of one of NumPy’s sequence functions, which operate on the whole array rather than per element. 
-# What is returned by one_dim.sum() ?
-
-# numbers = [x for x in range(1,6)]
-# print(sum(numbers))
-# # Output 15
 
 # 36. Break out those pictures of the unit circle for this one, for some trigonometry so simple an ex-history major can do it – 
-# well at least I can on a good day.
-
-# arr = np.array([0., .5, 1.0, 1.5, 2.0]) * np.pi
-
-# # What does the following display:
-
-# print(np.int32(np.sin(arr)))
-
 
 # 37. For the defined above in #36, what are the values for:
 
