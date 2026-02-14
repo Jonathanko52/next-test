@@ -4,11 +4,16 @@ import re
 # NumPy array of the numbers from 10 to 100, counting by 10?
 
 
-print(np.arange(10,110,10))
+# print(np.arange(10,110,10))
 
 # 2. How could you create the same NumPy array using a Python range and a list?
 
+target_array = np.array([], dtype=int)
 
+for i in range(1,11):
+  target_array = np.append(target_array, i * 10)
+
+print(target_array)
 
 # 3. What happens if you pass no arguments to the np.array()?
 
