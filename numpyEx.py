@@ -1,7 +1,10 @@
 import numpy as np
 import re
-# 1. Using a NumPy function, how would you create a one-dimensional NumPy array of the numbers from 10 to 100, counting by 10?
+# 1. Using a NumPy function, how would you create a one-dimensional 
+# NumPy array of the numbers from 10 to 100, counting by 10?
 
+
+print(np.arange(10,110,10))
 
 # 2. How could you create the same NumPy array using a Python range and a list?
 
