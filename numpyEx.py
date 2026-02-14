@@ -15,6 +15,8 @@ for i in range(1,11):
 
 print(target_array)
 
+target_arrat = np.array([i for i in range(10,110,10)])
+
 # 3. What happens if you pass no arguments to the np.array()?
 
 # 4. How might you create a NumPy array of the capital letters, A-Z?
