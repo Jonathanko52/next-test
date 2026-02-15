@@ -20,12 +20,14 @@ target_arrat = np.array([i for i in range(10,110,10)])
 # print(np.array())
 
 # 4. How might you create a NumPy array of the capital letters, A-Z?
+from string import ascii_uppercase
 
-np.array([chr(i) for i in range(ord('A'), ord('Z') + 1)])
+np.array(list(ascii_uppercase))
 
 
 # 5. How would you create a ten-element NumPy array object of all zeros?
 
+np.zeroes(10)
 
 # 6. How would you find the data type given in #4.
 
