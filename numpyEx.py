@@ -27,15 +27,30 @@ np.array(list(ascii_uppercase))
 
 # 5. How would you create a ten-element NumPy array object of all zeros?
 
-np.zeroes(10)
+np.zeros(10)
 
 # 6. How would you find the data type given in #4.
 
 # 7. What is the data type for #4?
 
+# You can find the data type of a NumPy array using the dtype attribute.  
+# In the case of np.zeros and similar functions, the data type is dtype('float64')
+# For example
+
+df = np.zeros(10)
+df.dtype
+
+df.dtype
+print(df)
+
 # 8. What function would return the same number of elements, but of all ones?
 
+np.ones(10)
+
 # 9. How could you create a ten-element array of random integers between 1 and 5 (inclusive)?
+
+
+np.random.randint(1, 6, 10)
 
 # 10. How can you create a normal distribution of 10 numbers, centered on 5?
 
