@@ -61,7 +61,7 @@ np.random.rand(10)
 # 12. Consider the code: np.ones((3,5)). Does this A) create an array of three arrays containing 
 # five elements each or B) create an array of five arrays containing three elements each?
 
-print(np.ones((3,5)))
+test = np.ones((3,5,4,7))
 
 # Answer: Three arrats, 5 values each.
 
@@ -77,6 +77,7 @@ myarray = np.array([[ 1,  2,  3,  4],
 
 
 # 14. ndim is dimensions of array.
+
 
 # 15.An array of three arrays of four elements each like this has twelve elements, of course. 
 # How could you create a new array consisting of two arrays of six elements each?
