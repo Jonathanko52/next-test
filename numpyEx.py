@@ -37,11 +37,10 @@ np.zeros(10)
 # In the case of np.zeros and similar functions, the data type is dtype('float64')
 # For example
 
-df = np.zeros(10)
+df = np.zeros((10,4))
 df.dtype
 
 df.dtype
-print(df)
 
 # 8. What function would return the same number of elements, but of all ones?
 
@@ -62,11 +61,12 @@ np.random.rand(10)
 # 12. Consider the code: np.ones((3,5)). Does this A) create an array of three arrays containing 
 # five elements each or B) create an array of five arrays containing three elements each?
 
-np.ones((3,5))
+print(np.ones((3,5)))
 
 # Answer: Three arrats, 5 values each.
 
 # Needs to be a tuple?
+# Tuples for multi-dimensional
 
 # 13. Consider an array named “myarray” that is displayed as in the block below. 
 # What value does the code myarray[1,2] return? A) 10 B) 7.
