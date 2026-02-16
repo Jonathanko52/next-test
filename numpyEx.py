@@ -62,6 +62,8 @@ np.random.rand(10)
 # 12. Consider the code: np.ones((3,5)). Does this A) create an array of three arrays containing 
 # five elements each or B) create an array of five arrays containing three elements each?
 
+np.ones((3,5))
+
 # Answer: Three arrats, 5 values each.
 
 # Needs to be a tuple?
