@@ -92,9 +92,10 @@ x = new_array
 
 new_array[0,0] = 25
 
-print(x[0,0])
 
 # 17. How could you create a two-dimensional, 3 x 4 array (three arrays of four elements each) with random numbers from 1 to 10?
+
+values = np.random.randint(1, 11, (3,4))
 
 # 18. How could you create an array of the same size and shape as #17, filled with 64-bit integer zeros?
 
