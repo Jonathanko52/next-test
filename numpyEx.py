@@ -78,9 +78,13 @@ myarray = np.array([[ 1,  2,  3,  4],
 
 # 14. ndim is dimensions of array.
 
+np.ndim(myarray)
 
 # 15.An array of three arrays of four elements each like this has twelve elements, of course. 
 # How could you create a new array consisting of two arrays of six elements each?
+
+original_array = np.arange(1, 13)
+new_array = original_array.reshape(3, 4)
 
 # 16. Given new_array from the last exercise, and the code x = new_array, you run the code:
 
