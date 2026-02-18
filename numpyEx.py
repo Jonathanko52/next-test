@@ -129,7 +129,7 @@ display an array that looks like:
 
 test_array = np.array([[0,1,2],[3,4,5]])
 
-
+print(test_array.transpose())
 # 22. Write a statement that prints the first row. (It will be a five-element array).
 
 # 23. Write an expression to print the last row. (It will be a five-element array).
