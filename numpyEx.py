@@ -103,6 +103,14 @@ zeros = np.zeros(dtype=np.int64, shape=(3,4))
 
 # 19. Given this code:
 
+z_list = [z for z in range(0,5)]
+y_list = [z_list for y in range(0,4)]
+x_list = [y_list for x in range(0,3)]
+
+x_array = np.array(x_list)
+
+# Three dimensional array. ( 3 2-d arrays, each with 4 arrays with 5 elements)
+
 # 20. Given x_array from #19, what is the value for x_array.ndim?
 
 # 21. Given an array, named "arr”, that looks like:
