@@ -127,6 +127,9 @@ display an array that looks like:
        [2, 5]]
 '''
 
+test_array = np.array([[0,1,2],[3,4,5]])
+
+
 # 22. Write a statement that prints the first row. (It will be a five-element array).
 
 # 23. Write an expression to print the last row. (It will be a five-element array).
