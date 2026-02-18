@@ -99,6 +99,8 @@ values = np.random.randint(1, 11, (3,4))
 
 # 18. How could you create an array of the same size and shape as #17, filled with 64-bit integer zeros?
 
+zeros = np.zeros(dtype=np.int64, shape=(3,4))
+
 # 19. Given this code:
 
 # 20. Given x_array from #19, what is the value for x_array.ndim?
