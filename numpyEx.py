@@ -154,11 +154,16 @@ four_by_five[:,0]
 
 # 27. What does print(four_by_five[:, 3:]) display
 
-four_by_five[:,3:]
+four_by_five[:,2:]
 
 one_dim = np.arange(1,6)
 
+one_dim
+
 # 28. What would be displayed by print(one_dim * 2)
+
+one_dim * 2
+
 
 # 29. What would be returned by this expression: one_dim + np.arange(5, 0, -1) ?
 
