@@ -140,13 +140,17 @@ four_by_five[-1]
 
 # 24. What does print(four_by_five[2,3]) display?
 
-print(four_by_five)
-print(four_by_five[1,2])
+# print(four_by_five)
+# print(four_by_five[1,2])
 # Fixed
 
 # 25. What does print(four_by_five[3,2]) display?
 
+# Output 18
+
 # 26. How could you display the first column? It will be a (four-element array ending with 16.)
+
+four_by_five[:,0]
 
 # 27. What does print(four_by_five[:, 3:]) display
 
