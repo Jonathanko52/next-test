@@ -179,11 +179,19 @@ print(num_twenty_nine)
 
 
 # 31. What is the result of one_dim > 2 ?
+
+# print(one_dim)
+# print(one_dim > 2)
+
 # [1 2 3 4 5]
 # [False False  True  True  True]
-
 # 32. For NumPy arrays, logical operations are done with the operators “&” and “|”, rather than the usual Python “and” and “or”. Given that, what would be the result of this expression?
 # (one_dim > 4) | (one_dim == 1)
+
+# | does the work of || in numpy. & does the work of &&
+
+print((one_dim > 4) | (one_dim == 1))
+print((one_dim > 4) & (one_dim == 1))
 
 # 33. What is the result of this expression: -one_dim
 
