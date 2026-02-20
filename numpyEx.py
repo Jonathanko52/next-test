@@ -127,12 +127,16 @@ display an array that looks like:
        [2, 5]]
 '''
 
-test_array = np.array([[0,1,2],[3,4,5]])
+four_by_five = np.array([[0,1,2],[3,4,5]])
 
 print(test_array.transpose())
 # 22. Write a statement that prints the first row. (It will be a five-element array).
 
+four_by_five[0]
+
 # 23. Write an expression to print the last row. (It will be a five-element array).
+
+four_by_five[-1]
 
 # 24. What does print(four_by_five[2,3]) display?
 
