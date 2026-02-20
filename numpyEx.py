@@ -164,8 +164,14 @@ one_dim
 
 one_dim * 2
 
-
 # 29. What would be returned by this expression: one_dim + np.arange(5, 0, -1) ?
+
+num_twenty_nine = one_dim + np.arange(5, 0, -1)
+
+# Here we’re creating a new array with a descending range: [5, 4, 3, 2, 1] and 
+# adding it to [1, 2, 3, 4, 5], so we get an array with the values [6, 6, 6, 6, 6].
+
+print(num_twenty_nine)
 
 # 30. How many zeros are in the array returned by one_dim - one_dim ?
 
