@@ -190,8 +190,8 @@ print(num_twenty_nine)
 
 # | does the work of || in numpy. & does the work of &&
 
-print((one_dim > 4) | (one_dim == 1))
-print((one_dim > 4) & (one_dim == 1))
+# print((one_dim > 4) | (one_dim == 1))
+# print((one_dim > 4) & (one_dim == 1))
 
 # 33. What is the result of this expression: -one_dim
 
