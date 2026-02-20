@@ -136,6 +136,7 @@ four_by_five[-1]
 
 # 24. What does print(four_by_five[2,3]) display?
 
+print(four_by_five[2,3])
 # Output: 14. 3rd array, 4th index.
 
 # 25. What does print(four_by_five[3,2]) display?

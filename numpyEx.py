@@ -129,7 +129,7 @@ display an array that looks like:
 
 four_by_five = np.array([[0,1,2],[3,4,5]])
 
-print(test_array.transpose())
+four_by_five.transpose()
 # 22. Write a statement that prints the first row. (It will be a five-element array).
 
 four_by_five[0]
@@ -139,6 +139,10 @@ four_by_five[0]
 four_by_five[-1]
 
 # 24. What does print(four_by_five[2,3]) display?
+
+print(four_by_five)
+print(four_by_five[1,2])
+# Fixed
 
 # 25. What does print(four_by_five[3,2]) display?
 
