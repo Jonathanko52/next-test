@@ -175,6 +175,9 @@ print(num_twenty_nine)
 
 # 30. How many zeros are in the array returned by one_dim - one_dim ?
 
+# one_dim - one_dim = array of same length, but all 0's
+
+
 # 31. What is the result of one_dim > 2 ?
 # [1 2 3 4 5]
 # [False False  True  True  True]
