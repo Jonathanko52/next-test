@@ -7,90 +7,37 @@ import re
 
 # 2. How could you create the same NumPy array using a Python range and a list?
 
-target_array = np.array([], dtype=int)
-
-for i in range(1,11):
-  target_array = np.append(target_array, i * 10)
-
-target_arrat = np.array([i for i in range(10,110,10)])
-
 # 3. What happens if you pass no arguments to the np.array()?
 
-# print(np.array())
-
 # 4. How might you create a NumPy array of the capital letters, A-Z?
-from string import ascii_uppercase
-
-np.array(list(ascii_uppercase))
-
 
 # 5. How would you create a ten-element NumPy array object of all zeros?
-
-np.zeros(10)
 
 # 6. How would you find the data type given in #4.
 
 # 7. What is the data type for #4?
 
-# You can find the data type of a NumPy array using the dtype attribute.  
-# In the case of np.zeros and similar functions, the data type is dtype('float64')
-# For example
-
-df = np.zeros((10,4))
-df.dtype
-
-df.dtype
-
 # 8. What function would return the same number of elements, but of all ones?
-
-np.ones(10)
 
 # 9. How could you create a ten-element array of random integers between 1 and 5 (inclusive)?
 
-np.random.randint(1, 6, 10)
-
 # 10. How can you create a normal distribution of 10 numbers, centered on 5?
 
-np.random.normal(5, 1, 10)
-
 # 11. What code would create an array of 10 random numbers between zero and one?
-
-np.random.rand(10)
 
 # 12. Consider the code: np.ones((3,5)). Does this A) create an array of three arrays containing 
 # five elements each or B) create an array of five arrays containing three elements each?
 
-test = np.ones((3,5,4,7))
-
-# Answer: Three arrats, 5 values each.
-
-# Needs to be a tuple?
-# Tuples for multi-dimensional
 
 # 13. Consider an array named “myarray” that is displayed as in the block below. 
 # What value does the code myarray[1,2] return? A) 10 B) 7.
 
-myarray = np.array([[ 1,  2,  3,  4],
-       [ 5,  6,  7,  8],
-       [ 9, 10, 11, 12]])
-
-
 # 14. ndim is dimensions of array.
-
-np.ndim(myarray)
 
 # 15.An array of three arrays of four elements each like this has twelve elements, of course. 
 # How could you create a new array consisting of two arrays of six elements each?
 
-original_array = np.arange(1, 13)
-new_array = original_array.reshape(3, 4)
-
 # 16. Given new_array from the last exercise, and the code x = new_array, you run the code:
-
-x = new_array
-
-new_array[0,0] = 25
-
 
 # 17. How could you create a two-dimensional, 3 x 4 array (three arrays of four elements each) with random numbers from 1 to 10?
 
