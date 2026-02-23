@@ -4,7 +4,6 @@ import re
 # NumPy array of the numbers from 10 to 100, counting by 10?
 
 
-# print(np.arange(10,110,10))
 
 # 2. How could you create the same NumPy array using a Python range and a list?
 
@@ -227,5 +226,9 @@ lumberjack
 
 # 44. How could you surround each string with an initial and final asterisk character (*)?
 
+# step1 = np.char.add(["*"], lumberjack)
+# print(step1)
+# step2 = np.char.add(step1, ["*"])
+# print(step2)
 
 # 45. The function, np.where, can be used to create an array of indexes that can be used to index 
