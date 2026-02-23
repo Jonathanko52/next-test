@@ -41,54 +41,19 @@ import re
 
 # 17. How could you create a two-dimensional, 3 x 4 array (three arrays of four elements each) with random numbers from 1 to 10?
 
-values = np.random.randint(1, 11, (3,4))
-
 # 18. How could you create an array of the same size and shape as #17, filled with 64-bit integer zeros?
-
-zeros = np.zeros(dtype=np.int64, shape=(3,4))
 
 # 19. Given this code:
 
-z_list = [z for z in range(0,5)]
-y_list = [z_list for y in range(0,4)]
-x_list = [y_list for x in range(0,3)]
-
-x_array = np.array(x_list)
-
-# Three dimensional array. ( 3 2-d arrays, each with 4 arrays with 5 elements)
-
 # 20. Given x_array from #19, what is the value for x_array.ndim?
 
-# Number of dimensions. Should return 3.
-
 # 21. Given an array, named "arr”, that looks like:
-'''
-[[0, 1, 2],
-       [3, 4, 5]]
 
-display an array that looks like:
-
-[[0, 3],
-       [1, 4],
-       [2, 5]]
-'''
-
-four_by_five = np.array([[0,1,2],[3,4,5]])
-
-four_by_five.transpose()
 # 22. Write a statement that prints the first row. (It will be a five-element array).
-
-four_by_five[0]
 
 # 23. Write an expression to print the last row. (It will be a five-element array).
 
-four_by_five[-1]
-
 # 24. What does print(four_by_five[2,3]) display?
-
-# print(four_by_five)
-# print(four_by_five[1,2])
-# Fixed
 
 # 25. What does print(four_by_five[3,2]) display?
 
@@ -96,23 +61,11 @@ four_by_five[-1]
 
 # 26. How could you display the first column? It will be a (four-element array ending with 16.)
 
-four_by_five[:,0]
-
 # 27. What does print(four_by_five[:, 3:]) display
-
-four_by_five[:,2:]
-
-one_dim = np.arange(1,6)
-
-one_dim
 
 # 28. What would be displayed by print(one_dim * 2)
 
-one_dim * 2
-
 # 29. What would be returned by this expression: one_dim + np.arange(5, 0, -1) ?
-
-num_twenty_nine = one_dim + np.arange(5, 0, -1)
 
 # Here we’re creating a new array with a descending range: [5, 4, 3, 2, 1] and 
 # adding it to [1, 2, 3, 4, 5], so we get an array with the values [6, 6, 6, 6, 6].
