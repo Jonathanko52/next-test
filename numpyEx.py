@@ -67,30 +67,11 @@ import re
 
 # 29. What would be returned by this expression: one_dim + np.arange(5, 0, -1) ?
 
-# Here we’re creating a new array with a descending range: [5, 4, 3, 2, 1] and 
-# adding it to [1, 2, 3, 4, 5], so we get an array with the values [6, 6, 6, 6, 6].
-
-print(num_twenty_nine)
-
 # 30. How many zeros are in the array returned by one_dim - one_dim ?
-
-# one_dim - one_dim = array of same length, but all 0's
-
 
 # 31. What is the result of one_dim > 2 ?
 
-# print(one_dim)
-# print(one_dim > 2)
-
-# [1 2 3 4 5]
-# [False False  True  True  True]
 # 32. For NumPy arrays, logical operations are done with the operators “&” and “|”, rather than the usual Python “and” and “or”. Given that, what would be the result of this expression?
-# (one_dim > 4) | (one_dim == 1)
-
-# | does the work of || in numpy. & does the work of &&
-
-# print((one_dim > 4) | (one_dim == 1))
-# print((one_dim > 4) & (one_dim == 1))
 
 # 33. What is the result of this expression: -one_dim
 
@@ -115,20 +96,9 @@ print(num_twenty_nine)
 # 41. Given the CSV file saved in 40, how could you load it back into a variable, arr2?
 
 
-# STRING STUFF
-
-lumberjack = np.array("I'm a lumberjack and I'm OK I sleep all night and I work all day".split(" "))
-lumberjack
-
-
 # 43. What would you expect the value of print(np.char.capitalize(lumberjack)[2]) to display?
 
 
 # 44. How could you surround each string with an initial and final asterisk character (*)?
-
-# step1 = np.char.add(["*"], lumberjack)
-# print(step1)
-# step2 = np.char.add(step1, ["*"])
-# print(step2)
 
 # 45. The function, np.where, can be used to create an array of indexes that can be used to index 
