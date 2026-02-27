@@ -29,21 +29,21 @@ export default function Page() {
   }
   */
 
-  const setterId = () => 
-    { itemId, setItemId 
-      
+  const setterId = (idValue) => 
+    { 
+      setItemId(idValue)
     }
   const setterHeader = () => 
-    { taskHeader, setTaskHeader 
-      
+    { 
+      setTaskHeader()
     }
   const setterText = () => 
-    { taskText, setTaskText 
-      
+    { 
+      setTaskText()
     }
   const setterState = () => 
-    { taskState, setTaskState 
-      
+    { 
+      setTaskState()
     }
   const setterSubTasks = () => 
     { 
