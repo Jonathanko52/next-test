@@ -33,25 +33,25 @@ export default function Page() {
     { 
       setItemId(idValue)
     }
-  const setterHeader = () => 
+  const setterHeader = (headerValue) => 
     { 
-      setTaskHeader()
+      setTaskHeader(headerValue)
     }
-  const setterText = () => 
+  const setterText = (textValue) => 
     { 
-      setTaskText()
+      setTaskText(textValue)
     }
-  const setterState = () => 
+  const setterState = (taskStateValue) => 
     { 
-      setTaskState()
+      setTaskState(taskStateValue)
     }
-  const setterSubTasks = () => 
+  const setterSubTasks = (subTaskValue) => 
     { 
-      setSubtasks()
+      setSubtasks(subTaskValue)
     }
-  const setterRepeatability = () => 
+  const setterRepeatability = (repeatValue) => 
     { 
-      setRepeatability()
+      setRepeatability(repeatValue)
     }
 
   
