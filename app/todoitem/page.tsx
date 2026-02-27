@@ -29,29 +29,29 @@ export default function Page() {
   }
   */
 
-  const setter = () => 
+  const setterId = () => 
     { itemId, setItemId 
-
+      
     }
-  const setter = () => 
-    { 
-
+  const setterHeader = () => 
+    { taskHeader, setTaskHeader 
+      
     }
-  const setter = () => 
+  const setterText = () => 
     { taskText, setTaskText 
-
+      
     }
-  const setter = () => 
+  const setterState = () => 
     { taskState, setTaskState 
-
+      
     }
-  const setter = () => 
-    { subtasks, setSubtasks 
-
+  const setterSubTasks = () => 
+    { 
+      setSubtasks()
     }
-  const setter = () => 
-    { repeatability:, setRepeatability 
-
+  const setterRepeatability = () => 
+    { 
+      setRepeatability()
     }
 
   
