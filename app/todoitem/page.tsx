@@ -45,23 +45,21 @@ export default function Page() {
   const setterHeader = (headerValue) => 
     { 
       //     taskHeader: text
-
       setTaskHeader(headerValue)
     }
   const setterText = (textValue) => 
     { 
           // taskText: text
-
       setTaskText(textValue)
     }
   const setterState = (taskStateValue) => 
     { 
-      //       Uncompleted, coompleted, partial-completed, canceled?
-
+      //Uncompleted, coompleted, partial-completed, canceled?
       setTaskState(taskStateValue)
     }
   const setterSubTasks = (subTaskValue) => 
     { 
+      //     subTasks: []
       setSubtasks(subTaskValue)
     }
   const setterRepeatability = (repeatValue) => 
