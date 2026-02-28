@@ -29,9 +29,11 @@ export default function Page() {
   }
   */
 
-  const setterId = (idValue) => 
-    { 
-      setItemId(idValue)
+
+  const setterId = () => 
+    {   
+      const uuid = crypto.randomUUID();
+      setItemId(uuid)
     }
   const setterHeader = (headerValue) => 
     { 
