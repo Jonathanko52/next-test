@@ -5,6 +5,7 @@ import { Button } from "@/app/ui/button";
 import { useGlobalState } from "@/app/context/StateContext";
 export default function Page() {
   const { itemId, setItemId } = useState([]);
+  const {priority, setPriority} = useState(0)
   const { taskHeader, setTaskHeader } = useState([]);
   const { taskText, setTaskText } = useState([]);
   const { taskState, setTaskState } = useState([]);
@@ -35,16 +36,28 @@ export default function Page() {
       const uuid = crypto.randomUUID();
       setItemId(uuid)
     }
+
+  const setterPriority = (priority)=>
+    {
+        setPriority(priority)
+    }
+
   const setterHeader = (headerValue) => 
     { 
+      //     taskHeader: text
+
       setTaskHeader(headerValue)
     }
   const setterText = (textValue) => 
     { 
+          // taskText: text
+
       setTaskText(textValue)
     }
   const setterState = (taskStateValue) => 
     { 
+      //       Uncompleted, coompleted, partial-completed, canceled?
+
       setTaskState(taskStateValue)
     }
   const setterSubTasks = (subTaskValue) => 
