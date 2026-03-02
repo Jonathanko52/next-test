@@ -4,14 +4,13 @@ import { useState } from "react";
 import { Button } from "@/app/ui/button";
 import { useGlobalState } from "@/app/context/StateContext";
 export default function Page() {
-  const { itemId, setItemId } = useState([]);
-  const {priority, setPriority} = useState(0)
+  const { itemId, setItemId } = useState(crypto.randomUUID());
+  const { priority, setPriority } = useState(0);
   const { taskHeader, setTaskHeader } = useState([]);
   const { taskText, setTaskText } = useState([]);
   const { taskState, setTaskState } = useState([]);
   const { subtasks, setSubtasks } = useState([]);
-  const { repeatability:, setRepeatability } = useState([]);
-
+  const { repeatability, setRepeatability } = useState([]);
 
   //todoitem structure:
   /*
@@ -30,50 +29,40 @@ export default function Page() {
   }
   */
 
+  const setterId = () => {
+    //using crypto uuid
+    const uuid = crypto.randomUUID();
+    setItemId(uuid);
+  };
 
-  const setterId = () => 
-    {
-      //using crypto uuid 
-      const uuid = crypto.randomUUID();
-      setItemId(uuid)
-    }
+  const setterPriority = (priority) => {
+    // priority: 1~99
+    setPriority(priority);
+  };
 
-  const setterPriority = (priority)=>
-    {
-          // priority: 1~99  
-        setPriority(priority)
-    }
-
-  const setterHeader = (headerValue) => 
-    { 
-      //     taskHeader: text
-      setTaskHeader(headerValue)
-    }
-  const setterText = (textValue) => 
-    { 
-          // taskText: text
-      setTaskText(textValue)
-    }
-  const setterState = (taskStateValue) => 
-    { 
-      //Uncompleted, coompleted, partial-completed, canceled?
-      setTaskState(taskStateValue)
-    }
-  const setterSubTasks = (subTaskValue) => 
-    { 
-      //     subTasks: []
-      setSubtasks(subTaskValue)
-    }
-  const setterRepeatability = (repeatValue) => 
-    { 
-      // taskrepeatability:
-      //  Oneoff,
-      //  Rollover,
-      //  Weekly: [0,1,2,3,4,5,6]
-      setRepeatability(repeatValue)
-    }
-
-  
+  const setterHeader = (headerValue) => {
+    //     taskHeader: text
+    setTaskHeader(headerValue);
+  };
+  const setterText = (textValue) => {
+    // taskText: text
+    setTaskText(textValue);
+  };
+  const setterState = (taskStateValue) => {
+    //Uncompleted, coompleted, partial-completed, canceled?
+    setTaskState(taskStateValue);
+  };
+  const setterSubTasks = (subTaskValue) => {
+    //     subTasks: []
+    setSubtasks(subTaskValue);
+  };
+  const setterRepeatability = (repeatValue) => {
+    // taskrepeatability:
+    //  Oneoff,
+    //  Rollover,
+    //  Weekly: [0,1,2,3,4,5,6]
+    setRepeatability(repeatValue);
+  };
 
   return (
     <main className="flex min-h-screen flex-col p-6">
