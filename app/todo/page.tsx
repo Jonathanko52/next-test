@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Button } from "@/app/ui/button";
 import { useGlobalState } from "@/app/context/StateContext";
+import TaskItem from "./components/todoitem/page";
 
 export default function TodoMain() {
   const { toDoItemList, setToDoItemList } = useGlobalState();
@@ -33,18 +34,17 @@ export default function TodoMain() {
         marginLeft: "2em",
       }}>
       {toDoItemList.length > 0 ? (
-        toDoItemList.map((item) => (
-          <div key={item.id}>
-            {/* Added key prop for React performance */} <p>{item.id}</p>
-            <p>{item.priority}</p>
-            <p>{item.taskHeader}</p>
-            <p>{item.taskText}</p>
-            <p>{item.taskState}</p>
-            <p>{item.subTasks}</p>
-            <p>{item.taskrepeatability}</p>
-          </div>
-        ))
+        toDoItemList.map((item, index) => <TaskItem key={index}></TaskItem>)
       ) : (
+        // <div key={item.id}>
+        //   {/* Added key prop for React performance */} <p>{item.id}</p>
+        //   <p>{item.priority}</p>
+        //   <p>{item.taskHeader}</p>
+        //   <p>{item.taskText}</p>
+        //   <p>{item.taskState}</p>
+        //   <p>{item.subTasks}</p>
+        //   <p>{item.taskrepeatability}</p>
+        // </div>
         <div>No Items in todo</div>
       )}
     </div>
