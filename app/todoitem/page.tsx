@@ -40,6 +40,7 @@ export default function Page() {
 
   const setterPriority = (priority)=>
     {
+          // priority: 1~99  
         setPriority(priority)
     }
 
@@ -65,6 +66,10 @@ export default function Page() {
     }
   const setterRepeatability = (repeatValue) => 
     { 
+      // taskrepeatability:
+      //  Oneoff,
+      //  Rollover,
+      //  Weekly: [0,1,2,3,4,5,6]
       setRepeatability(repeatValue)
     }
 
