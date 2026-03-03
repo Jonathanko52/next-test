@@ -4,14 +4,14 @@ import { useState } from "react";
 import { Button } from "@/app/ui/button";
 import { useGlobalState } from "@/app/context/StateContext";
 export default function Page() {
-  const { itemId, setItemId } = useState(crypto.randomUUID());
-  const { priority, setPriority } = useState(0);
-  const { taskHeader, setTaskHeader } = useState([]);
-  const { taskText, setTaskText } = useState([]);
-  const { taskState, setTaskState } = useState([]);
-  const { subtasks, setSubtasks } = useState([]);
-  const { repeatability, setRepeatability } = useState([]);
-  const { editMode, setEditMode } = useState(false);
+  const [itemId, setItemId] = useState(crypto.randomUUID());
+  const [priority, setPriority] = useState(0);
+  const [taskHeader, setTaskHeader] = useState([]);
+  const [taskText, setTaskText] = useState([]);
+  const [taskState, setTaskState] = useState([]);
+  const [subtasks, setSubtasks] = useState([]);
+  const [repeatability, setRepeatability] = useState([]);
+  const [editMode, setEditMode] = useState(false);
 
   //todoitem structure:
   /*
@@ -67,7 +67,6 @@ export default function Page() {
 
   const setterEditMode = () => {
     setEditMode(!editMode);
-    console.log(editMode);
   };
 
   const editModeListener = () => {};
