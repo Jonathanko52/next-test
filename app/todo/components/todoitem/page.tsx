@@ -75,14 +75,19 @@ export default function Page() {
     <main className="flex min-h-screen flex-col p-6">
       {editMode ? (
         <div
+          id={itemId}
           className="flex h-20 shrink-0 items-end rounded-lg bg-blue-500 p-4 md:h-52"
           onClick={setterEditMode}>
           {taskHeader}
           {taskText}
+          {priority}
+          {taskState}
+          {subtasks}
+          {repeatability}
         </div>
       ) : (
         <div className="flex h-20 shrink-0 items-end rounded-lg bg-blue-500 p-4 md:h-52">
-          EDIT MODE
+          EDIT MODE ON
           <text>{taskHeader}</text>
           <text>{taskText}</text>
           <button
