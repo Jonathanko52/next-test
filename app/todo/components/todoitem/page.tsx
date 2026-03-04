@@ -6,8 +6,8 @@ import { useGlobalState } from "@/app/context/StateContext";
 export default function Page() {
   const [itemId, setItemId] = useState(crypto.randomUUID());
   const [priority, setPriority] = useState(0);
-  const [taskHeader, setTaskHeader] = useState([]);
-  const [taskText, setTaskText] = useState([]);
+  const [taskHeader, setTaskHeader] = useState("Task Header");
+  const [taskText, setTaskText] = useState("Task Text");
   const [taskState, setTaskState] = useState([]);
   const [subtasks, setSubtasks] = useState([]);
   const [repeatability, setRepeatability] = useState([]);
@@ -73,22 +73,25 @@ export default function Page() {
 
   return (
     <main className="flex min-h-screen flex-col p-6">
-      (editMode ?
-      <div
-        className="flex h-20 shrink-0 items-end rounded-lg bg-blue-500 p-4 md:h-52"
-        onClick={setterEditMode}>
-        {taskHeader}
-        {taskText}
-      </div>
-      :
-      <div
-        className="flex h-20 shrink-0 items-end rounded-lg bg-blue-500 p-4 md:h-52"
-        onClick={setterEditMode}>
-        EDIT MODE
-        <text>{taskHeader}</text>
-        <text>{taskText}</text>
-      </div>
-      )
+      {editMode ? (
+        <div
+          className="flex h-20 shrink-0 items-end rounded-lg bg-blue-500 p-4 md:h-52"
+          onClick={setterEditMode}>
+          {taskHeader}
+          {taskText}
+        </div>
+      ) : (
+        <div className="flex h-20 shrink-0 items-end rounded-lg bg-blue-500 p-4 md:h-52">
+          EDIT MODE
+          <text>{taskHeader}</text>
+          <text>{taskText}</text>
+          <button
+            className="text-white bg-warning box-border border border-transparent hover:bg-warning-strong focus:ring-4 focus:ring-warning-medium shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none"
+            onClick={setterEditMode}>
+            Edit mode off
+          </button>
+        </div>
+      )}
     </main>
   );
 }
