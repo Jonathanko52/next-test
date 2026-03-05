@@ -90,12 +90,12 @@ export default function Page() {
           id={itemId}
           className="flex h-20 shrink-0 items-end rounded-lg bg-blue-500 p-4 md:h-52">
           EDIT MODE ON
-          <input>{taskHeader}</input>
-          <input>{taskText}</input>
-          <input>{priority}</input>
-          <input>{taskState}</input>
-          <input>{subtasks}</input>
-          <input>{repeatability}</input>
+          <input type="text" value={taskHeader}></input>
+          <input type="text" value={taskText}></input>
+          <input type="text" value={priority}></input>
+          <input type="text" value={taskState}></input>
+          <input type="text" value={subtasks}></input>
+          <input type="text" value={repeatability}></input>
           <button
             className="text-white bg-warning box-border border border-transparent hover:bg-warning-strong focus:ring-4 focus:ring-warning-medium shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none"
             onClick={setterEditMode}>
