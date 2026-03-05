@@ -26,9 +26,8 @@ export default function TodoMain() {
 
   return (
     <div
+      className="w-full flex min-h-screen flex-col p-6"
       style={{
-        width: "200px",
-        height: "40px",
         fontSize: "1.2em",
         margin: "1em",
         marginLeft: "2em",
