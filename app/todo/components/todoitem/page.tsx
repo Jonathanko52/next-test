@@ -93,13 +93,13 @@ export default function Page() {
           <br></br>
           Text: <input type="text" value={taskText}></input>
           <br></br>
-          <input type="text" value={priority}></input>
+          Priority: <input type="text" value={priority}></input>
           <br></br>
-          <input type="text" value={taskState}></input>
+          State: <input type="text" value={taskState}></input>
           <br></br>
-          <input type="text" value={subtasks}></input>
+          Subtasks: <input type="text" value={subtasks}></input>
           <br></br>
-          <input type="text" value={repeatability}></input>
+          Repeatability: <input type="text" value={repeatability}></input>
           <br></br>
           <button
             className="text-white bg-warning box-border border border-transparent hover:bg-warning-strong focus:ring-4 focus:ring-warning-medium shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none"
