@@ -80,8 +80,8 @@ export default function Page() {
           onClick={setterEditMode}>
           {taskHeader}
           {taskText}
-          {priority}
-          {taskState}
+          Priority: {priority}
+          State: {taskState}
           {subtasks}
           {repeatability}
         </div>
