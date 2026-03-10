@@ -88,8 +88,10 @@ export default function Page() {
       ) : (
         <div
           id={itemId}
-          className="flex flex-col gap-3 h-auto shrink-0 rounded-lg bg-blue-500 p-6 md:min-h-52">
-          EDIT MODE ON Header: <input type="text" value={taskHeader}></input>
+          className="flex flex-col gap-3 h-auto shrink-0 rounded-lg bg-blue-500 p-6 md:min-h-52"
+          onClick={setterEditMode}>
+          EDIT MODE ON Header:{" "}
+          <input type="text" defaultValue={taskHeader}></input>
           <br></br>
           Text: <input type="text" value={taskText}></input>
           <br></br>
