@@ -113,7 +113,7 @@ export default function Page() {
               type="text"
               value={taskHeader}
               onChange={(e) => {
-                set(e.target.value);
+                setTaskHeader(e.target.value);
               }}
               className="flex-1 rounded px-2 py-1 text-black"
             />
@@ -124,7 +124,7 @@ export default function Page() {
               type="text"
               value={taskText}
               onChange={(e) => {
-                set(e.target.value);
+                setTaskText(e.target.value);
               }}
               className="flex-1 rounded px-2 py-1 text-black"
             />
@@ -135,7 +135,7 @@ export default function Page() {
               type="text"
               value={priority}
               onChange={(e) => {
-                set(e.target.value);
+                setPriority(parseInt(e.target.value));
               }}
               className="flex-1 rounded px-2 py-1 text-black"
             />
@@ -146,9 +146,9 @@ export default function Page() {
             <input
               type="text"
               value={taskState}
-              onChange={(e) => {
-                set(e.target.value);
-              }}
+              // onChange={(e) => {
+              //   setTaskState(e.target.value);
+              // }}
               className="flex-1 rounded px-2 py-1 text-black"
             />
           </div>
@@ -157,9 +157,9 @@ export default function Page() {
             <input
               type="text"
               value={subtasks}
-              onChange={(e) => {
-                set(e.target.value);
-              }}
+              // onChange={(e) => {
+              //   setSubTasks(e.target.value);
+              // }}
               className="flex-1 rounded px-2 py-1 text-black"
             />
           </div>
@@ -169,7 +169,7 @@ export default function Page() {
               type="text"
               value={repeatability}
               onChange={(e) => {
-                set(e.target.value);
+                setRepeatability(e.target.value);
               }}
               className="flex-1 rounded px-2 py-1 text-black"
             />
