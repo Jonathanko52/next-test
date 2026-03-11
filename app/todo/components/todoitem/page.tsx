@@ -79,18 +79,24 @@ export default function Page() {
           className="flex h-20 shrink-0 items-end rounded-lg bg-blue-500 p-4 md:h-52"
           onClick={setterEditMode}>
           Header: {taskHeader}
+          <br></br>
           Text: {taskText}
+          <br></br>
           Priority: {priority}
+          <br></br>
           State: {taskState}
+          <br></br>
           Subtasks: {subtasks}
+          <br></br>
           Repeatability: {repeatability}
+          <br></br>
         </div>
       ) : (
         <div
           id={itemId}
           className="flex flex-col gap-3 h-auto shrink-0 rounded-lg bg-blue-500 p-6 md:min-h-52"
           onClick={setterEditMode}>
-          EDIT MODE ON Header:{" "}
+          EDIT MODE ON Header:
           <input type="text" defaultValue={taskHeader}></input>
           <br></br>
           Text: <input type="text" value={taskText}></input>
