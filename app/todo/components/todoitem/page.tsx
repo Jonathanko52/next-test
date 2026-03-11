@@ -94,23 +94,64 @@ export default function Page() {
       ) : (
         <div
           id={itemId}
-          className="flex flex-col gap-3 h-auto shrink-0 rounded-lg bg-blue-500 p-6 md:min-h-52"
+          className="flex flex-col gap-4 h-auto shrink-0 rounded-lg bg-blue-500 p-6 md:min-h-52 text-white"
           onClick={setterEditMode}>
-          EDIT MODE ON Header:
-          <input type="text" defaultValue={taskHeader}></input>
-          <br></br>
-          Text: <input type="text" value={taskText}></input>
-          <br></br>
-          Priority: <input type="text" value={priority}></input>
-          <br></br>
-          State: <input type="text" value={taskState}></input>
-          <br></br>
-          Subtasks: <input type="text" value={subtasks}></input>
-          <br></br>
-          Repeatability: <input type="text" value={repeatability}></input>
-          <br></br>
+          <div className="font-bold border-b border-blue-400 pb-2 mb-2">
+            EDIT MODE ON: {taskHeader}
+          </div>
+
+          {/* Field Row: Text */}
+          <div className="flex items-center justify-between gap-4">
+            <header className="shrink-0 w-24">Text:</header>
+            <input
+              type="text"
+              value={taskText}
+              className="flex-1 rounded px-2 py-1 text-black"
+            />
+          </div>
+
+          {/* Field Row: Priority */}
+          <div className="flex items-center justify-between gap-4">
+            <header className="shrink-0 w-24">Priority:</header>
+            <input
+              type="text"
+              value={priority}
+              className="flex-1 rounded px-2 py-1 text-black"
+            />
+          </div>
+
+          {/* Field Row: State */}
+          <div className="flex items-center justify-between gap-4">
+            <header className="shrink-0 w-24">State:</header>
+            <input
+              type="text"
+              value={taskState}
+              className="flex-1 rounded px-2 py-1 text-black"
+            />
+          </div>
+
+          {/* Field Row: Subtasks */}
+          <div className="flex items-center justify-between gap-4">
+            <header className="shrink-0 w-24">Subtasks:</header>
+            <input
+              type="text"
+              value={subtasks}
+              className="flex-1 rounded px-2 py-1 text-black"
+            />
+          </div>
+
+          {/* Field Row: Repeatability */}
+          <div className="flex items-center justify-between gap-4">
+            <header className="shrink-0 w-24">Repeatability:</header>
+            <input
+              type="text"
+              value={repeatability}
+              className="flex-1 rounded px-2 py-1 text-black"
+            />
+          </div>
+
           <button
-            className="text-white bg-warning box-border border border-transparent hover:bg-warning-strong focus:ring-4 focus:ring-warning-medium shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none"
+            className="mt-4 text-white bg-warning box-border border border-transparent hover:bg-warning-strong focus:ring-4 focus:ring-warning-medium shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none"
             onClick={setterEditMode}>
             Edit mode off
           </button>
