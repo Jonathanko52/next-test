@@ -10,7 +10,7 @@ export default function Page() {
   const [taskText, setTaskText] = useState("Task Text");
   const [taskState, setTaskState] = useState([]);
   const [subtasks, setSubtasks] = useState([]);
-  const [repeatability, setRepeatability] = useState([]);
+  const [repeatability, setRepeatability] = useState("TEST");
   const [editMode, setEditMode] = useState(false);
 
   //todoitem structure:
@@ -165,14 +165,16 @@ export default function Page() {
           </div>
           <div className="flex items-center justify-between gap-4">
             <header className="shrink-0 w-24">Repeatability:</header>
-            <input
-              type="text"
+            <select
               value={repeatability}
               onChange={(e) => {
                 setRepeatability(e.target.value);
               }}
-              className="flex-1 rounded px-2 py-1 text-black"
-            />
+              className="flex-1 rounded px-2 py-1 text-black">
+              <option value="glucose">Glucose</option>
+              <option value="cholesterol">Cholesterol</option>
+              <option value="hemoglobin">Hemoglobin</option>
+            </select>
           </div>
           <button
             className="mt-4 text-white bg-warning box-border border border-transparent hover:bg-warning-strong focus:ring-4 focus:ring-warning-medium shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none"
