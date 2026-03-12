@@ -7,22 +7,10 @@ import TaskItem from "./components/todoitem/page";
 
 export default function TodoMain() {
   const { toDoItemList, setToDoItemList } = useGlobalState();
-  //todoitem structure:
-  /*
-  {
-    id:
-    priority: 1~99  
-    taskHeader: text
-    taskText: text
-    taskState:
-      Uncompleted, coompleted, partial-completed, canceled?
-    subTasks: []
-    taskrepeatability:
-      Oneoff,
-      Rollover,
-      Weekly: [0,1,2,3,4,5,6]
-  }
-  */
+
+  const createNewItem = () => {
+    toDoItemList.push(<TaskItem></TaskItem>);
+  };
 
   return (
     <div
@@ -32,6 +20,11 @@ export default function TodoMain() {
         margin: "1em",
         marginLeft: "2em",
       }}>
+      <button
+        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+        onClick={createNewItem}>
+        CREATE ITEM
+      </button>
       {toDoItemList.length > 0 ? (
         toDoItemList.map((item, index) => <TaskItem key={index}></TaskItem>)
       ) : (
