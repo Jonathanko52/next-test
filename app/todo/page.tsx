@@ -16,9 +16,9 @@ export default function TodoMain() {
 
   return (
     <div
-      className="w-full flex min-h-screen flex-col p-6"
+      className="w-full flex flex-col p-2"
       style={{
-        fontSize: "1.2em",
+        fontSize: "1em",
         margin: "1em",
         marginLeft: "2em",
       }}>

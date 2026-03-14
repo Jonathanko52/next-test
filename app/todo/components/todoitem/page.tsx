@@ -72,7 +72,7 @@ export default function Page() {
   const editModeListener = () => {};
 
   return (
-    <main className="w-full flex min-h-screen flex-col p-6">
+    <div className="flex flex-col p-1">
       {editMode ? (
         <div
           id={itemId}
@@ -106,7 +106,7 @@ export default function Page() {
       ) : (
         <div
           id={itemId}
-          className="flex flex-col gap-4 h-auto shrink-0 rounded-lg bg-blue-500 p-6 md:min-h-52 text-white">
+          className="flex flex-col h-auto rounded-lg bg-blue-500 p-4  text-white">
           <div className="flex items-center justify-between gap-4">
             <header className="shrink-0 w-24">Text:</header>
             <input
@@ -183,6 +183,6 @@ export default function Page() {
           </button>
         </div>
       )}
-    </main>
+    </div>
   );
 }
