@@ -11,7 +11,7 @@ export default function Page() {
   const [taskState, setTaskState] = useState([]);
   const [subtasks, setSubtasks] = useState([]);
   const [repeatability, setRepeatability] = useState("TEST");
-  const [editMode, setEditMode] = useState(false);
+  const [editMode, setEditMode] = useState(true);
 
   //todoitem structure:
   /*
@@ -76,29 +76,29 @@ export default function Page() {
       {editMode ? (
         <div
           id={itemId}
-          className="flex flex-col gap-4 h-auto shrink-0 rounded-lg bg-blue-500 p-6 md:min-h-52 text-white"
+          className="flex flex-col h-auto rounded-lg bg-blue-500 p-4  text-white"
           onClick={setterEditMode}>
-          <div className="font-bold border-b border-blue-400 pb-2 mb-2">
+          <div className="font-bold border-b border-blue-400 pb-2">
             Header: {taskHeader}
           </div>
           <br></br>
-          <div className="font-bold border-b border-blue-400 pb-2 mb-2">
+          <div className="font-bold border-b border-blue-400 pb-2">
             Text: {taskText}
           </div>
           <br></br>
-          <div className="font-bold border-b border-blue-400 pb-2 mb-2">
+          <div className="font-bold border-b border-blue-400 pb-2">
             Priority: {priority}
           </div>
           <br></br>
-          <div className="font-bold border-b border-blue-400 pb-2 mb-2">
+          <div className="font-bold border-b border-blue-400 pb-2">
             State: {taskState}
           </div>
           <br></br>
-          <div className="font-bold border-b border-blue-400 pb-2 mb-2">
+          <div className="font-bold border-b border-blue-400 pb-2">
             Subtasks: {subtasks}
           </div>
           <br></br>
-          <div className="font-bold border-b border-blue-400 pb-2 mb-2">
+          <div className="font-bold border-b border-blue-400 pb-2">
             Repeatability: {repeatability}
           </div>
           <br></br>
