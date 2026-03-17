@@ -158,20 +158,34 @@ export default function Page() {
               <option value="cholesterol">Cholesterol</option>
               <option value="hemoglobin">Hemoglobin</option>
             </select> */}
-            <label>Sunday</label>
-            <input type="checkbox" name="Sunday" value="Sunday"></input>
-            <label>Monday</label>
-            <input type="checkbox" name="Monday" value="Monday"></input>
-            <label>Tuesday</label>
-            <input type="checkbox" name="Tuesday" value="Tuesday"></input>
-            <label>Wednesday</label>
-            <input type="checkbox" name="Wednesday" value="Wednesday"></input>
-            <label>Thursday</label>
-            <input type="checkbox" name="Thursday" value="Thursday"></input>
-            <label>Friday</label>
-            <input type="checkbox" name="Friday" value="Friday"></input>
-            <label>Saturday</label>
-            <input type="checkbox" name="Saturday" value="Saturday"></input>
+            <div key={"1"} className="flex items-center gap-1">
+              <label>Sunday</label>
+              <input type="checkbox" name="Sunday" value="Sunday"></input>
+            </div>
+            <div key={"1"} className="flex items-center gap-1">
+              <label>Monday</label>
+              <input type="checkbox" name="Monday" value="Monday"></input>
+            </div>
+            <div key={"1"} className="flex items-center gap-1">
+              <label>Tuesday</label>
+              <input type="checkbox" name="Tuesday" value="Tuesday"></input>
+            </div>
+            <div key={"1"} className="flex items-center gap-1">
+              <label>Wednesday</label>
+              <input type="checkbox" name="Wednesday" value="Wednesday"></input>
+            </div>
+            <div key={"1"} className="flex items-center gap-1">
+              <label>Thursday</label>
+              <input type="checkbox" name="Thursday" value="Thursday"></input>
+            </div>
+            <div key={"1"} className="flex items-center gap-1">
+              <label>Friday</label>
+              <input type="checkbox" name="Friday" value="Friday"></input>
+            </div>
+            <div key={"1"} className="flex items-center gap-1">
+              <label>Saturday</label>
+              <input type="checkbox" name="Saturday" value="Saturday"></input>
+            </div>
           </div>
           <button
             className="mt-4 text-white bg-warning box-border border border-transparent hover:bg-warning-strong focus:ring-4 focus:ring-warning-medium shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none"
