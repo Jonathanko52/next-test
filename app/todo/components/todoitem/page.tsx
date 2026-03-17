@@ -149,16 +149,7 @@ export default function Page() {
           </div>
           <div className="flex items-center justify-between gap-4">
             <header className="shrink-0 w-24">Repeatability:</header>
-            {/* <select
-              value={repeatability}
-              onChange={(e) => {
-                setRepeatability(e.target.value);
-              }}
-              className="flex-1 rounded px-2 py-1 text-black">
-              <option value="glucose">Glucose</option>
-              <option value="cholesterol">Cholesterol</option>
-              <option value="hemoglobin">Hemoglobin</option>
-            </select> */}
+
             <div key={"0"} className="flex items-center gap-1">
               <label>Sunday</label>
               <input
@@ -167,7 +158,7 @@ export default function Page() {
                 value="Sunday"
                 key="key"
                 onChange={(e) => {
-                  setterRepeatability(e.target.value, e.target);
+                  setterRepeatability(e.target.value, 0);
                 }}></input>
             </div>
             <div key={"1"} className="flex items-center gap-1">
@@ -178,7 +169,7 @@ export default function Page() {
                 value="Monday"
                 key="key"
                 onChange={(e) => {
-                  setterRepeatability(e.target.value, e.target);
+                  setterRepeatability(e.target.value, 1);
                 }}></input>
             </div>
             <div key={"2"} className="flex items-center gap-1">
@@ -189,7 +180,7 @@ export default function Page() {
                 value="Tuesday"
                 key="key"
                 onChange={(e) => {
-                  setterRepeatability(e.target.value, e.target);
+                  setterRepeatability(e.target.value, 2);
                 }}></input>
             </div>
             <div key={"3"} className="flex items-center gap-1">
@@ -200,7 +191,7 @@ export default function Page() {
                 value="Wednesday"
                 key="key"
                 onChange={(e) => {
-                  setterRepeatability(e.target.value, e.target);
+                  setterRepeatability(e.target.value, 3);
                 }}></input>
             </div>
             <div key={"4"} className="flex items-center gap-1">
@@ -211,7 +202,7 @@ export default function Page() {
                 value="Thursday"
                 key="key"
                 onChange={(e) => {
-                  setterRepeatability(e.target.value, e.target);
+                  setterRepeatability(e.target.value, 4);
                 }}></input>
             </div>
             <div key={"5"} className="flex items-center gap-1">
@@ -222,7 +213,7 @@ export default function Page() {
                 value="Friday"
                 key="key"
                 onChange={(e) => {
-                  setterRepeatability(e.target.value, e.target);
+                  setterRepeatability(e.target.value, 5);
                 }}></input>
             </div>
             <div key={"6"} className="flex items-center gap-1">
@@ -233,7 +224,7 @@ export default function Page() {
                 value="Saturday"
                 key="key"
                 onChange={(e) => {
-                  setterRepeatability(e.target.value, e.target);
+                  setterRepeatability(e.target.value, 6);
                 }}></input>
             </div>
           </div>
