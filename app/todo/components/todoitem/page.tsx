@@ -148,7 +148,7 @@ export default function Page() {
           </div>
           <div className="flex items-center justify-between gap-4">
             <header className="shrink-0 w-24">Repeatability:</header>
-            <select
+            {/* <select
               value={repeatability}
               onChange={(e) => {
                 setRepeatability(e.target.value);
@@ -157,13 +157,20 @@ export default function Page() {
               <option value="glucose">Glucose</option>
               <option value="cholesterol">Cholesterol</option>
               <option value="hemoglobin">Hemoglobin</option>
-            </select>
+            </select> */}
+            <label>Sunday</label>
             <input type="checkbox" name="Sunday" value="Sunday"></input>
+            <label>Monday</label>
             <input type="checkbox" name="Monday" value="Monday"></input>
+            <label>Tuesday</label>
             <input type="checkbox" name="Tuesday" value="Tuesday"></input>
+            <label>Wednesday</label>
             <input type="checkbox" name="Wednesday" value="Wednesday"></input>
+            <label>Thursday</label>
             <input type="checkbox" name="Thursday" value="Thursday"></input>
+            <label>Friday</label>
             <input type="checkbox" name="Friday" value="Friday"></input>
+            <label>Saturday</label>
             <input type="checkbox" name="Saturday" value="Saturday"></input>
           </div>
           <button
