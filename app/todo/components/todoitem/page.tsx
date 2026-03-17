@@ -13,23 +13,6 @@ export default function Page() {
   const [repeatability, setRepeatability] = useState("TEST");
   const [editMode, setEditMode] = useState(true);
 
-  //todoitem structure:
-  /*
-  {
-    id:
-    priority: 1~99  
-    taskHeader: text
-    taskText: text
-    taskState:
-      Uncompleted, coompleted, partial-completed, canceled?
-    subTasks: []
-    taskrepeatability:
-      Oneoff,
-      Rollover,
-      Weekly: [0,1,2,3,4,5,6]
-  }
-  */
-
   const setterId = () => {
     //using crypto uuid
     const uuid = crypto.randomUUID();
