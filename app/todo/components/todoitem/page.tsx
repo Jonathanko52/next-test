@@ -40,12 +40,13 @@ export default function Page() {
     //     subTasks: []
     setSubtasks(subTaskValue);
   };
-  const setterRepeatability = (repeatValue) => {
+  const setterRepeatability = (repeatValue, repeatKey) => {
+    console.log(repeatValue, repeatKey);
     // taskrepeatability:
     //  Oneoff,
     //  Rollover,
     //  Weekly: [0,1,2,3,4,5,6]
-    setRepeatability(repeatValue);
+    // setRepeatability(repeatValue);
   };
 
   const setterEditMode = () => {
@@ -158,33 +159,82 @@ export default function Page() {
               <option value="cholesterol">Cholesterol</option>
               <option value="hemoglobin">Hemoglobin</option>
             </select> */}
-            <div key={"1"} className="flex items-center gap-1">
+            <div key={"0"} className="flex items-center gap-1">
               <label>Sunday</label>
-              <input type="checkbox" name="Sunday" value="Sunday"></input>
+              <input
+                type="checkbox"
+                name="Sunday"
+                value="Sunday"
+                key="key"
+                onChange={(e) => {
+                  setterRepeatability(e.target.value, e.target);
+                }}></input>
             </div>
             <div key={"1"} className="flex items-center gap-1">
               <label>Monday</label>
-              <input type="checkbox" name="Monday" value="Monday"></input>
+              <input
+                type="checkbox"
+                name="Monday"
+                value="Monday"
+                key="key"
+                onChange={(e) => {
+                  setterRepeatability(e.target.value, e.target);
+                }}></input>
             </div>
-            <div key={"1"} className="flex items-center gap-1">
+            <div key={"2"} className="flex items-center gap-1">
               <label>Tuesday</label>
-              <input type="checkbox" name="Tuesday" value="Tuesday"></input>
+              <input
+                type="checkbox"
+                name="Tuesday"
+                value="Tuesday"
+                key="key"
+                onChange={(e) => {
+                  setterRepeatability(e.target.value, e.target);
+                }}></input>
             </div>
-            <div key={"1"} className="flex items-center gap-1">
+            <div key={"3"} className="flex items-center gap-1">
               <label>Wednesday</label>
-              <input type="checkbox" name="Wednesday" value="Wednesday"></input>
+              <input
+                type="checkbox"
+                name="Wednesday"
+                value="Wednesday"
+                key="key"
+                onChange={(e) => {
+                  setterRepeatability(e.target.value, e.target);
+                }}></input>
             </div>
-            <div key={"1"} className="flex items-center gap-1">
+            <div key={"4"} className="flex items-center gap-1">
               <label>Thursday</label>
-              <input type="checkbox" name="Thursday" value="Thursday"></input>
+              <input
+                type="checkbox"
+                name="Thursday"
+                value="Thursday"
+                key="key"
+                onChange={(e) => {
+                  setterRepeatability(e.target.value, e.target);
+                }}></input>
             </div>
-            <div key={"1"} className="flex items-center gap-1">
+            <div key={"5"} className="flex items-center gap-1">
               <label>Friday</label>
-              <input type="checkbox" name="Friday" value="Friday"></input>
+              <input
+                type="checkbox"
+                name="Friday"
+                value="Friday"
+                key="key"
+                onChange={(e) => {
+                  setterRepeatability(e.target.value, e.target);
+                }}></input>
             </div>
-            <div key={"1"} className="flex items-center gap-1">
+            <div key={"6"} className="flex items-center gap-1">
               <label>Saturday</label>
-              <input type="checkbox" name="Saturday" value="Saturday"></input>
+              <input
+                type="checkbox"
+                name="Saturday"
+                value="Saturday"
+                key="key"
+                onChange={(e) => {
+                  setterRepeatability(e.target.value, e.target);
+                }}></input>
             </div>
           </div>
           <button
