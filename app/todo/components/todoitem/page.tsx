@@ -158,6 +158,14 @@ export default function Page() {
               <option value="cholesterol">Cholesterol</option>
               <option value="hemoglobin">Hemoglobin</option>
             </select>
+            <input type="checkbox" name="" value=""></input>
+            <input type="checkbox" name="" value=""></input>
+            <input type="checkbox" name="" value=""></input>
+            <input type="checkbox" name="" value=""></input>
+            <input type="checkbox" name="" value=""></input>
+            <input type="checkbox" name="" value=""></input>
+            <input type="checkbox" name="" value=""></input>
+            <input type="checkbox" name="" value=""></input>
           </div>
           <button
             className="mt-4 text-white bg-warning box-border border border-transparent hover:bg-warning-strong focus:ring-4 focus:ring-warning-medium shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none"
