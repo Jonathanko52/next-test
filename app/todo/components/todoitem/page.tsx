@@ -13,34 +13,34 @@ export default function Page() {
   const [repeatability, setRepeatability] = useState("TEST");
   const [editMode, setEditMode] = useState(true);
 
-  const setterId = () => {
+  const handlerId = () => {
     //using crypto uuid
     const uuid = crypto.randomUUID();
     setItemId(uuid);
   };
 
-  const setterPriority = (priority) => {
+  const handlerPriority = (priority) => {
     // priority: 1~99
     setPriority(priority);
   };
 
-  const setterHeader = (headerValue) => {
+  const handlerHeader = (headerValue) => {
     //     taskHeader: text
     setTaskHeader(headerValue);
   };
-  const setterText = (textValue) => {
+  const handlerText = (textValue) => {
     // taskText: text
     setTaskText(textValue);
   };
-  const setterState = (taskStateValue) => {
+  const handlerState = (taskStateValue) => {
     //Uncompleted, coompleted, partial-completed, canceled?
     setTaskState(taskStateValue);
   };
-  const setterSubTasks = (subTaskValue) => {
+  const handlerSubTasks = (subTaskValue) => {
     //     subTasks: []
     setSubtasks(subTaskValue);
   };
-  const setterRepeatability = (repeatValue, repeatKey) => {
+  const repeatabilityHandler = (repeatValue, repeatKey) => {
     console.log(repeatValue, repeatKey);
     // taskrepeatability:
     //  Oneoff,
@@ -49,7 +49,7 @@ export default function Page() {
     // setRepeatability(repeatValue);
   };
 
-  const setterEditMode = () => {
+  const handlerEditMode = () => {
     setEditMode(!editMode);
   };
 
@@ -61,7 +61,7 @@ export default function Page() {
         <div
           id={itemId}
           className="flex flex-col h-auto rounded-lg bg-blue-500 p-4  text-white"
-          onClick={setterEditMode}>
+          onClick={handlerEditMode}>
           <div className="font-bold border-b border-blue-400 pb-2">
             Header: {taskHeader}
           </div>
@@ -158,7 +158,7 @@ export default function Page() {
                 value="Sunday"
                 key="key"
                 onChange={(e) => {
-                  setterRepeatability(e.target.value, 0);
+                  repeatabilityHandler(e.target.value, 0);
                 }}></input>
             </div>
             <div key={"1"} className="flex items-center gap-1">
@@ -169,7 +169,7 @@ export default function Page() {
                 value="Monday"
                 key="key"
                 onChange={(e) => {
-                  setterRepeatability(e.target.value, 1);
+                  repeatabilityHandler(e.target.value, 1);
                 }}></input>
             </div>
             <div key={"2"} className="flex items-center gap-1">
@@ -180,7 +180,7 @@ export default function Page() {
                 value="Tuesday"
                 key="key"
                 onChange={(e) => {
-                  setterRepeatability(e.target.value, 2);
+                  repeatabilityHandler(e.target.value, 2);
                 }}></input>
             </div>
             <div key={"3"} className="flex items-center gap-1">
@@ -191,7 +191,7 @@ export default function Page() {
                 value="Wednesday"
                 key="key"
                 onChange={(e) => {
-                  setterRepeatability(e.target.value, 3);
+                  repeatabilityHandler(e.target.value, 3);
                 }}></input>
             </div>
             <div key={"4"} className="flex items-center gap-1">
@@ -202,7 +202,7 @@ export default function Page() {
                 value="Thursday"
                 key="key"
                 onChange={(e) => {
-                  setterRepeatability(e.target.value, 4);
+                  repeatabilityHandler(e.target.value, 4);
                 }}></input>
             </div>
             <div key={"5"} className="flex items-center gap-1">
@@ -213,7 +213,7 @@ export default function Page() {
                 value="Friday"
                 key="key"
                 onChange={(e) => {
-                  setterRepeatability(e.target.value, 5);
+                  repeatabilityHandler(e.target.value, 5);
                 }}></input>
             </div>
             <div key={"6"} className="flex items-center gap-1">
@@ -224,13 +224,13 @@ export default function Page() {
                 value="Saturday"
                 key="key"
                 onChange={(e) => {
-                  setterRepeatability(e.target.value, 6);
+                  repeatabilityHandler(e.target.value, 6);
                 }}></input>
             </div>
           </div>
           <button
             className="mt-4 text-white bg-warning box-border border border-transparent hover:bg-warning-strong focus:ring-4 focus:ring-warning-medium shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none"
-            onClick={setterEditMode}>
+            onClick={handlerEditMode}>
             Edit mode off
           </button>
         </div>
