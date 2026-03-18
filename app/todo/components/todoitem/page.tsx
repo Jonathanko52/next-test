@@ -19,7 +19,7 @@ export default function Page() {
     setItemId(uuid);
   };
 
-  const handlerPriority = (priority) => {
+  const priorityHandler = (priority) => {
     // priority: 1~99
     setPriority(priority);
   };
@@ -122,7 +122,7 @@ export default function Page() {
               type="text"
               value={priority}
               onChange={(e) => {
-                setPriority(parseInt(e.target.value));
+                priorityHandler(parseInt(e.target.value));
               }}
               className="flex-1 rounded px-2 py-1 text-black"></input>
           </div>
