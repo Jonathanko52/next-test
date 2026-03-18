@@ -32,7 +32,7 @@ export default function Page() {
     // taskText: text
     setTaskText(textValue);
   };
-  const handlerState = (taskStateValue) => {
+  const taskStateHandler = (taskStateValue) => {
     //Uncompleted, coompleted, partial-completed, canceled?
     setTaskState(taskStateValue);
   };
@@ -40,6 +40,7 @@ export default function Page() {
     //     subTasks: []
     setSubtasks(subTaskValue);
   };
+
   const repeatabilityHandler = (repeatValue, repeatKey) => {
     console.log(repeatValue, repeatKey);
     repeatabilityCopy = repeatability.slice();
@@ -132,9 +133,9 @@ export default function Page() {
             <input
               type="text"
               value={taskState}
-              // onChange={(e) => {
-              //   setTaskState(e.target.value);
-              // }}
+              onChange={(e) => {
+                taskStateHandler(e.target.value)
+/              }}
               className="flex-1 rounded px-2 py-1 text-black"
             />
           </div>
