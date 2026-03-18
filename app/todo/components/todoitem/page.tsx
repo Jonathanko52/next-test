@@ -124,8 +124,7 @@ export default function Page() {
               onChange={(e) => {
                 setPriority(parseInt(e.target.value));
               }}
-              className="flex-1 rounded px-2 py-1 text-black"
-            />
+              className="flex-1 rounded px-2 py-1 text-black"></input>
           </div>
 
           <div className="flex items-center justify-between gap-4">
