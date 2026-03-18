@@ -36,9 +36,11 @@ export default function Page() {
     //Uncompleted, coompleted, partial-completed, canceled?
     setTaskState(taskStateValue);
   };
-  const handlerSubTasks = (subTaskValue) => {
+  const subTasksHandler = (subTaskValue) => {
     //     subTasks: []
-    setSubtasks(subTaskValue);
+    subTasksCopy = subTasks.slice()
+    subTasksCopy.push(subTaskValue)
+    setSubtasks(subTasksCopy);
   };
 
   const repeatabilityHandler = (repeatValue, repeatKey) => {
@@ -144,9 +146,9 @@ export default function Page() {
             <input
               type="text"
               value={subtasks}
-              // onChange={(e) => {
-              //   setSubTasks(e.target.value);
-              // }}
+              onChange={(e) => {
+                subTasksHandler(e.target.value);
+              }}
               className="flex-1 rounded px-2 py-1 text-black"
             />
           </div>
