@@ -10,7 +10,7 @@ export default function Page() {
   const [taskText, setTaskText] = useState("Task Text");
   const [taskState, setTaskState] = useState([]);
   const [subtasks, setSubtasks] = useState([]);
-  const [repeatability, setRepeatability] = useState("TEST");
+  const [repeatability, setRepeatability] = useState([0, 0, 0, 0, 0, 0, 0]);
   const [editMode, setEditMode] = useState(true);
 
   const handlerId = () => {
@@ -42,11 +42,14 @@ export default function Page() {
   };
   const repeatabilityHandler = (repeatValue, repeatKey) => {
     console.log(repeatValue, repeatKey);
-    // taskrepeatability:
-    //  Oneoff,
-    //  Rollover,
-    //  Weekly: [0,1,2,3,4,5,6]
-    // setRepeatability(repeatValue);
+    repeatabilityCopy = repeatability.slice();
+    if (repeatabilityCopy[repeatabilityKey] == 0) {
+      repeatabilityCopy[repeatabilityKey] = 1;
+    } else {
+      repeatabilityCopy[repeatabilityKey] = 0;
+    }
+
+    setRepeatability(repeatabilityCopy);
   };
 
   const handlerEditMode = () => {
