@@ -8,11 +8,12 @@ export default function Page() {
   const [priority, setPriority] = useState(0);
   const [taskHeader, setTaskHeader] = useState("Task Header");
   const [taskText, setTaskText] = useState("Task Text");
-  const [taskState, setTaskState] = useState([]);
+  const [taskState, setTaskState] = useState(0);
   const [subtasks, setSubtasks] = useState([]);
   const [repeatability, setRepeatability] = useState([0, 0, 0, 0, 0, 0, 0]);
   const [editMode, setEditMode] = useState(true);
 
+  const TASK_STATES = ["COMPLETED", "INCOMPLETE", "ONHOLD", "CANCELED"];
   const DAYS_OF_WEEK = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
   const handlerId = () => {
@@ -35,7 +36,8 @@ export default function Page() {
     setTaskText(textValue);
   };
   const taskStateHandler = (taskStateValue) => {
-    //Uncompleted, coompleted, partial-completed, canceled?
+    // TASK_STATES = ["COMPLETED", "INCOMPLETE", "ONHOLD", "CANCELED"]
+
     setTaskState(taskStateValue);
   };
   const subTasksHandler = (subTaskValue) => {
