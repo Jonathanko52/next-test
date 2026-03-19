@@ -89,9 +89,9 @@ export default function Page() {
           </div>
           <br></br>
           <div className="font-bold border-b border-blue-400 pb-2">
-            Repeatability:<div>Mon</div>
+            Repeatability:
             {repeatability.map((cur, ind) => {
-              <div>Mon</div>;
+              return <div key={ind}>Mon</div>;
             })}
           </div>
           <br></br>
