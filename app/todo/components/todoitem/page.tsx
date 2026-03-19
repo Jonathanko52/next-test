@@ -13,6 +13,8 @@ export default function Page() {
   const [repeatability, setRepeatability] = useState([0, 0, 0, 0, 0, 0, 0]);
   const [editMode, setEditMode] = useState(true);
 
+  const DAYS_OF_WEEK = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
   const handlerId = () => {
     //using crypto uuid
     const uuid = crypto.randomUUID();
@@ -45,13 +47,14 @@ export default function Page() {
 
   const repeatabilityHandler = (repeatValue, repeatKey) => {
     console.log(repeatValue, repeatKey);
-    repeatabilityCopy = repeatability.slice();
-    if (repeatabilityCopy[repeatabilityKey] == 0) {
-      repeatabilityCopy[repeatabilityKey] = 1;
+    console.log(repeatability);
+    let repeatabilityCopy = repeatability.slice();
+    if (repeatabilityCopy[repeatKey] == 0) {
+      repeatabilityCopy[repeatKey] = 1;
     } else {
-      repeatabilityCopy[repeatabilityKey] = 0;
+      repeatabilityCopy[repeatKey] = 0;
     }
-
+    console.log(repeatabilityCopy);
     setRepeatability(repeatabilityCopy);
   };
 
@@ -91,7 +94,8 @@ export default function Page() {
           <div className="font-bold border-b border-blue-400 pb-2">
             Repeatability:
             {repeatability.map((cur, ind) => {
-              return <div key={ind}>Mon</div>;
+              if (repeatability[ind] == 1)
+                return <div key={ind}>{DAYS_OF_WEEK[ind]}</div>;
             })}
           </div>
           <br></br>
