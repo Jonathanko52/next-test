@@ -37,7 +37,11 @@ export default function Page() {
   };
   const taskStateHandler = (taskStateValue) => {
     // TASK_STATES = ["COMPLETED", "INCOMPLETE", "ONHOLD", "CANCELED"]
-
+    if (taskStateValue <= 3) {
+      taskStateValue++;
+    } else {
+      taskStateValue = 0;
+    }
     setTaskState(taskStateValue);
   };
   const subTasksHandler = (subTaskValue) => {
@@ -84,7 +88,8 @@ export default function Page() {
           </div>
           <br></br>
           <div className="font-bold border-b border-blue-400 pb-2">
-            State: {taskState}
+            State: {TASK_STATES[taskState]}
+            {/* TASK_STATES = ["COMPLETED", "INCOMPLETE", "ONHOLD", "CANCELED"] */}
           </div>
           <br></br>
           <div className="font-bold border-b border-blue-400 pb-2">
