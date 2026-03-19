@@ -40,14 +40,12 @@ export default function Page() {
   };
   const subTasksHandler = (subTaskValue) => {
     //     subTasks: []
-    subTasksCopy = subTasks.slice();
+    let subTasksCopy = subTasks.slice();
     subTasksCopy.push(subTaskValue);
     setSubtasks(subTasksCopy);
   };
 
   const repeatabilityHandler = (repeatValue, repeatKey) => {
-    console.log(repeatValue, repeatKey);
-    console.log(repeatability);
     let repeatabilityCopy = repeatability.slice();
     if (repeatabilityCopy[repeatKey] == 0) {
       repeatabilityCopy[repeatKey] = 1;
