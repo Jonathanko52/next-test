@@ -38,8 +38,8 @@ export default function Page() {
   };
   const subTasksHandler = (subTaskValue) => {
     //     subTasks: []
-    subTasksCopy = subTasks.slice()
-    subTasksCopy.push(subTaskValue)
+    subTasksCopy = subTasks.slice();
+    subTasksCopy.push(subTaskValue);
     setSubtasks(subTasksCopy);
   };
 
@@ -136,8 +136,8 @@ export default function Page() {
               type="text"
               value={taskState}
               onChange={(e) => {
-                taskStateHandler(e.target.value)
-/              }}
+                taskStateHandler(e.target.value);
+              }}
               className="flex-1 rounded px-2 py-1 text-black"
             />
           </div>
