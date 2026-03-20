@@ -37,12 +37,11 @@ export default function Page() {
   };
 
   const taskStateHandler = (taskStateValue) => {
-    // TASK_STATES = ["COMPLETED", "INCOMPLETE", "ONHOLD", "CANCELED"]
-    if (taskStateValue <= 3) {
-      taskStateValue++;
-    } else {
-      taskStateValue = 0;
-    }
+    // if (taskStateValue <= 3) {
+    //   taskStateValue++;
+    // } else {
+    //   taskStateValue = 0;
+    // }
     setTaskState(taskStateValue);
   };
   const subTasksHandler = (subTaskValue) => {
@@ -144,25 +143,18 @@ export default function Page() {
 
           <div className="flex items-center justify-between gap-4">
             <header className="shrink-0 w-24">State:</header>
-            <input
-              type="text"
-              value={taskState}
-              onChange={(e) => {
-                taskStateHandler(e.target.value);
-              }}
-              className="flex-1 rounded px-2 py-1 text-black"
-            />
             <select
-              type="text"
-              value={priority}
+              value={taskState}
               className="flex-1 rounded px-2 py-1 text-black"
               onChange={(e) => {
-                priorityHandler(parseInt(e.target.value));
+                const newValue = parseInt(e.target.value);
+                console.log("New State Value:", newValue);
+                taskStateHandler(newValue);
               }}>
-              <option value>Completed</option>
-              <option value>Incomplete</option>
-              <option value>Onhold</option>
-              <option value>Canceled</option>
+              <option value="0">Completed</option>
+              <option value="1">Incomplete</option>
+              <option value="2">Onhold</option>
+              <option value="3">Canceled</option>
             </select>
           </div>
           <div className="flex items-center justify-between gap-4">
