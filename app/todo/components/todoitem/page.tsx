@@ -35,6 +35,7 @@ export default function Page() {
     // taskText: text
     setTaskText(textValue);
   };
+
   const taskStateHandler = (taskStateValue) => {
     // TASK_STATES = ["COMPLETED", "INCOMPLETE", "ONHOLD", "CANCELED"]
     if (taskStateValue <= 3) {
@@ -89,7 +90,6 @@ export default function Page() {
           <br></br>
           <div className="font-bold border-b border-blue-400 pb-2">
             State: {TASK_STATES[taskState]}
-            {/* TASK_STATES = ["COMPLETED", "INCOMPLETE", "ONHOLD", "CANCELED"] */}
           </div>
           <br></br>
           <div className="font-bold border-b border-blue-400 pb-2">
@@ -152,6 +152,18 @@ export default function Page() {
               }}
               className="flex-1 rounded px-2 py-1 text-black"
             />
+            <select
+              type="text"
+              value={priority}
+              className="flex-1 rounded px-2 py-1 text-black"
+              onChange={(e) => {
+                priorityHandler(parseInt(e.target.value));
+              }}>
+              <option value>Completed</option>
+              <option value>Incomplete</option>
+              <option value>Onhold</option>
+              <option value>Canceled</option>
+            </select>
           </div>
           <div className="flex items-center justify-between gap-4">
             <header className="shrink-0 w-24">Subtasks:</header>
