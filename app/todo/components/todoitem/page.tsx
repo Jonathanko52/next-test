@@ -58,7 +58,6 @@ export default function Page() {
     } else {
       repeatabilityCopy[repeatKey] = 0;
     }
-    console.log(repeatabilityCopy);
     setRepeatability(repeatabilityCopy);
   };
 
@@ -148,7 +147,6 @@ export default function Page() {
               className="flex-1 rounded px-2 py-1 text-black"
               onChange={(e) => {
                 const newValue = parseInt(e.target.value);
-                console.log("New State Value:", newValue);
                 taskStateHandler(newValue);
               }}>
               <option value="0">Completed</option>
