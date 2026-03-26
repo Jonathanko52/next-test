@@ -56,16 +56,16 @@ export default function Page() {
     setItemId(uuid);
   };
 
-  const priorityHandler = (priority) => {
+  const priorityHandler = (priority: number) => {
     // priority: 1~99
     setPriority(priority);
   };
 
-  const handlerHeader = (headerValue) => {
+  const handlerHeader = (headerValue: string) => {
     //     taskHeader: text
     setTaskHeader(headerValue);
   };
-  const handlerText = (textValue) => {
+  const handlerText = (textValue: string) => {
     // taskText: text
     setTaskText(textValue);
   };
