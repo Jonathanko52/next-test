@@ -3,10 +3,38 @@
 import { useState } from "react";
 import { Button } from "@/app/ui/button";
 import { useGlobalState } from "@/app/context/StateContext";
+import { Dispatch, SetStateAction } from "react";
 
-interface taskItemProps {
-  name: string;
-  count?: number; // Optional prop
+interface Subtask {
+  id: string;
+  text: string;
+  isCompleted: boolean;
+}
+
+interface TaskItemProps {
+  itemId: string;
+  setItemId: Dispatch<SetStateAction<string>>;
+
+  priority: number;
+  setPriority: Dispatch<SetStateAction<number>>;
+
+  taskHeader: string;
+  setTaskHeader: Dispatch<SetStateAction<string>>;
+
+  taskText: string;
+  setTaskText: Dispatch<SetStateAction<string>>;
+
+  taskState: number;
+  setTaskState: Dispatch<SetStateAction<number>>;
+
+  subtasks: Subtask[]; // Or use 'any[]' if the structure is unknown
+  setSubtasks: Dispatch<SetStateAction<Subtask[]>>;
+
+  repeatability: number[]; // Represents the array [0, 0, 0, 0, 0, 0, 0]
+  setRepeatability: Dispatch<SetStateAction<number[]>>;
+
+  editMode: boolean;
+  setEditMode: Dispatch<SetStateAction<boolean>>;
 }
 
 export default function Page() {
