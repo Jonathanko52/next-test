@@ -3,6 +3,12 @@
 import { useState } from "react";
 import { Button } from "@/app/ui/button";
 import { useGlobalState } from "@/app/context/StateContext";
+
+interface taskItemProps {
+  name: string;
+  count?: number; // Optional prop
+}
+
 export default function Page() {
   const [itemId, setItemId] = useState(crypto.randomUUID());
   const [priority, setPriority] = useState(0);
