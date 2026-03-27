@@ -86,7 +86,8 @@ export default function Page() {
     setSubtasks(subTasksCopy);
   };
 
-  const repeatabilityHandler = (repeatValue: number, repeatKey: number) => {
+  const repeatabilityHandler = (repeatValue, repeatKey: number) => {
+    console.log(repeatValue);
     let repeatabilityCopy = repeatability.slice();
     if (repeatabilityCopy[repeatKey] == 0) {
       repeatabilityCopy[repeatKey] = 1;
