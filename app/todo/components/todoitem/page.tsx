@@ -70,7 +70,7 @@ export default function Page() {
     setTaskText(textValue);
   };
 
-  const taskStateHandler = (taskStateValue) => {
+  const taskStateHandler = (taskStateValue: number) => {
     // if (taskStateValue <= 3) {
     //   taskStateValue++;
     // } else {
@@ -78,7 +78,7 @@ export default function Page() {
     // }
     setTaskState(taskStateValue);
   };
-  const subTasksHandler = (subTaskValue) => {
+  const subTasksHandler = (subTaskValue: Array) => {
     //     subTasks: []
     let subTasksCopy = subTasks.slice();
     subTasksCopy.push(subTaskValue);
