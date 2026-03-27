@@ -27,10 +27,10 @@ interface TaskItemProps {
   taskState: number;
   setTaskState: Dispatch<SetStateAction<number>>;
 
-  subtasks: Subtask[]; // Or use 'any[]' if the structure is unknown
+  subtasks: Subtask[];
   setSubtasks: Dispatch<SetStateAction<Subtask[]>>;
 
-  repeatability: number[]; // Represents the array [0, 0, 0, 0, 0, 0, 0]
+  repeatability: number[];
   setRepeatability: Dispatch<SetStateAction<number[]>>;
 
   editMode: boolean;
