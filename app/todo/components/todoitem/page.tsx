@@ -43,7 +43,7 @@ export default function Page() {
   const [taskHeader, setTaskHeader] = useState("Task Header");
   const [taskText, setTaskText] = useState("Task Text");
   const [taskState, setTaskState] = useState(0);
-  const [subtasks, setSubtasks] = useState([]);
+  const [subTasks, setSubtasks] = useState([]);
   const [repeatability, setRepeatability] = useState([0, 0, 0, 0, 0, 0, 0]);
   const [editMode, setEditMode] = useState(true);
 
@@ -78,14 +78,15 @@ export default function Page() {
     // }
     setTaskState(taskStateValue);
   };
-  const subTasksHandler = (subTaskValue: Array) => {
+
+  const subTasksHandler = (subTaskValue: object) => {
     //     subTasks: []
     let subTasksCopy = subTasks.slice();
     subTasksCopy.push(subTaskValue);
     setSubtasks(subTasksCopy);
   };
 
-  const repeatabilityHandler = (repeatValue, repeatKey) => {
+  const repeatabilityHandler = (repeatValue: number, repeatKey: number) => {
     let repeatabilityCopy = repeatability.slice();
     if (repeatabilityCopy[repeatKey] == 0) {
       repeatabilityCopy[repeatKey] = 1;
@@ -125,7 +126,7 @@ export default function Page() {
           </div>
           <br></br>
           <div className="font-bold border-b border-blue-400 pb-2">
-            Subtasks: {subtasks}
+            Subtasks: {subTasks}
           </div>
           <br></br>
           <div className="font-bold border-b border-blue-400 pb-2">
