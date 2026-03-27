@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { Button } from "@/app/ui/button";
 import { useGlobalState } from "@/app/context/StateContext";
-import { Dispatch, SetStateAction } from "react";
+import { Dispatch, SetStateAction, useId } from "react";
 
 interface Subtask {
   id: string;
@@ -38,7 +38,7 @@ interface TaskItemProps {
 }
 
 export default function Page() {
-  const [itemId, setItemId] = useState(crypto.randomUUID());
+  const [itemId, setItemId] = useState(useId());
   const [priority, setPriority] = useState(0);
   const [taskHeader, setTaskHeader] = useState("Task Header");
   const [taskText, setTaskText] = useState("Task Text");
@@ -52,8 +52,8 @@ export default function Page() {
 
   const handlerId = () => {
     //using crypto uuid
-    const uuid = crypto.randomUUID();
-    setItemId(uuid);
+    const stableId = useId();
+    setItemId(stableId);
   };
 
   const priorityHandler = (priority: number) => {
@@ -193,7 +193,7 @@ export default function Page() {
             <header className="shrink-0 w-24">Subtasks:</header>
             <input
               type="text"
-              value={subtasks}
+              value={subTasks}
               onChange={(e) => {
                 subTasksHandler(e.target.value);
               }}
