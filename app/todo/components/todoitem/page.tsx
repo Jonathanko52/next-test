@@ -24,8 +24,8 @@ interface TaskItemProps {
   taskText: string;
   setTaskText: Dispatch<SetStateAction<string>>;
 
-  taskState: number;
-  setTaskState: Dispatch<SetStateAction<number>>;
+  taskState: string;
+  setTaskState: Dispatch<SetStateAction<string>>;
 
   subtasks: Subtask[];
   setSubtasks: Dispatch<SetStateAction<Subtask[]>>;
@@ -75,12 +75,7 @@ export default function Page() {
     setTaskText(textValue);
   };
 
-  const taskStateHandler = (taskStateValue: number) => {
-    // if (taskStateValue <= 3) {
-    //   taskStateValue++;
-    // } else {
-    //   taskStateValue = 0;
-    // }
+  const taskStateHandler = (taskStateValue: string) => {
     setTaskState(taskStateValue);
   };
 
@@ -106,7 +101,6 @@ export default function Page() {
     setEditMode(!editMode);
   };
 
-  console.log(iconMap, taskState);
   return (
     <div className="flex flex-col p-1">
       {editMode ? (
@@ -166,13 +160,13 @@ export default function Page() {
               value={taskState}
               className="flex-1 rounded px-2 py-1 text-black"
               onChange={(e) => {
-                const newValue = parseInt(e.target.value);
-                taskStateHandler(newValue);
+                taskStateHandler(e.target.value);
               }}>
-              <option value="0">Completed</option>
-              <option value="1">Incomplete</option>
-              <option value="2">Onhold</option>
-              <option value="3">Canceled</option>
+              <option value="success">Success</option>
+              <option value="error">Fail</option>
+              <option value="pending">Onhold</option>
+              <option value="idle">Ongoing</option>
+              {/* "success", "error", "pending", "idle" */}
             </select>
           </div>
           <div className="flex items-center justify-between gap-4">
