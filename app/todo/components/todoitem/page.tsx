@@ -115,27 +115,6 @@ export default function Page() {
           <div className="font-bold border-b border-blue-400 pb-2">
             Text: {taskText}
           </div>
-          <br></br>
-          <div className="font-bold border-b border-blue-400 pb-2">
-            Priority: {priority}
-          </div>
-          <br></br>
-          <div className="font-bold border-b border-blue-400 pb-2">
-            State: {TASK_STATES[taskState]}
-          </div>
-          <br></br>
-          <div className="font-bold border-b border-blue-400 pb-2">
-            Subtasks: {subTasks}
-          </div>
-          <br></br>
-          <div className="font-bold border-b border-blue-400 pb-2">
-            Repeatability:
-            {repeatability.map((cur, ind) => {
-              if (repeatability[ind] == 1)
-                return <div key={ind}>{DAYS_OF_WEEK[ind]}</div>;
-            })}
-          </div>
-          <br></br>
         </div>
       ) : (
         <div
