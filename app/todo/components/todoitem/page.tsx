@@ -42,14 +42,19 @@ export default function Page() {
   const [priority, setPriority] = useState(0);
   const [taskHeader, setTaskHeader] = useState("Task Header");
   const [taskText, setTaskText] = useState("Task Text");
-  const [taskState, setTaskState] = useState(0);
+  const [taskState, setTaskState] = useState("success");
   const [subTasks, setSubtasks] = useState([]);
   const [repeatability, setRepeatability] = useState([0, 0, 0, 0, 0, 0, 0]);
   const [editMode, setEditMode] = useState(true);
 
-  const TASK_STATES = ["COMPLETED", "INCOMPLETE", "ONHOLD", "CANCELED"];
+  const TASK_STATES = ["success", "error", "pending", "idle"];
   const DAYS_OF_WEEK = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-
+  const iconMap = {
+    success: "✅", // Checkmark
+    error: "❌", // Cross
+    pending: "⏳", // Timer
+    idle: "⭕", // Empty circle
+  };
   const handlerId = () => {
     //using crypto uuid
     const stableId = useId();
@@ -101,6 +106,7 @@ export default function Page() {
     setEditMode(!editMode);
   };
 
+  console.log(iconMap, taskState);
   return (
     <div className="flex flex-col p-1">
       {editMode ? (
@@ -108,6 +114,7 @@ export default function Page() {
           id={itemId}
           className="flex flex-col h-auto rounded-lg bg-blue-500 p-4  text-white"
           onClick={handlerEditMode}>
+          <div>{iconMap[taskState]}</div>
           <div className="font-bold border-b border-blue-400 pb-2">
             Header: {taskHeader}
           </div>
