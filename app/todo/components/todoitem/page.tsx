@@ -52,7 +52,7 @@ export default function Page() {
   // Used for repeatability
   const DAYS_OF_WEEK = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
-  const iconMap = ["✅", "❌", "⏳", "⭕"];
+  const iconMap = ["⭕", "✅", "❌", "⏳"];
   const handlerId = () => {
     //using crypto uuid
     const stableId = useId();
@@ -164,7 +164,7 @@ export default function Page() {
               className="flex-1 rounded px-2 py-1 text-black"></input>
           </div>
 
-          <div className="flex items-center justify-between gap-4">
+          {/* <div className="flex items-center justify-between gap-4">
             <header className="shrink-0 w-24">State:</header>
             <select
               value={taskState}
@@ -176,9 +176,8 @@ export default function Page() {
               <option value="error">Fail</option>
               <option value="pending">Onhold</option>
               <option value="idle">Ongoing</option>
-              {/* "success", "error", "pending", "idle" */}
             </select>
-          </div>
+          </div> */}
           <div className="flex items-center justify-between gap-4">
             <header className="shrink-0 w-24">Subtasks:</header>
             <input
