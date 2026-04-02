@@ -50,10 +50,10 @@ export default function Page() {
   const TASK_STATES = ["success", "error", "pending", "idle"];
   const DAYS_OF_WEEK = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
   const iconMap = {
-    success: "✅", // Checkmark
-    error: "❌", // Cross
-    pending: "⏳", // Timer
-    idle: "⭕", // Empty circle
+    success: "✅",
+    error: "❌",
+    pending: "⏳",
+    idle: "⭕",
   };
   const handlerId = () => {
     //using crypto uuid
