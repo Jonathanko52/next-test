@@ -42,7 +42,7 @@ export default function Page() {
   const [priority, setPriority] = useState(0);
   const [taskHeader, setTaskHeader] = useState("Task Header");
   const [taskText, setTaskText] = useState("Task Text");
-  const [taskState, setTaskState] = useState("success");
+  const [taskState, setTaskState] = useState(0);
   const [subTasks, setSubtasks] = useState([]);
   const [repeatability, setRepeatability] = useState([0, 0, 0, 0, 0, 0, 0]);
   const [editMode, setEditMode] = useState(true);
@@ -52,12 +52,7 @@ export default function Page() {
   // Used for repeatability
   const DAYS_OF_WEEK = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
-  const iconMap = {
-    success: "✅",
-    error: "❌",
-    pending: "⏳",
-    idle: "⭕",
-  };
+  const iconMap = ["✅", "❌", "⏳", "⭕"];
   const handlerId = () => {
     //using crypto uuid
     const stableId = useId();
@@ -73,9 +68,20 @@ export default function Page() {
     //     taskHeader: text
     setTaskHeader(headerValue);
   };
+
   const handlerText = (textValue: string) => {
     // taskText: text
     setTaskText(textValue);
+  };
+
+  const taskStateHandlerOutsideEdit = () => {
+    let newTaskState = taskState;
+    if (newTaskState >= 3) {
+      newTaskState = 0;
+    } else {
+      newTaskState++;
+    }
+    setTaskState(newTaskState);
   };
 
   const taskStateHandler = (taskStateValue: string) => {
@@ -109,15 +115,16 @@ export default function Page() {
       {editMode ? (
         <div
           id={itemId}
-          className="flex flex-col h-auto rounded-lg bg-blue-500 p-4  text-white"
-          onClick={handlerEditMode}>
-          <div>{iconMap[taskState]}</div>
-          <div className="font-bold border-b border-blue-400 pb-2">
-            Header: {taskHeader}
-          </div>
-          <br></br>
-          <div className="font-bold border-b border-blue-400 pb-2">
-            Text: {taskText}
+          className="flex flex-col h-auto rounded-lg bg-blue-500 p-4  text-white">
+          <div onClick={taskStateHandlerOutsideEdit}>{iconMap[taskState]}</div>
+          <div onClick={handlerEditMode}>
+            <div className="font-bold border-b border-blue-400 pb-2">
+              Header: {taskHeader}
+            </div>
+            <br></br>
+            <div className="font-bold border-b border-blue-400 pb-2">
+              Text: {taskText}
+            </div>
           </div>
         </div>
       ) : (
