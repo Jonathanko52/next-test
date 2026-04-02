@@ -117,6 +117,7 @@ export default function Page() {
           id={itemId}
           className="flex flex-col h-auto rounded-lg bg-blue-500 p-4  text-white">
           <div onClick={taskStateHandlerOutsideEdit}>{iconMap[taskState]}</div>
+          <br></br>
           <div onClick={handlerEditMode}>
             <div className="font-bold border-b border-blue-400 pb-2">
               Header: {taskHeader}
