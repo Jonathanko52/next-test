@@ -48,7 +48,10 @@ export default function Page() {
   const [editMode, setEditMode] = useState(true);
 
   const TASK_STATES = ["success", "error", "pending", "idle"];
+
+  // Used for repeatability
   const DAYS_OF_WEEK = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
   const iconMap = {
     success: "✅",
     error: "❌",
@@ -86,7 +89,7 @@ export default function Page() {
     setSubtasks(subTasksCopy);
   };
 
-  const repeatabilityHandler = (repeatValue, repeatKey: number) => {
+  const repeatabilityHandler = (repeatKey: number) => {
     let repeatabilityCopy = repeatability.slice();
     if (repeatabilityCopy[repeatKey] == 0) {
       repeatabilityCopy[repeatKey] = 1;
@@ -94,6 +97,7 @@ export default function Page() {
       repeatabilityCopy[repeatKey] = 0;
     }
     setRepeatability(repeatabilityCopy);
+    console.log(repeatabilityCopy);
   };
 
   const handlerEditMode = () => {
@@ -181,84 +185,20 @@ export default function Page() {
           </div>
           <div className="flex items-center justify-between gap-4">
             <header className="shrink-0 w-24">Repeatability:</header>
-
-            <div key={"0"} className="flex items-center gap-1">
-              <label>Sunday</label>
-              <input
-                type="checkbox"
-                name="Sunday"
-                value="Sunday"
-                key="key"
-                onChange={(e) => {
-                  repeatabilityHandler(e.target.value, 0);
-                }}></input>
-            </div>
-            <div key={"1"} className="flex items-center gap-1">
-              <label>Monday</label>
-              <input
-                type="checkbox"
-                name="Monday"
-                value="Monday"
-                key="key"
-                onChange={(e) => {
-                  repeatabilityHandler(e.target.value, 1);
-                }}></input>
-            </div>
-            <div key={"2"} className="flex items-center gap-1">
-              <label>Tuesday</label>
-              <input
-                type="checkbox"
-                name="Tuesday"
-                value="Tuesday"
-                key="key"
-                onChange={(e) => {
-                  repeatabilityHandler(e.target.value, 2);
-                }}></input>
-            </div>
-            <div key={"3"} className="flex items-center gap-1">
-              <label>Wednesday</label>
-              <input
-                type="checkbox"
-                name="Wednesday"
-                value="Wednesday"
-                key="key"
-                onChange={(e) => {
-                  repeatabilityHandler(e.target.value, 3);
-                }}></input>
-            </div>
-            <div key={"4"} className="flex items-center gap-1">
-              <label>Thursday</label>
-              <input
-                type="checkbox"
-                name="Thursday"
-                value="Thursday"
-                key="key"
-                onChange={(e) => {
-                  repeatabilityHandler(e.target.value, 4);
-                }}></input>
-            </div>
-            <div key={"5"} className="flex items-center gap-1">
-              <label>Friday</label>
-              <input
-                type="checkbox"
-                name="Friday"
-                value="Friday"
-                key="key"
-                onChange={(e) => {
-                  repeatabilityHandler(e.target.value, 5);
-                }}></input>
-            </div>
-            <div key={"6"} className="flex items-center gap-1">
-              <label>Saturday</label>
-              <input
-                type="checkbox"
-                name="Saturday"
-                value="Saturday"
-                key="key"
-                onChange={(e) => {
-                  repeatabilityHandler(e.target.value, 6);
-                }}></input>
-            </div>
+            {DAYS_OF_WEEK.map((cur, ind) => (
+              <div key={ind} className="flex items-center gap-1">
+                <label>{cur}</label>
+                <input
+                  type="checkbox"
+                  name={cur}
+                  value={cur}
+                  key="key"
+                  checked={repeatability[ind] == 1 ? true : false}
+                  onChange={(e) => {
+                    repeatabilityHandler(ind);
+                  }}></input>
+              </div>
+            ))}
           </div>
           <button
             className="mt-4 text-white bg-warning box-border border border-transparent hover:bg-warning-strong focus:ring-4 focus:ring-warning-medium shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none"
