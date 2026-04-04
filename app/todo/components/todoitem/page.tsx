@@ -25,7 +25,7 @@ interface TaskItemProps {
   setTaskText: Dispatch<SetStateAction<string>>;
 
   taskState: string;
-  setTaskState: Dispatch<SetStateAction<string>>;
+  setTaskState: Dispatch<SetStateAction<number>>;
 
   subtasks: Subtask[];
   setSubtasks: Dispatch<SetStateAction<Subtask[]>>;
@@ -84,7 +84,7 @@ export default function Page() {
     setTaskState(newTaskState);
   };
 
-  const taskStateHandler = (taskStateValue: string) => {
+  const taskStateHandler = (taskStateValue: number) => {
     setTaskState(taskStateValue);
   };
 
