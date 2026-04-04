@@ -88,7 +88,7 @@ export default function Page() {
     setTaskState(taskStateValue);
   };
 
-  const subTasksHandler = (subTaskValue: object) => {
+  const subTasksHandler = (subTaskValue: Array) => {
     //     subTasks: []
     let subTasksCopy = subTasks.slice();
     subTasksCopy.push(subTaskValue);
