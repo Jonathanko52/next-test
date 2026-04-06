@@ -37,7 +37,7 @@ interface TaskItemProps {
   setEditMode: Dispatch<SetStateAction<boolean>>;
 }
 
-export default function Page() {
+export default function Page({ deleteItem }) {
   const [itemId, setItemId] = useState(useId());
   const [priority, setPriority] = useState(0);
   const [taskHeader, setTaskHeader] = useState("Task Header");
@@ -110,6 +110,8 @@ export default function Page() {
   const handlerEditMode = () => {
     setEditMode(!editMode);
   };
+
+  console.log(deleteItem);
 
   return (
     <div className="flex flex-col p-1">
