@@ -16,15 +16,15 @@ const StateContext = createContext<any>(undefined);
 
 export function StateProvider({ children }: { children: ReactNode }) {
   const [toDoItemList, setToDoItemList] = useState<ToDoItem[]>([
-    // {
-    //   id: 1,
-    //   priority: 1,
-    //   taskHeader: "TASK HEADER",
-    //   taskText: "TASK TEXT \n",
-    //   taskState: "Uncompleted",
-    //   subTasks: [],
-    //   taskrepeatability: "Oneoff",
-    // },
+    {
+      id: 1,
+      priority: 1,
+      taskHeader: "TASK HEADER",
+      taskText: "TASK TEXT \n",
+      taskState: "Uncompleted",
+      subTasks: [],
+      taskrepeatability: "Oneoff",
+    },
   ]);
   return (
     <StateContext.Provider value={{ toDoItemList, setToDoItemList }}>

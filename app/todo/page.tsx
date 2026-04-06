@@ -38,7 +38,10 @@ export default function TodoMain() {
       </button>
       {toDoItemList.length > 0 ? (
         toDoItemList.map((item, index) => (
-          <TaskItem key={index} deleteItem={deleteItem}></TaskItem>
+          <TaskItem
+            key={index}
+            deleteIndex={index}
+            deleteItem={deleteItem}></TaskItem>
         ))
       ) : (
         <div>No Items in todo</div>
