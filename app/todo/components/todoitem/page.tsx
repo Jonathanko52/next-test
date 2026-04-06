@@ -53,6 +53,7 @@ export default function Page() {
   const DAYS_OF_WEEK = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
   const iconMap = ["⭕", "✅", "❌", "⏳"];
+
   const handlerId = () => {
     //using crypto uuid
     const stableId = useId();

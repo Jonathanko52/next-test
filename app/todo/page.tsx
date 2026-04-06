@@ -13,7 +13,16 @@ export default function TodoMain() {
     newItemList.push(<TaskItem></TaskItem>);
     setToDoItemList(newItemList);
   };
+  const deleteItem = () => {};
 
+  // localStorage.setItem('user_profile', JSON.stringify(user));
+
+  // useEffect(() => {
+  //   const saved = localStorage.getItem('app_settings');
+  //   if (saved) {
+  //     setData(JSON.parse(saved));
+  //   }
+  // }, []);
   return (
     <div
       className="w-full flex flex-col p-2"
