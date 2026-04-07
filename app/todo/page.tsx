@@ -6,7 +6,7 @@ import { useGlobalState } from "@/app/context/StateContext";
 import TaskItem from "./components/todoitem/page";
 
 export default function TodoMain() {
-  const { toDoItemList, setToDoItemList } = useGlobalState([]);
+  const { toDoItemList, setToDoItemList } = useGlobalState();
 
   const createNewItem = () => {
     let newItemList = toDoItemList.slice();
