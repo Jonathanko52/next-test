@@ -13,7 +13,10 @@ export default function TodoMain() {
     newItemList.push(<TaskItem></TaskItem>);
     setToDoItemList(newItemList);
   };
-  const deleteItem = () => {};
+  const deleteItem = (indexToRemove: number) => {
+    let newItemList = toDoItemList.toSpliced(indexToRemove, 1);
+    setToDoItemList(newItemList);
+  };
 
   // localStorage.setItem('user_profile', JSON.stringify(user));
 
