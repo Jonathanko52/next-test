@@ -22,12 +22,18 @@ export default function TodoMain() {
     localStorage.setItem("ToDoItemList", JSON.stringify(toDoItemList));
   };
 
-  useEffect(() => {
-    const saved = localStorage.getItem("app_settings");
+  const retrieveItemList = () => {
+    const saved = localStorage.getItem("ToDoItemList");
     if (saved) {
-      setData(JSON.parse(saved));
+      setToDoItemList(JSON.parse(saved));
     }
-  }, []);
+  };
+  // useEffect(() => {
+  //   const saved = localStorage.getItem("app_settings");
+  //   if (saved) {
+  //     setData(JSON.parse(saved));
+  //   }
+  // }, []);
   return (
     <div
       className="w-full flex flex-col p-2"
