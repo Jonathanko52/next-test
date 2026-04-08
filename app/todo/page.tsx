@@ -18,14 +18,16 @@ export default function TodoMain() {
     setToDoItemList(newItemList);
   };
 
-  // localStorage.setItem('user_profile', JSON.stringify(user));
+  const saveItemList = () => {
+    localStorage.setItem("ToDoItemList", JSON.stringify(toDoItemList));
+  };
 
-  // useEffect(() => {
-  //   const saved = localStorage.getItem('app_settings');
-  //   if (saved) {
-  //     setData(JSON.parse(saved));
-  //   }
-  // }, []);
+  useEffect(() => {
+    const saved = localStorage.getItem("app_settings");
+    if (saved) {
+      setData(JSON.parse(saved));
+    }
+  }, []);
   return (
     <div
       className="w-full flex flex-col p-2"
