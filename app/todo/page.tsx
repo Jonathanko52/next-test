@@ -62,6 +62,7 @@ export default function TodoMain() {
         toDoItemList.map((item, index) => (
           <TaskItem
             key={index}
+            data={item}
             deleteIndex={index}
             deleteItem={deleteItem}></TaskItem>
         ))
