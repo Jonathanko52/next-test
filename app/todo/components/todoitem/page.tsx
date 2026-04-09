@@ -37,7 +37,7 @@ interface TaskItemProps {
   setEditMode: Dispatch<SetStateAction<boolean>>;
 }
 
-export default function Page({ deleteItem, deleteIndex }) {
+export default function Page({ deleteItem, deleteIndex, data }) {
   const [itemId, setItemId] = useState(useId());
   const [priority, setPriority] = useState(0);
   const [taskHeader, setTaskHeader] = useState("Task Header");
@@ -54,6 +54,7 @@ export default function Page({ deleteItem, deleteIndex }) {
 
   const iconMap = ["⭕", "✅", "❌", "⏳"];
 
+  console.log(data);
   const handlerId = () => {
     //using crypto uuid
     const stableId = useId();
