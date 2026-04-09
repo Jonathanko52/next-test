@@ -47,6 +47,12 @@ export default function TodoMain() {
         onClick={createNewItem}>
         CREATE ITEM
       </button>
+      <button
+        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+        onClick={saveItemList}>
+        SAVE LIST
+      </button>
+      saveItemList
       {toDoItemList.length > 0 ? (
         toDoItemList.map((item, index) => (
           <TaskItem
