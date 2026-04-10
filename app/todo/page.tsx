@@ -8,7 +8,7 @@ import TaskItem from "./components/todoitem/page";
 export default function TodoMain() {
   const { toDoItemList, setToDoItemList } = useGlobalState();
 
-  const createNewItem = () => {
+  const createNewItem = (newHeader: string) => {
     let newItemList = toDoItemList.slice();
     newItemList.push(<TaskItem></TaskItem>);
     setToDoItemList(newItemList);
