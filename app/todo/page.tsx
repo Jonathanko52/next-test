@@ -52,12 +52,12 @@ export default function TodoMain() {
           }}
           className="flex-1 rounded px-2 py-1 text-black"
         />
+        <button
+          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+          onClick={createNewItem}>
+          CREATE ITEM
+        </button>
       </div>
-      <button
-        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-        onClick={createNewItem}>
-        CREATE ITEM
-      </button>
       <button
         className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
         onClick={saveItemList}>
