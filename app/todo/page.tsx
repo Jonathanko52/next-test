@@ -42,6 +42,17 @@ export default function TodoMain() {
         margin: "1em",
         marginLeft: "2em",
       }}>
+      <div className="flex items-center justify-between gap-4">
+        <header className="shrink-0 w-24">New Item Name:</header>
+        <input
+          type="text"
+          // value={subTasks}
+          onChange={(e) => {
+            // subTasksHandler(e.target.value);
+          }}
+          className="flex-1 rounded px-2 py-1 text-black"
+        />
+      </div>
       <button
         className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
         onClick={createNewItem}>
