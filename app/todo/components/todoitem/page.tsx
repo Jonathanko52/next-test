@@ -104,7 +104,6 @@ export default function Page({ deleteItem, deleteIndex, data }) {
       repeatabilityCopy[repeatKey] = 0;
     }
     setRepeatability(repeatabilityCopy);
-    console.log(repeatabilityCopy);
   };
 
   const handlerEditMode = () => {
