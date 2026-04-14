@@ -54,7 +54,6 @@ export default function Page({ deleteItem, deleteIndex, data }) {
 
   const iconMap = ["⭕", "✅", "❌", "⏳"];
 
-  console.log(data);
   const handlerId = () => {
     //using crypto uuid
     const stableId = useId();
@@ -111,8 +110,6 @@ export default function Page({ deleteItem, deleteIndex, data }) {
   const handlerEditMode = () => {
     setEditMode(!editMode);
   };
-
-  console.log(deleteItem, deleteIndex);
 
   return (
     <div className="flex flex-col p-1">
