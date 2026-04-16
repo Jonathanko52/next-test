@@ -28,12 +28,9 @@ export default function TodoMain() {
       setToDoItemList(JSON.parse(saved));
     }
   };
-  // useEffect(() => {
-  //   const saved = localStorage.getItem("app_settings");
-  //   if (saved) {
-  //     setData(JSON.parse(saved));
-  //   }
-  // }, []);
+  useEffect(() => {
+    retrieveItemList();
+  }, []);
   return (
     <div
       className="w-full flex flex-col p-2"
