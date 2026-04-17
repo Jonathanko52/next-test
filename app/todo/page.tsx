@@ -7,11 +7,13 @@ import TaskItem from "./components/todoitem/page";
 
 export default function TodoMain() {
   const { toDoItemList, setToDoItemList } = useGlobalState();
+  const [newTaskHeader, setNewTaskHeader] = useState("");
 
-  const createNewItem = (newHeader: string) => {
+  const createNewItem = () => {
     let newItemList = toDoItemList.slice();
-    newItemList.push(<TaskItem taskHeader={newHeader}></TaskItem>);
+    newItemList.push(<TaskItem taskHeader={newTaskHeader}></TaskItem>);
     setToDoItemList(newItemList);
+    setNewTaskHeader("");
   };
   const deleteItem = (indexToRemove: number) => {
     let newItemList = toDoItemList.toSpliced(indexToRemove, 1);
@@ -43,9 +45,9 @@ export default function TodoMain() {
         <header className="shrink-0 w-24">New Item Name:</header>
         <input
           type="text"
-          // value={subTasks}
+          value={newTaskHeader}
           onChange={(e) => {
-            // subTasksHandler(e.target.value);
+            setNewTaskHeader(e.target.value);
           }}
           className="flex-1 rounded px-2 py-1 text-black"
         />
@@ -65,7 +67,6 @@ export default function TodoMain() {
         onClick={retrieveItemList}>
         LOAD LIST
       </button>
-      saveItemList
       {toDoItemList.length > 0 ? (
         toDoItemList.map((item, index) => (
           <TaskItem
