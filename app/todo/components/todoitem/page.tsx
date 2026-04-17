@@ -40,7 +40,7 @@ interface TaskItemProps {
 export default function Page({ deleteItem, deleteIndex, data }) {
   const [itemId, setItemId] = useState(useId());
   const [priority, setPriority] = useState(0);
-  const [taskHeader, setTaskHeader] = useState("Task Header");
+  const [taskHeader, setTaskHeader] = useState(data.taskHeader);
   const [taskText, setTaskText] = useState("Task Text");
   const [taskState, setTaskState] = useState(0);
   const [subTasks, setSubtasks] = useState([]);
@@ -127,7 +127,7 @@ export default function Page({ deleteItem, deleteIndex, data }) {
           </div>
           <button
             className="mt-4 text-white bg-warning box-border border border-transparent hover:bg-warning-strong focus:ring-4 focus:ring-warning-medium shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none"
-            onClick={deleteItem(deleteIndex)}>
+            onClick={deleteItem}>
             Delete
           </button>
         </div>
@@ -217,7 +217,7 @@ export default function Page({ deleteItem, deleteIndex, data }) {
           </button>
           <button
             className="mt-4 text-white bg-warning box-border border border-transparent hover:bg-warning-strong focus:ring-4 focus:ring-warning-medium shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none"
-            onClick={deleteItem(deleteIndex)}>
+            onClick={deleteItem}>
             Delete
           </button>
         </div>

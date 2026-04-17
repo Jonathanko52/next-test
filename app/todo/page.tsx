@@ -8,14 +8,17 @@ import TaskItem from "./components/todoitem/page";
 export default function TodoMain() {
   const { toDoItemList, setToDoItemList } = useGlobalState();
   const [newTaskHeader, setNewTaskHeader] = useState("");
+  console.log(toDoItemList, "LIST");
 
   const createNewItem = () => {
+    console.log("CREATE");
     let newItemList = toDoItemList.slice();
     newItemList.push(<TaskItem taskHeader={newTaskHeader}></TaskItem>);
     setToDoItemList(newItemList);
     setNewTaskHeader("");
   };
   const deleteItem = (indexToRemove: number) => {
+    console.log("DELETE");
     let newItemList = toDoItemList.toSpliced(indexToRemove, 1);
     setToDoItemList(newItemList);
   };
@@ -31,7 +34,7 @@ export default function TodoMain() {
     }
   };
   useEffect(() => {
-    retrieveItemList();
+    // retrieveItemList();
   }, []);
   return (
     <div
