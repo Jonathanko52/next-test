@@ -47,8 +47,6 @@ export default function Page({ deleteItem, deleteIndex, data }) {
   const [repeatability, setRepeatability] = useState([0, 0, 0, 0, 0, 0, 0]);
   const [editMode, setEditMode] = useState(true);
 
-  const TASK_STATES = ["success", "error", "pending", "idle"];
-
   // Used for repeatability
   const DAYS_OF_WEEK = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
