@@ -40,7 +40,7 @@ interface TaskItemProps {
 export default function Page({ deleteItem, deleteIndex, data }) {
   const [itemId, setItemId] = useState(useId());
   const [priority, setPriority] = useState(0);
-  const [taskHeader, setTaskHeader] = useState(data.taskHeader);
+  const [taskHeader, setTaskHeader] = useState("");
   const [taskText, setTaskText] = useState("Task Text");
   const [taskState, setTaskState] = useState(0);
   const [subTasks, setSubtasks] = useState([]);

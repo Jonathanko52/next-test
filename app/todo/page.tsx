@@ -11,9 +11,9 @@ export default function TodoMain() {
   console.log(toDoItemList, "LIST");
 
   const createNewItem = () => {
-    console.log("CREATE");
+    console.log("CREATE", newTaskHeader);
     let newItemList = toDoItemList.slice();
-    newItemList.push(<TaskItem taskHeader={newTaskHeader}></TaskItem>);
+    newItemList.push({ taskHeader: newTaskHeader });
     setToDoItemList(newItemList);
     setNewTaskHeader("");
   };
