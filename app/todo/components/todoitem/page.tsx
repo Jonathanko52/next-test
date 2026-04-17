@@ -90,7 +90,6 @@ export default function Page({ deleteItem, deleteIndex, data }) {
   };
 
   const subTasksHandler = (subTaskValue: string) => {
-    //     subTasks: []
     let subTasksCopy = subTasks.slice();
     subTasksCopy.push(subTaskValue);
     setSubtasks(subTasksCopy);
