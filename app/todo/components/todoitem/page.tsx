@@ -108,6 +108,10 @@ export default function Page({ deleteItem, deleteIndex, data }) {
     setEditMode(!editMode);
   };
 
+  useEffect(() => {
+    console.log("DATA");
+  }, []);
+
   return (
     <div className="flex flex-col p-1">
       {editMode ? (
