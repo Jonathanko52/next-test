@@ -11,14 +11,12 @@ export default function TodoMain() {
   console.log(toDoItemList, "LIST");
 
   const createNewItem = () => {
-    console.log("CREATE", newTaskHeader);
     let newItemList = toDoItemList.slice();
     newItemList.push({ taskHeader: newTaskHeader });
     setToDoItemList(newItemList);
     setNewTaskHeader("");
   };
   const deleteItem = (indexToRemove: number) => {
-    console.log("DELETE");
     let newItemList = toDoItemList.toSpliced(indexToRemove, 1);
     setToDoItemList(newItemList);
   };
@@ -34,7 +32,11 @@ export default function TodoMain() {
     }
   };
 
-  const printState = () => {};
+  const printState = () => {
+    toDoItemList.forEach((cur) => {
+      console.log(cur);
+    });
+  };
   useEffect(() => {
     // retrieveItemList();
   }, []);
@@ -71,6 +73,11 @@ export default function TodoMain() {
         className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
         onClick={retrieveItemList}>
         LOAD LIST
+      </button>
+      <button
+        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+        onClick={printState}>
+        Print state
       </button>
       {toDoItemList.length > 0 ? (
         toDoItemList.map((item, index) => (

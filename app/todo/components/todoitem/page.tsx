@@ -47,7 +47,6 @@ export default function Page({ deleteItem, deleteIndex, data }) {
   const [repeatability, setRepeatability] = useState([0, 0, 0, 0, 0, 0, 0]);
   const [editMode, setEditMode] = useState(true);
 
-  console.log("DATA", data);
   // Used for repeatability
   const DAYS_OF_WEEK = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
@@ -109,7 +108,7 @@ export default function Page({ deleteItem, deleteIndex, data }) {
   };
 
   useEffect(() => {
-    console.log("DATA");
+    console.log("DATA", data);
   }, []);
 
   return (
@@ -136,6 +135,7 @@ export default function Page({ deleteItem, deleteIndex, data }) {
           </button>
         </div>
       ) : (
+        // EDIT MODE TEXT
         <div
           id={itemId}
           className="flex flex-col h-auto rounded-lg bg-blue-500 p-4  text-white">
