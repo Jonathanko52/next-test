@@ -108,7 +108,9 @@ export default function Page({ deleteItem, deleteIndex, data }) {
   };
 
   useEffect(() => {
-    console.log("DATA", data);
+    if (data.taskHeader) {
+      setTaskHeader(data.taskHeader);
+    }
   }, []);
 
   return (

@@ -11,9 +11,7 @@ export default function TodoMain() {
   console.log(toDoItemList, "LIST");
 
   const createNewItem = () => {
-    let newItemList = toDoItemList.slice();
-    newItemList.push({ taskHeader: newTaskHeader });
-    setToDoItemList(newItemList);
+    setToDoItemList([...toDoItemList, { taskHeader: newTaskHeader }]);
     setNewTaskHeader("");
   };
   const deleteItem = (indexToRemove: number) => {
