@@ -33,6 +33,8 @@ export default function TodoMain() {
       setToDoItemList(JSON.parse(saved));
     }
   };
+
+  const printState = () => {};
   useEffect(() => {
     // retrieveItemList();
   }, []);

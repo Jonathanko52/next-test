@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { Button } from "@/app/ui/button";
 import { useGlobalState } from "@/app/context/StateContext";
-import { Dispatch, SetStateAction, useId } from "react";
+import { Dispatch, SetStateAction, useId, useEffect } from "react";
 
 interface Subtask {
   id: string;
