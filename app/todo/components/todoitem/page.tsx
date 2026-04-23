@@ -174,20 +174,6 @@ export default function Page({ deleteItem, deleteIndex, data }) {
               className="flex-1 rounded px-2 py-1 text-black"></input>
           </div>
 
-          {/* <div className="flex items-center justify-between gap-4">
-            <header className="shrink-0 w-24">State:</header>
-            <select
-              value={taskState}
-              className="flex-1 rounded px-2 py-1 text-black"
-              onChange={(e) => {
-                taskStateHandler(e.target.value);
-              }}>
-              <option value="success">Success</option>
-              <option value="error">Fail</option>
-              <option value="pending">Onhold</option>
-              <option value="idle">Ongoing</option>
-            </select>
-          </div> */}
           <div className="flex items-center justify-between gap-4">
             <header className="shrink-0 w-24">Subtasks:</header>
             <input
