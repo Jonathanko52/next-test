@@ -54,8 +54,32 @@ export default function Page({ deleteItem, deleteIndex, data }) {
 
   // Use effect converting props to state
   useEffect(() => {
-    if (data.taskHeader) {
+    if (data?.taskHeader) {
       setTaskHeader(data.taskHeader);
+    }
+    if (data?.itemId) {
+      setItemId(data?.itemId);
+    }
+    if (data?.priority) {
+      setPriority(data?.priority);
+    }
+    if (data?.taskHeader) {
+      setTaskHeader(data?.taskHeader);
+    }
+    if (data?.taskText) {
+      setTaskText(data.taskText);
+    }
+    if (data?.taskState) {
+      setTaskState(data.taskState);
+    }
+    if (data?.subtasks) {
+      setSubtasks(data.subtasks);
+    }
+    if (data?.repeatability) {
+      setRepeatability(data.repeatability);
+    }
+    if (data?.editMode) {
+      setEditMode(data.editMode);
     }
   }, []);
 
