@@ -52,6 +52,13 @@ export default function Page({ deleteItem, deleteIndex, data }) {
 
   const iconMap = ["⭕", "✅", "❌", "⏳"];
 
+  // Use effect converting props to state
+  useEffect(() => {
+    if (data.taskHeader) {
+      setTaskHeader(data.taskHeader);
+    }
+  }, []);
+
   // Handlers
   const handlerId = () => {
     //using crypto uuid
