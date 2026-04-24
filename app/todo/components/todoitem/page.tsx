@@ -52,6 +52,7 @@ export default function Page({ deleteItem, deleteIndex, data }) {
 
   const iconMap = ["⭕", "✅", "❌", "⏳"];
 
+  // Handlers
   const handlerId = () => {
     //using crypto uuid
     const stableId = useId();
@@ -106,12 +107,6 @@ export default function Page({ deleteItem, deleteIndex, data }) {
   const handlerEditMode = () => {
     setEditMode(!editMode);
   };
-
-  useEffect(() => {
-    if (data.taskHeader) {
-      setTaskHeader(data.taskHeader);
-    }
-  }, []);
 
   return (
     <div className="flex flex-col p-1">
