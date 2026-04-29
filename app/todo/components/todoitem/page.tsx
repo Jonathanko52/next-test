@@ -44,7 +44,7 @@ export default function Page({ deleteItem, deleteIndex, data }) {
   const [taskHeader, setTaskHeader] = useState(data?.taskHeader ?? "");
   const [taskText, setTaskText] = useState("Task Text");
   const [taskState, setTaskState] = useState(0);
-  const [subTasks, setSubtasks] = useState([]);
+  const [subTasks, setSubtasks] = useState<string[]>([]);
   const [repeatability, setRepeatability] = useState([0, 0, 0, 0, 0, 0, 0]);
   const [editMode, setEditMode] = useState(true);
 
@@ -97,7 +97,7 @@ export default function Page({ deleteItem, deleteIndex, data }) {
   };
 
   const handlerHeader = (headerValue: string) => {
-    //     taskHeader: text
+    //taskHeader: text
     setTaskHeader(headerValue);
   };
 
