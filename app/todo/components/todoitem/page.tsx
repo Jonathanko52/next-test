@@ -11,6 +11,7 @@ interface Subtask {
   isCompleted: boolean;
 }
 
+// For Typescript
 interface TaskItemProps {
   itemId: string;
   setItemId: Dispatch<SetStateAction<string>>;
