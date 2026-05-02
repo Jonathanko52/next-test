@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { Button } from "@/app/ui/button";
 import { useGlobalState } from "@/app/context/StateContext";
-import { Dispatch, SetStateAction, useId, useEffect } from "react";
+import { Dispatch, SetStateAction, useEffect } from "react";
 
 interface Subtask {
   id: string;
@@ -38,8 +38,7 @@ interface TaskItemProps {
   setEditMode: Dispatch<SetStateAction<boolean>>;
 }
 
-export default function Page({ deleteItem, deleteIndex, data }) {
-  const [itemId, setItemId] = useState(useId());
+export default function Page({ deleteItem, itemId, data }: { deleteItem: (id: string) => void; itemId: string; data: any }) {
   const [priority, setPriority] = useState(0);
   const [taskHeader, setTaskHeader] = useState(data?.taskHeader ?? "");
   const [taskText, setTaskText] = useState("Task Text");
@@ -57,9 +56,6 @@ export default function Page({ deleteItem, deleteIndex, data }) {
   useEffect(() => {
     if (data?.taskHeader) {
       setTaskHeader(data.taskHeader);
-    }
-    if (data?.itemId) {
-      setItemId(data?.itemId);
     }
     if (data?.priority) {
       setPriority(data?.priority);
@@ -85,12 +81,6 @@ export default function Page({ deleteItem, deleteIndex, data }) {
   }, []);
 
   // Handlers
-  const handlerId = () => {
-    //using crypto uuid
-    const stableId = useId();
-    setItemId(stableId);
-  };
-
   const priorityHandler = (priority: number) => {
     // priority: 1~99
     setPriority(priority);
@@ -159,9 +149,7 @@ export default function Page({ deleteItem, deleteIndex, data }) {
           </div>
           <button
             className="mt-4 text-white bg-warning box-border border border-transparent hover:bg-warning-strong focus:ring-4 focus:ring-warning-medium shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none"
-            onClick={() => {
-              deleteItem(deleteIndex);
-            }}>
+            onClick={() => deleteItem(itemId)}>
             Delete
           </button>
         </div>
@@ -238,7 +226,7 @@ export default function Page({ deleteItem, deleteIndex, data }) {
           </button>
           <button
             className="mt-4 text-white bg-warning box-border border border-transparent hover:bg-warning-strong focus:ring-4 focus:ring-warning-medium shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none"
-            onClick={deleteItem}>
+            onClick={() => deleteItem(itemId)}>
             Delete
           </button>
         </div>

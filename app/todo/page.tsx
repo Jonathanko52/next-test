@@ -10,31 +10,21 @@ export default function TodoMain() {
   const [newTaskHeader, setNewTaskHeader] = useState("");
 
   const createNewItem = () => {
-    setToDoItemList([...toDoItemList, { taskHeader: newTaskHeader }]);
+    setToDoItemList([
+      ...toDoItemList,
+      { id: crypto.randomUUID(), taskHeader: newTaskHeader },
+    ]);
     setNewTaskHeader("");
   };
-  //   const createNewItem = () => {
-  //   setToDoItemList([
-  //     ...toDoItemList,
-  //     {
-  //       id: crypto.randomUUID(), // Add a unique identifier
-  //       taskHeader: newTaskHeader
-  //     }
-  //   ]);
-  //   setNewTaskHeader("");
-  // };
-  const deleteItem = (indexToRemove: number) => {
-    console.log("INDEX TO RMOW", indexToRemove);
-    let newItemList = toDoItemList.toSpliced(indexToRemove, 1);
-    console.log(newItemList);
-    setToDoItemList(newItemList);
-  };
 
-  //   const deleteItem = (idToRemove: string) => {
-  //   setToDoItemList((prevList) =>
-  //     prevList.filter((item) => item.id !== idToRemove)
-  //   );
-  // };
+  const deleteItem = (idToRemove: string) => {
+    setToDoItemList(
+      toDoItemList.filter(
+        (item: { id: string; [key: string]: unknown }) =>
+          item.id !== idToRemove,
+      ),
+    );
+  };
 
   const saveItemList = () => {
     localStorage.setItem("ToDoItemList", JSON.stringify(toDoItemList));
@@ -49,7 +39,7 @@ export default function TodoMain() {
 
   const printState = () => {
     console.log(toDoItemList);
-    toDoItemList.forEach((cur) => {
+    toDoItemList.forEach((cur: unknown) => {
       console.log(cur);
     });
   };
@@ -96,10 +86,11 @@ export default function TodoMain() {
         Print state
       </button>
       {toDoItemList.length > 0 ? (
-        toDoItemList.map((item, index) => (
+        toDoItemList.map((item: { id: string; [key: string]: unknown }) => (
           <TaskItem
+            key={item.id}
             data={item}
-            deleteIndex={index}
+            itemId={item.id}
             deleteItem={deleteItem}></TaskItem>
         ))
       ) : (
