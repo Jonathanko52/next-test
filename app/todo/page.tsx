@@ -13,10 +13,28 @@ export default function TodoMain() {
     setToDoItemList([...toDoItemList, { taskHeader: newTaskHeader }]);
     setNewTaskHeader("");
   };
+  //   const createNewItem = () => {
+  //   setToDoItemList([
+  //     ...toDoItemList,
+  //     {
+  //       id: crypto.randomUUID(), // Add a unique identifier
+  //       taskHeader: newTaskHeader
+  //     }
+  //   ]);
+  //   setNewTaskHeader("");
+  // };
   const deleteItem = (indexToRemove: number) => {
+    console.log("INDEX TO RMOW", indexToRemove);
     let newItemList = toDoItemList.toSpliced(indexToRemove, 1);
+    console.log(newItemList);
     setToDoItemList(newItemList);
   };
+
+  //   const deleteItem = (idToRemove: string) => {
+  //   setToDoItemList((prevList) =>
+  //     prevList.filter((item) => item.id !== idToRemove)
+  //   );
+  // };
 
   const saveItemList = () => {
     localStorage.setItem("ToDoItemList", JSON.stringify(toDoItemList));
@@ -30,6 +48,7 @@ export default function TodoMain() {
   };
 
   const printState = () => {
+    console.log(toDoItemList);
     toDoItemList.forEach((cur) => {
       console.log(cur);
     });
@@ -79,12 +98,23 @@ export default function TodoMain() {
       {toDoItemList.length > 0 ? (
         toDoItemList.map((item, index) => (
           <TaskItem
-            key={index}
             data={item}
             deleteIndex={index}
             deleteItem={deleteItem}></TaskItem>
         ))
       ) : (
+        //         {toDoItemList.length > 0 ? (
+        //   toDoItemList.map((item) => (
+        //     <TaskItem
+        //       key={item.id}           // CRITICAL: Tells React exactly which item this is
+        //       data={item}
+        //       itemId={item.id}        // Pass the ID instead of the index
+        //       deleteItem={deleteItem}
+        //     />
+        //   ))
+        // ) : (
+        //   <div>No Items in todo</div>
+        // )}
         <div>No Items in todo</div>
       )}
     </div>
