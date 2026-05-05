@@ -39,9 +39,6 @@ export default function TodoMain() {
 
   const printState = () => {
     console.log(toDoItemList);
-    toDoItemList.forEach((cur: unknown) => {
-      console.log(cur);
-    });
   };
   useEffect(() => {
     // retrieveItemList();

@@ -38,7 +38,15 @@ interface TaskItemProps {
   setEditMode: Dispatch<SetStateAction<boolean>>;
 }
 
-export default function Page({ deleteItem, itemId, data }: { deleteItem: (id: string) => void; itemId: string; data: any }) {
+export default function Page({
+  deleteItem,
+  itemId,
+  data,
+}: {
+  deleteItem: (id: string) => void;
+  itemId: string;
+  data: any;
+}) {
   const [priority, setPriority] = useState(0);
   const [taskHeader, setTaskHeader] = useState(data?.taskHeader ?? "");
   const [taskText, setTaskText] = useState("Task Text");
@@ -128,6 +136,16 @@ export default function Page({ deleteItem, itemId, data }: { deleteItem: (id: st
 
   const handlerEditMode = () => {
     setEditMode(!editMode);
+  };
+
+  const printState = () => {
+    console.log();
+    // const [taskHeader, setTaskHeader] = useState(data?.taskHeader ?? "");
+    // const [taskText, setTaskText] = useState("Task Text");
+    // const [taskState, setTaskState] = useState(0);
+    // const [subTasks, setSubtasks] = useState<string[]>([]);
+    // const [repeatability, setRepeatability] = useState([0, 0, 0, 0, 0, 0, 0]);
+    // const [editMode, setEditMode] = useState(true);
   };
 
   return (
