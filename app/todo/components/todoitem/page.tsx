@@ -139,11 +139,11 @@ export default function Page({
   };
 
   const printState = () => {
-    console.log("HEADER: ", taskHeader);
-    console.log(taskText);
-    console.log(taskState);
-    console.log(subTasks);
-    console.log(repeatability);
+    console.log("HEADER:", taskHeader);
+    console.log("TEXT:", taskText);
+    console.log("STATE:", taskState);
+    console.log("SUB:", subTasks);
+    console.log("REPEATABILITY:", repeatability);
   };
 
   return (
