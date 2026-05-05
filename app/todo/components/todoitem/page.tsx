@@ -139,13 +139,11 @@ export default function Page({
   };
 
   const printState = () => {
-    console.log();
-    // const [taskHeader, setTaskHeader] = useState(data?.taskHeader ?? "");
-    // const [taskText, setTaskText] = useState("Task Text");
-    // const [taskState, setTaskState] = useState(0);
-    // const [subTasks, setSubtasks] = useState<string[]>([]);
-    // const [repeatability, setRepeatability] = useState([0, 0, 0, 0, 0, 0, 0]);
-    // const [editMode, setEditMode] = useState(true);
+    console.log(taskHeader);
+    console.log(taskText);
+    console.log(taskState);
+    console.log(subTasks);
+    console.log(repeatability);
   };
 
   return (
@@ -246,6 +244,11 @@ export default function Page({
             className="mt-4 text-white bg-warning box-border border border-transparent hover:bg-warning-strong focus:ring-4 focus:ring-warning-medium shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none"
             onClick={() => deleteItem(itemId)}>
             Delete
+          </button>
+          <button
+            className="mt-4 text-white bg-warning box-border border border-transparent hover:bg-warning-strong focus:ring-4 focus:ring-warning-medium shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none"
+            onClick={() => printState()}>
+            Print State
           </button>
         </div>
       )}
