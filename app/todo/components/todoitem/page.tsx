@@ -139,7 +139,7 @@ export default function Page({
   };
 
   const printState = () => {
-    console.log(taskHeader);
+    console.log("HEADER: ", taskHeader);
     console.log(taskText);
     console.log(taskState);
     console.log(subTasks);
