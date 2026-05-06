@@ -10,6 +10,7 @@ export default function TodoMain() {
   const [newTaskHeader, setNewTaskHeader] = useState("");
 
   const createNewItem = () => {
+    // HERE' S THE PROGLEM
     setToDoItemList([
       ...toDoItemList,
       { id: crypto.randomUUID(), taskHeader: newTaskHeader },
