@@ -27,6 +27,8 @@ export default function TodoMain() {
     );
   };
 
+  const updateItemLost = () => {};
+
   const saveItemList = () => {
     localStorage.setItem("ToDoItemList", JSON.stringify(toDoItemList));
   };
