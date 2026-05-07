@@ -92,18 +92,6 @@ export default function TodoMain() {
             deleteItem={deleteItem}></TaskItem>
         ))
       ) : (
-        //         {toDoItemList.length > 0 ? (
-        //   toDoItemList.map((item) => (
-        //     <TaskItem
-        //       key={item.id}           // CRITICAL: Tells React exactly which item this is
-        //       data={item}
-        //       itemId={item.id}        // Pass the ID instead of the index
-        //       deleteItem={deleteItem}
-        //     />
-        //   ))
-        // ) : (
-        //   <div>No Items in todo</div>
-        // )}
         <div>No Items in todo</div>
       )}
     </div>
