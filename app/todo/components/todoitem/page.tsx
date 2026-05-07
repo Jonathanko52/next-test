@@ -42,6 +42,7 @@ export default function Page({
   deleteItem,
   itemId,
   data,
+  updateItemList,
 }: {
   deleteItem: (id: string) => void;
   itemId: string;
@@ -54,6 +55,16 @@ export default function Page({
   const [subTasks, setSubtasks] = useState<string[]>([]);
   const [repeatability, setRepeatability] = useState([0, 0, 0, 0, 0, 0, 0]);
   const [editMode, setEditMode] = useState(true);
+
+  //
+  //{  const [priority, setPriority] = useState(0);
+  // const [taskHeader, setTaskHeader] = useState(data?.taskHeader ?? "");
+  // const [taskText, setTaskText] = useState("Task Text");
+  // const [taskState, setTaskState] = useState(0);
+  // const [subTasks, setSubtasks] = useState<string[]>([]);
+  // const [repeatability, setRepeatability] = useState([0, 0, 0, 0, 0, 0, 0]);
+  // const [editMode, setEditMode] = useState(true);}
+  //
 
   // Used for repeatability
   const DAYS_OF_WEEK = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
@@ -134,8 +145,9 @@ export default function Page({
     setRepeatability(repeatabilityCopy);
   };
 
-  const handlerEditMode = () => {
+  const handlerEditMode = (index) => {
     setEditMode(!editMode);
+    updateItemList(index);
   };
 
   const printState = () => {
@@ -154,7 +166,10 @@ export default function Page({
           className="flex flex-col h-auto rounded-lg bg-blue-500 p-4  text-white">
           <div onClick={taskStateHandlerOutsideEdit}>{iconMap[taskState]}</div>
           <br></br>
-          <div onClick={handlerEditMode}>
+          <div
+            onClick={() => {
+              handlerEditMode;
+            }}>
             <div className="font-bold border-b border-blue-400 pb-2">
               Header: {taskHeader}
             </div>
@@ -237,7 +252,9 @@ export default function Page({
           </div>
           <button
             className="mt-4 text-white bg-warning box-border border border-transparent hover:bg-warning-strong focus:ring-4 focus:ring-warning-medium shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none"
-            onClick={handlerEditMode}>
+            onClick={() => {
+              handlerEditMode(itemId);
+            }}>
             Edit mode off
           </button>
           <button
