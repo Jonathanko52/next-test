@@ -27,7 +27,7 @@ export default function TodoMain() {
     );
   };
 
-  const updateItemLost = () => {
+  const updateItemList = (index, itemObject) => {
     setToDoItemList();
   };
 
@@ -45,6 +45,7 @@ export default function TodoMain() {
   const printState = () => {
     console.log(toDoItemList);
   };
+
   useEffect(() => {
     // retrieveItemList();
   }, []);
@@ -93,7 +94,8 @@ export default function TodoMain() {
             key={item.id}
             data={item}
             itemId={item.id}
-            deleteItem={deleteItem}></TaskItem>
+            deleteItem={deleteItem}
+            updateItemList={updateItemList}></TaskItem>
         ))
       ) : (
         <div>No Items in todo</div>
