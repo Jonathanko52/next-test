@@ -57,13 +57,14 @@ export default function Page({
   const [editMode, setEditMode] = useState(true);
 
   //
-  //{  const [priority, setPriority] = useState(0);
-  // const [taskHeader, setTaskHeader] = useState(data?.taskHeader ?? "");
-  // const [taskText, setTaskText] = useState("Task Text");
-  // const [taskState, setTaskState] = useState(0);
-  // const [subTasks, setSubtasks] = useState<string[]>([]);
-  // const [repeatability, setRepeatability] = useState([0, 0, 0, 0, 0, 0, 0]);
-  // const [editMode, setEditMode] = useState(true);}
+  //{priority
+  // taskHeader
+  // taskText
+  // taskState
+  // subTasks
+  // repeatability
+  // editMode
+  // }
   //
 
   // Used for repeatability
