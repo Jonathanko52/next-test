@@ -57,7 +57,7 @@ export default function Page({
   const [editMode, setEditMode] = useState(true);
 
   //
-  //{priority
+  //{priority:priority,
   // taskHeader
   // taskText
   // taskState
