@@ -148,7 +148,15 @@ export default function Page({
 
   const handlerEditMode = (index) => {
     setEditMode(!editMode);
-    updateItemList(index);
+    updateItemList(index, {
+      priority: priority,
+      taskHeader: taskHeader,
+      taskText: taskText,
+      taskState: taskState,
+      subTasks: subTasks,
+      repeatability: repeatability,
+      editMode: editMode,
+    });
   };
 
   const printState = () => {
@@ -169,7 +177,7 @@ export default function Page({
           <br></br>
           <div
             onClick={() => {
-              handlerEditMode;
+              handlerEditMode(itemId);
             }}>
             <div className="font-bold border-b border-blue-400 pb-2">
               Header: {taskHeader}
