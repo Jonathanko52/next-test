@@ -57,12 +57,12 @@ export default function Page({
   const [editMode, setEditMode] = useState(true);
 
   //
-  //{priority:priority,
-  // taskHeader
-  // taskText
-  // taskState
-  // subTasks
-  // repeatability
+  //{priority: priority,
+  // taskHeader: taskHeader,
+  // taskText: taskText,
+  // taskState: taskState,
+  // subTasks: subTasks,
+  // repeatability: repeatability
   // editMode
   // }
   //
