@@ -62,8 +62,8 @@ export default function Page({
   // taskText: taskText,
   // taskState: taskState,
   // subTasks: subTasks,
-  // repeatability: repeatability
-  // editMode
+  // repeatability: repeatability,
+  // editMode: editMode
   // }
   //
 
