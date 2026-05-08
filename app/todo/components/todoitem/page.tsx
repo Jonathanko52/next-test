@@ -47,6 +47,7 @@ export default function Page({
   deleteItem: (id: string) => void;
   itemId: string;
   data: any;
+  updateItemList: (id: string, item: object) => void;
 }) {
   const [priority, setPriority] = useState(0);
   const [taskHeader, setTaskHeader] = useState(data?.taskHeader ?? "");

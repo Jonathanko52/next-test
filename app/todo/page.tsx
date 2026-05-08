@@ -27,8 +27,12 @@ export default function TodoMain() {
     );
   };
 
-  const updateItemList = (index, itemObject) => {
-    setToDoItemList();
+  const updateItemList = (id, itemObject) => {
+    setToDoItemList(
+      toDoItemList.map((item) =>
+        item.id === id ? { ...item, ...itemObject } : item,
+      ),
+    );
   };
 
   const saveItemList = () => {
