@@ -57,17 +57,6 @@ export default function Page({
   const [repeatability, setRepeatability] = useState([0, 0, 0, 0, 0, 0, 0]);
   const [editMode, setEditMode] = useState(true);
 
-  //
-  //{priority: priority,
-  // taskHeader: taskHeader,
-  // taskText: taskText,
-  // taskState: taskState,
-  // subTasks: subTasks,
-  // repeatability: repeatability,
-  // editMode: editMode
-  // }
-  //
-
   // Used for repeatability
   const DAYS_OF_WEEK = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
@@ -132,9 +121,9 @@ export default function Page({
   };
 
   const subTasksHandler = (subTaskValue: string) => {
-    let subTasksCopy = subTasks.slice();
-    subTasksCopy.push(subTaskValue);
-    setSubtasks(subTasksCopy);
+    // let subTasksCopy = subTasks.slice();
+    // subTasksCopy.push(subTaskValue);
+    // setSubtasks(subTasksCopy);
   };
 
   const repeatabilityHandler = (repeatKey: number) => {
