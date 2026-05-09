@@ -28,7 +28,7 @@ interface TaskItemProps {
   taskState: string;
   setTaskState: Dispatch<SetStateAction<number>>;
 
-  subtasks: Subtask[];
+  subtasks: string;
   setSubtasks: Dispatch<SetStateAction<string>>;
 
   repeatability: number[];
@@ -53,7 +53,7 @@ export default function Page({
   const [taskHeader, setTaskHeader] = useState(data?.taskHeader ?? "");
   const [taskText, setTaskText] = useState("Task Text");
   const [taskState, setTaskState] = useState(0);
-  const [subTasks, setSubtasks] = useState<string[]>([]);
+  const [subTasks, setSubtasks] = useState("");
   const [repeatability, setRepeatability] = useState([0, 0, 0, 0, 0, 0, 0]);
   const [editMode, setEditMode] = useState(true);
 
@@ -121,9 +121,7 @@ export default function Page({
   };
 
   const subTasksHandler = (subTaskValue: string) => {
-    // let subTasksCopy = subTasks.slice();
-    // subTasksCopy.push(subTaskValue);
-    // setSubtasks(subTasksCopy);
+    setSubtasks(subTaskValue);
   };
 
   const repeatabilityHandler = (repeatKey: number) => {
