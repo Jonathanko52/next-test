@@ -88,7 +88,7 @@ export default function Page({
     if (data?.editMode) {
       setEditMode(data.editMode);
     }
-  }, []);
+  }, [data]);
 
   // Handlers
   const priorityHandler = (priority: number) => {
@@ -134,7 +134,7 @@ export default function Page({
     setRepeatability(repeatabilityCopy);
   };
 
-  const handlerEditMode = (index) => {
+  const handlerEditMode = (index: number) => {
     setEditMode(!editMode);
     updateItemList(index, {
       priority: priority,
