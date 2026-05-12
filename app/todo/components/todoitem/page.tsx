@@ -26,7 +26,7 @@ interface TaskItemProps {
   setTaskText: Dispatch<SetStateAction<string>>;
 
   taskState: string;
-  setTaskState: Dispatch<SetStateAction<number>>;
+  setTaskState: Dispatch<SetStateAction<string>>;
 
   subtasks: string;
   setSubtasks: Dispatch<SetStateAction<string>>;
@@ -134,7 +134,7 @@ export default function Page({
     setRepeatability(repeatabilityCopy);
   };
 
-  const handlerEditMode = (index: number) => {
+  const handlerEditMode = (index: string) => {
     setEditMode(!editMode);
     updateItemList(index, {
       priority: priority,
@@ -247,7 +247,7 @@ export default function Page({
                   name={cur}
                   value={cur}
                   key="key"
-                  checked={repeatability[ind] == 1 ? true : false}
+                  checked={repeatability[ind] == 1}
                   onChange={(e) => {
                     repeatabilityHandler(ind);
                   }}></input>
