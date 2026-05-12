@@ -51,7 +51,7 @@ export default function Page({
 }) {
   const [priority, setPriority] = useState(0);
   const [taskHeader, setTaskHeader] = useState(data?.taskHeader ?? "");
-  const [taskText, setTaskText] = useState("Task Text");
+  const [taskText, setTaskText] = useState(data?.taskText ?? "");
   const [taskState, setTaskState] = useState(0);
   const [subTasks, setSubtasks] = useState("");
   const [repeatability, setRepeatability] = useState([0, 0, 0, 0, 0, 0, 0]);
