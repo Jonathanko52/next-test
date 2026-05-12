@@ -162,7 +162,9 @@ export default function Page({
           id={itemId}
           className="flex flex-col h-auto rounded-lg bg-blue-500 p-4  text-white">
           <div className="flex items-center gap-3">
-            <div onClick={taskStateHandlerOutsideEdit}>{iconMap[taskState]}</div>
+            <div onClick={taskStateHandlerOutsideEdit}>
+              {iconMap[taskState]}
+            </div>
             <div
               className="font-bold border-b border-blue-400 pb-2 flex-1"
               onClick={() => {
@@ -192,7 +194,7 @@ export default function Page({
           id={itemId}
           className="flex flex-col h-auto rounded-lg bg-blue-500 p-4  text-white">
           <div className="flex items-center justify-between gap-4">
-            <header className="shrink-0 w-24">Text:</header>
+            <header className="shrink-0 w-24">Header:</header>
             <input
               type="text"
               value={taskHeader}
