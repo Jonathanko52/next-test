@@ -246,7 +246,7 @@ export default function Page({
                   type="checkbox"
                   name={cur}
                   value={cur}
-                  key="key"
+                  key={cur}
                   checked={repeatability[ind] == 1}
                   onChange={(e) => {
                     repeatabilityHandler(ind);
