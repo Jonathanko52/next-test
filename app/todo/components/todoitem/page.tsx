@@ -1,8 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Button } from "@/app/ui/button";
-import { useGlobalState } from "@/app/context/StateContext";
+
 import { Dispatch, SetStateAction, useEffect } from "react";
 
 interface Subtask {
@@ -218,7 +217,7 @@ export default function Page({
               type="text"
               value={priority}
               onChange={(e) => {
-                priorityHandler(parseInt(e.target.value));
+                priorityHandler(parseInt(e.target.value, 10) || 0);
               }}
               className="flex-1 rounded px-2 py-1 text-black"></input>
           </div>
