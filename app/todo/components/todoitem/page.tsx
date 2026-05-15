@@ -70,9 +70,6 @@ export default function Page({
     if (data?.priority) {
       setPriority(data?.priority);
     }
-    if (data?.taskHeader) {
-      setTaskHeader(data?.taskHeader);
-    }
     if (data?.taskText) {
       setTaskText(data.taskText);
     }
