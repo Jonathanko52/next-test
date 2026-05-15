@@ -140,7 +140,7 @@ export default function Page({
       taskState: taskState,
       subTasks: subTasks,
       repeatability: repeatability,
-      editMode: editMode,
+      // editMode: editMode,
     });
   };
 
