@@ -188,7 +188,7 @@ export default function Page({
           id={itemId}
           className="flex flex-col h-auto rounded-lg bg-blue-500 p-4  text-white">
           <div className="flex items-center justify-between gap-4">
-            <header className="shrink-0 w-24">Header:</header>
+            <span className="shrink-0 w-24">Header:</span>
             <input
               type="text"
               value={taskHeader}
@@ -199,7 +199,7 @@ export default function Page({
             />
           </div>
           <div className="flex items-center justify-between gap-4">
-            <header className="shrink-0 w-24">Text:</header>
+            <span className="shrink-0 w-24">Text:</span>
             <input
               type="text"
               value={taskText}
@@ -210,7 +210,7 @@ export default function Page({
             />
           </div>
           <div className="flex items-center justify-between gap-4">
-            <header className="shrink-0 w-24">Priority:</header>
+            <span className="shrink-0 w-24">Priority:</span>
             <input
               type="text"
               value={priority}
@@ -221,7 +221,7 @@ export default function Page({
           </div>
 
           <div className="flex items-center justify-between gap-4">
-            <header className="shrink-0 w-24">Subtasks:</header>
+            <span className="shrink-0 w-24">Subtasks:</span>
             <input
               type="text"
               value={subTasks}
@@ -232,7 +232,7 @@ export default function Page({
             />
           </div>
           <div className="flex items-center justify-between gap-4">
-            <header className="shrink-0 w-24">Repeatability:</header>
+            <span className="shrink-0 w-24">Repeatability:</span>
             {DAYS_OF_WEEK.map((cur, ind) => (
               <div key={ind} className="flex items-center gap-1">
                 <label>{cur}</label>
