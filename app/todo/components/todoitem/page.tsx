@@ -1,8 +1,6 @@
 "use client";
 
-import { useState } from "react";
-
-import { Dispatch, SetStateAction, useEffect } from "react";
+import { useState, Dispatch, SetStateAction, useEffect } from "react";
 
 interface Subtask {
   id: string;
