@@ -81,7 +81,7 @@ export default function Page({
     if (data?.repeatability) {
       setRepeatability(data.repeatability);
     }
-    if (data?.editMode) {
+    if (data?.editMode !== undefined) {
       setEditMode(data.editMode);
     }
   }, [data]);
