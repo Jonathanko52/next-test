@@ -52,7 +52,7 @@ export default function Page({
   const [taskHeader, setTaskHeader] = useState(data?.taskHeader ?? "");
   const [taskText, setTaskText] = useState(data?.taskText ?? "");
   const [taskState, setTaskState] = useState(0);
-  const [subTasks, setSubtasks] = useState("");
+  const [subTasks, setSubTasks] = useState("");
   const [repeatability, setRepeatability] = useState([0, 0, 0, 0, 0, 0, 0]);
   const [editMode, setEditMode] = useState(true);
 
@@ -75,8 +75,8 @@ export default function Page({
     if (data?.taskState) {
       setTaskState(data.taskState);
     }
-    if (data?.subtasks) {
-      setSubtasks(data.subtasks);
+    if (data?.subTasks) {
+      setSubTasks(data.subTasks);
     }
     if (data?.repeatability) {
       setRepeatability(data.repeatability);
@@ -117,7 +117,7 @@ export default function Page({
   };
 
   const subTasksHandler = (subTaskValue: string) => {
-    setSubtasks(subTaskValue);
+    setSubTasks(subTaskValue);
   };
 
   const repeatabilityHandler = (repeatKey: number) => {
