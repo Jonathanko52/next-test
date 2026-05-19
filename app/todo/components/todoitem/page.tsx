@@ -173,7 +173,7 @@ export default function Page({
             onClick={() => {
               handlerEditMode(itemId);
             }}>
-            <br></br>
+            <br />
             <div className="font-bold border-b border-blue-400 pb-2">
               Text: {taskText}
             </div>
