@@ -66,7 +66,7 @@ export default function Page({
     if (data?.taskHeader) {
       setTaskHeader(data.taskHeader);
     }
-    if (data?.priority) {
+    if (data?.priority !== undefined) {
       setPriority(data?.priority);
     }
     if (data?.taskText) {
