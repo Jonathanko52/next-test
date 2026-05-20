@@ -70,7 +70,7 @@ export default function Page({
     if (data?.taskText) {
       setTaskText(data.taskText);
     }
-    if (data?.taskState) {
+    if (data?.taskState !== undefined) {
       setTaskState(data.taskState);
     }
     if (data?.subTasks) {
