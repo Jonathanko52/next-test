@@ -61,7 +61,7 @@ export default function Page({
 
   // Use effect converting props to state
   useEffect(() => {
-    if (data?.taskHeader) {
+    if (data?.taskHeader !== undefined) {
       setTaskHeader(data.taskHeader);
     }
     if (data?.priority !== undefined) {
@@ -73,10 +73,10 @@ export default function Page({
     if (data?.taskState !== undefined) {
       setTaskState(data.taskState);
     }
-    if (data?.subTasks) {
+    if (data?.subTasks !== undefined) {
       setSubTasks(data.subTasks);
     }
-    if (data?.repeatability) {
+    if (data?.repeatability !== undefined) {
       setRepeatability(data.repeatability);
     }
     if (data?.editMode !== undefined) {
