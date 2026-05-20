@@ -100,7 +100,7 @@ export default function Page({
     setTaskText(textValue);
   };
 
-  const taskStateHandlerOutsideEdit = () => {
+  const taskStateHandlerOutsideEdit = (index) => {
     let newTaskState = taskState;
     if (newTaskState >= 3) {
       newTaskState = 0;
@@ -108,6 +108,15 @@ export default function Page({
       newTaskState++;
     }
     setTaskState(newTaskState);
+    updateItemList(index, {
+      priority: priority,
+      taskHeader: taskHeader,
+      taskText: taskText,
+      taskState: taskState,
+      subTasks: subTasks,
+      repeatability: repeatability,
+      editMode: !editMode,
+    });
   };
 
   const taskStateHandler = (taskStateValue: number) => {
@@ -156,7 +165,10 @@ export default function Page({
           id={itemId}
           className="flex flex-col h-auto rounded-lg bg-blue-500 p-4  text-white">
           <div className="flex items-center gap-3">
-            <div onClick={taskStateHandlerOutsideEdit}>
+            <div
+              onClick={() => {
+                taskStateHandlerOutsideEdit(itemId);
+              }}>
               {iconMap[taskState]}
             </div>
             <div
