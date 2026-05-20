@@ -100,7 +100,7 @@ export default function Page({
     setTaskText(textValue);
   };
 
-  const taskStateHandlerOutsideEdit = (index) => {
+  const taskStateHandlerOutsideEdit = (index: string) => {
     let newTaskState = taskState;
     if (newTaskState >= 3) {
       newTaskState = 0;
@@ -112,10 +112,10 @@ export default function Page({
       priority: priority,
       taskHeader: taskHeader,
       taskText: taskText,
-      taskState: taskState,
+      taskState: newTaskState,
       subTasks: subTasks,
       repeatability: repeatability,
-      editMode: !editMode,
+      editMode: editMode,
     });
   };
 
