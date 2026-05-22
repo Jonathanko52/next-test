@@ -46,13 +46,15 @@ export default function Page({
   data: any;
   updateItemList: (id: string, item: object) => void;
 }) {
-  const [priority, setPriority] = useState(0);
+  const [priority, setPriority] = useState(data?.priority ?? 0);
   const [taskHeader, setTaskHeader] = useState(data?.taskHeader ?? "");
   const [taskText, setTaskText] = useState(data?.taskText ?? "");
-  const [taskState, setTaskState] = useState(0);
-  const [subTasks, setSubTasks] = useState("");
-  const [repeatability, setRepeatability] = useState([0, 0, 0, 0, 0, 0, 0]);
-  const [editMode, setEditMode] = useState(true);
+  const [taskState, setTaskState] = useState(data?.taskState ?? 0);
+  const [subTasks, setSubTasks] = useState(data?.subTasks ?? "");
+  const [repeatability, setRepeatability] = useState(
+    data?.repeatability ?? [0, 0, 0, 0, 0, 0, 0],
+  );
+  const [editMode, setEditMode] = useState(data?.editMode ?? true);
 
   // Used for repeatability
   const DAYS_OF_WEEK = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
