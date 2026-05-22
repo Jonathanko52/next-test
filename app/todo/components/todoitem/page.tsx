@@ -92,15 +92,15 @@ export default function Page({
     setPriority(priority);
   };
 
-  const handlerHeader = (headerValue: string) => {
-    //taskHeader: text
-    setTaskHeader(headerValue);
-  };
+  // const handlerHeader = (headerValue: string) => {
+  //   //taskHeader: text
+  //   setTaskHeader(headerValue);
+  // };
 
-  const handlerText = (textValue: string) => {
-    // taskText: text
-    setTaskText(textValue);
-  };
+  // const handlerText = (textValue: string) => {
+  //   // taskText: text
+  //   setTaskText(textValue);
+  // };
 
   const taskStateHandlerOutsideEdit = (index: string) => {
     let newTaskState = taskState;
@@ -121,9 +121,9 @@ export default function Page({
     });
   };
 
-  const taskStateHandler = (taskStateValue: number) => {
-    setTaskState(taskStateValue);
-  };
+  // const taskStateHandler = (taskStateValue: number) => {
+  //   setTaskState(taskStateValue);
+  // };
 
   const subTasksHandler = (subTaskValue: string) => {
     setSubTasks(subTaskValue);
