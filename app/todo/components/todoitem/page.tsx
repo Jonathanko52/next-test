@@ -2,38 +2,38 @@
 
 import { useState, Dispatch, SetStateAction, useEffect } from "react";
 
-interface Subtask {
-  id: string;
-  text: string;
-  isCompleted: boolean;
-}
+// interface Subtask {
+//   id: string;
+//   text: string;
+//   isCompleted: boolean;
+// }
 
-// For Typescript
-interface TaskItemProps {
-  itemId: string;
-  setItemId: Dispatch<SetStateAction<string>>;
+// // For Typescript
+// interface TaskItemProps {
+//   itemId: string;
+//   setItemId: Dispatch<SetStateAction<string>>;
 
-  priority: number;
-  setPriority: Dispatch<SetStateAction<number>>;
+//   priority: number;
+//   setPriority: Dispatch<SetStateAction<number>>;
 
-  taskHeader: string;
-  setTaskHeader: Dispatch<SetStateAction<string>>;
+//   taskHeader: string;
+//   setTaskHeader: Dispatch<SetStateAction<string>>;
 
-  taskText: string;
-  setTaskText: Dispatch<SetStateAction<string>>;
+//   taskText: string;
+//   setTaskText: Dispatch<SetStateAction<string>>;
 
-  taskState: string;
-  setTaskState: Dispatch<SetStateAction<string>>;
+//   taskState: string;
+//   setTaskState: Dispatch<SetStateAction<string>>;
 
-  subtasks: string;
-  setSubtasks: Dispatch<SetStateAction<string>>;
+//   subtasks: string;
+//   setSubtasks: Dispatch<SetStateAction<string>>;
 
-  repeatability: number[];
-  setRepeatability: Dispatch<SetStateAction<number[]>>;
+//   repeatability: number[];
+//   setRepeatability: Dispatch<SetStateAction<number[]>>;
 
-  editMode: boolean;
-  setEditMode: Dispatch<SetStateAction<boolean>>;
-}
+//   editMode: boolean;
+//   setEditMode: Dispatch<SetStateAction<boolean>>;
+// }
 
 export default function Page({
   deleteItem,
