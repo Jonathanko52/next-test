@@ -67,7 +67,7 @@ export default function Page({
     if (data?.priority !== undefined) {
       setPriority(data?.priority);
     }
-    if (data?.taskText) {
+    if (data?.taskText !== undefined) {
       setTaskText(data.taskText);
     }
     if (data?.taskState !== undefined) {
