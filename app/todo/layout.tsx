@@ -27,7 +27,7 @@ export default function RootLayout({
     } else {
       setButtonDiv(false);
       setRightSidebarOpen(true);
-      // setJobScraperOpen(false);
+      setJobScraperOpen(false);
     }
   };
 
