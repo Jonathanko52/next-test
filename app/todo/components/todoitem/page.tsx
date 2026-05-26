@@ -2,39 +2,6 @@
 
 import { useState, useEffect } from "react";
 
-// interface Subtask {
-//   id: string;
-//   text: string;
-//   isCompleted: boolean;
-// }
-
-// // For Typescript
-// interface TaskItemProps {
-//   itemId: string;
-//   setItemId: Dispatch<SetStateAction<string>>;
-
-//   priority: number;
-//   setPriority: Dispatch<SetStateAction<number>>;
-
-//   taskHeader: string;
-//   setTaskHeader: Dispatch<SetStateAction<string>>;
-
-//   taskText: string;
-//   setTaskText: Dispatch<SetStateAction<string>>;
-
-//   taskState: string;
-//   setTaskState: Dispatch<SetStateAction<string>>;
-
-//   subtasks: string;
-//   setSubtasks: Dispatch<SetStateAction<string>>;
-
-//   repeatability: number[];
-//   setRepeatability: Dispatch<SetStateAction<number[]>>;
-
-//   editMode: boolean;
-//   setEditMode: Dispatch<SetStateAction<boolean>>;
-// }
-
 export default function Page({
   deleteItem,
   itemId,
