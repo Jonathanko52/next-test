@@ -28,46 +28,11 @@ export default function Page({
 
   const iconMap = ["⭕", "✅", "❌", "⏳"];
 
-  // Use effect converting props to state
-  useEffect(() => {
-    if (data?.taskHeader !== undefined) {
-      setTaskHeader(data.taskHeader);
-    }
-    if (data?.priority !== undefined) {
-      setPriority(data?.priority);
-    }
-    if (data?.taskText !== undefined) {
-      setTaskText(data.taskText);
-    }
-    if (data?.taskState !== undefined) {
-      setTaskState(data.taskState);
-    }
-    if (data?.subTasks !== undefined) {
-      setSubTasks(data.subTasks);
-    }
-    if (data?.repeatability !== undefined) {
-      setRepeatability(data.repeatability);
-    }
-    if (data?.editMode !== undefined) {
-      setEditMode(data.editMode);
-    }
-  }, [data]);
-
   // Handlers
   const priorityHandler = (priority: number) => {
     // priority: 1~99
     setPriority(priority);
   };
-
-  // const handlerHeader = (headerValue: string) => {
-  //   //taskHeader: text
-  //   setTaskHeader(headerValue);
-  // };
-
-  // const handlerText = (textValue: string) => {
-  //   // taskText: text
-  //   setTaskText(textValue);
-  // };
 
   const taskStateHandlerOutsideEdit = (index: string) => {
     let newTaskState = taskState;
