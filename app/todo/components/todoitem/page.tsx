@@ -2,6 +2,11 @@
 
 import { useState, useEffect } from "react";
 
+// Used for repeatability
+const DAYS_OF_WEEK = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+const iconMap = ["⭕", "✅", "❌", "⏳"];
+
 export default function Page({
   deleteItem,
   itemId,
@@ -22,11 +27,6 @@ export default function Page({
     data?.repeatability ?? [0, 0, 0, 0, 0, 0, 0],
   );
   const [editMode, setEditMode] = useState(data?.editMode ?? true);
-
-  // Used for repeatability
-  const DAYS_OF_WEEK = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-
-  const iconMap = ["⭕", "✅", "❌", "⏳"];
 
   // Handlers
   const priorityHandler = (priority: number) => {
