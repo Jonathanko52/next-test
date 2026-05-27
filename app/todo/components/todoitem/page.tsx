@@ -34,6 +34,17 @@ export default function Page({
     setPriority(priority);
   };
 
+  useEffect(() => {
+    if (!editMode) return; // user is editing — don't overwrite
+    if (data?.taskHeader !== undefined) setTaskHeader(data.taskHeader);
+    if (data?.priority !== undefined) setPriority(data.priority);
+    if (data?.taskText !== undefined) setTaskText(data.taskText);
+    if (data?.taskState !== undefined) setTaskState(data.taskState);
+    if (data?.subTasks !== undefined) setSubTasks(data.subTasks);
+    if (data?.repeatability !== undefined) setRepeatability(data.repeatability);
+    if (data?.editMode !== undefined) setEditMode(data.editMode);
+  }, [data]);
+
   const taskStateHandlerOutsideEdit = (index: string) => {
     let newTaskState = taskState;
     if (newTaskState >= 3) {
@@ -158,7 +169,7 @@ export default function Page({
           <div className="flex items-center justify-between gap-4">
             <span className="shrink-0 w-24">Priority:</span>
             <input
-              type="text"
+              type="number"
               value={priority}
               onChange={(e) => {
                 priorityHandler(parseInt(e.target.value, 10) || 0);
