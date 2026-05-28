@@ -35,7 +35,7 @@ export default function Page({
   };
 
   useEffect(() => {
-    if (!editMode) return; // user is editing — don't overwrite
+    if (!editMode) return;
     if (data?.taskHeader !== undefined) setTaskHeader(data.taskHeader);
     if (data?.priority !== undefined) setPriority(data.priority);
     if (data?.taskText !== undefined) setTaskText(data.taskText);
@@ -43,7 +43,7 @@ export default function Page({
     if (data?.subTasks !== undefined) setSubTasks(data.subTasks);
     if (data?.repeatability !== undefined) setRepeatability(data.repeatability);
     if (data?.editMode !== undefined) setEditMode(data.editMode);
-  }, [data]);
+  }, [editMode, data]);
 
   const taskStateHandlerOutsideEdit = (index: string) => {
     let newTaskState = taskState;
