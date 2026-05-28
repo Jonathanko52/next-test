@@ -121,10 +121,10 @@ export default function Page({
             </div>
           </div>
           <div
+            className="mt-2"
             onClick={() => {
               handlerEditMode(itemId);
             }}>
-            <br />
             <div className="font-bold border-b border-blue-400 pb-2">
               Text: {taskText}
             </div>
@@ -187,7 +187,7 @@ export default function Page({
           <div className="flex items-center justify-between gap-4">
             <span className="shrink-0 w-24">Repeatability:</span>
             {DAYS_OF_WEEK.map((cur, ind) => (
-              <div key={ind} className="flex items-center gap-1">
+              <div key={cur} className="flex items-center gap-1">
                 <label>{cur}</label>
                 <input
                   type="checkbox"
