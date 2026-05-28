@@ -195,7 +195,7 @@ export default function Page({
                   value={cur}
                   key={cur}
                   checked={repeatability[ind] === 1}
-                  onChange={(e) => {
+                  onChange={() => {
                     repeatabilityHandler(ind);
                   }}></input>
               </div>
