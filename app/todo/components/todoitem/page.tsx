@@ -26,7 +26,7 @@ export default function Page({
   const [repeatability, setRepeatability] = useState(
     data?.repeatability ?? [0, 0, 0, 0, 0, 0, 0],
   );
-  const [editMode, setEditMode] = useState(data?.editMode ?? );
+  const [editMode, setEditMode] = useState(data?.editMode ?? true);
 
   // Handlers
   const priorityHandler = (priority: number) => {
@@ -171,7 +171,8 @@ export default function Page({
               onChange={(e) => {
                 priorityHandler(parseInt(e.target.value, 10) || 0);
               }}
-              className="flex-1 rounded px-2 py-1 text-black"/>
+              className="flex-1 rounded px-2 py-1 text-black"
+            />
           </div>
 
           <div className="flex items-center justify-between gap-4">
@@ -194,11 +195,11 @@ export default function Page({
                   type="checkbox"
                   name={cur}
                   value={cur}
-                  key={cur}
                   checked={repeatability[ind] === 1}
                   onChange={() => {
                     repeatabilityHandler(ind);
-                  }}/>
+                  }}
+                />
               </div>
             ))}
           </div>
