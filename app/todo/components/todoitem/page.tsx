@@ -130,6 +130,7 @@ export default function Page({
             </div>
           </div>
           <button
+            type="button"
             className="mt-4 text-white bg-warning box-border border border-transparent hover:bg-warning-strong focus:ring-4 focus:ring-warning-medium shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none"
             onClick={() => deleteItem(itemId)}>
             Delete
@@ -202,6 +203,7 @@ export default function Page({
             ))}
           </div>
           <button
+            type="button"
             className="mt-4 text-white bg-warning box-border border border-transparent hover:bg-warning-strong focus:ring-4 focus:ring-warning-medium shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none"
             onClick={() => {
               handlerEditMode(itemId);
@@ -209,11 +211,13 @@ export default function Page({
             Edit mode off
           </button>
           <button
+            type="button"
             className="mt-4 text-white bg-warning box-border border border-transparent hover:bg-warning-strong focus:ring-4 focus:ring-warning-medium shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none"
             onClick={() => deleteItem(itemId)}>
             Delete
           </button>
           <button
+            type="button"
             className="mt-4 text-white bg-warning box-border border border-transparent hover:bg-warning-strong focus:ring-4 focus:ring-warning-medium shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none"
             onClick={() => printState()}>
             Print State
