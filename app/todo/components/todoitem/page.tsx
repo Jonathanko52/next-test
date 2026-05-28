@@ -64,10 +64,6 @@ export default function Page({
     });
   };
 
-  // const taskStateHandler = (taskStateValue: number) => {
-  //   setTaskState(taskStateValue);
-  // };
-
   const subTasksHandler = (subTaskValue: string) => {
     setSubTasks(subTaskValue);
   };
@@ -198,7 +194,7 @@ export default function Page({
                   name={cur}
                   value={cur}
                   key={cur}
-                  checked={repeatability[ind] == 1}
+                  checked={repeatability[ind] === 1}
                   onChange={(e) => {
                     repeatabilityHandler(ind);
                   }}></input>
