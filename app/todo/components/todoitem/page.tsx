@@ -26,7 +26,7 @@ export default function Page({
   const [repeatability, setRepeatability] = useState(
     data?.repeatability ?? [0, 0, 0, 0, 0, 0, 0],
   );
-  const [editMode, setEditMode] = useState(data?.editMode ?? true);
+  const [editMode, setEditMode] = useState(data?.editMode ?? );
 
   // Handlers
   const priorityHandler = (priority: number) => {
@@ -104,7 +104,7 @@ export default function Page({
       {editMode ? (
         <div
           id={itemId}
-          className="flex flex-col h-auto rounded-lg bg-blue-500 p-4  text-white">
+          className="flex flex-col h-auto rounded-lg bg-blue-500 p-4 text-white">
           <div className="flex items-center gap-3">
             <div
               onClick={() => {
@@ -140,7 +140,7 @@ export default function Page({
         // EDIT MODE TEXT
         <div
           id={itemId}
-          className="flex flex-col h-auto rounded-lg bg-blue-500 p-4  text-white">
+          className="flex flex-col h-auto rounded-lg bg-blue-500 p-4 text-white">
           <div className="flex items-center justify-between gap-4">
             <span className="shrink-0 w-24">Header:</span>
             <input
@@ -171,7 +171,7 @@ export default function Page({
               onChange={(e) => {
                 priorityHandler(parseInt(e.target.value, 10) || 0);
               }}
-              className="flex-1 rounded px-2 py-1 text-black"></input>
+              className="flex-1 rounded px-2 py-1 text-black"/>
           </div>
 
           <div className="flex items-center justify-between gap-4">
@@ -198,7 +198,7 @@ export default function Page({
                   checked={repeatability[ind] === 1}
                   onChange={() => {
                     repeatabilityHandler(ind);
-                  }}></input>
+                  }}/>
               </div>
             ))}
           </div>
