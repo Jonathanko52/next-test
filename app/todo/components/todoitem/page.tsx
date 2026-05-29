@@ -53,15 +53,7 @@ export default function Page({
       newTaskState++;
     }
     setTaskState(newTaskState);
-    updateItemList(index, {
-      priority: priority,
-      taskHeader: taskHeader,
-      taskText: taskText,
-      taskState: newTaskState,
-      subTasks: subTasks,
-      repeatability: repeatability,
-      editMode: editMode,
-    });
+    updateItemList(index, { taskState: newTaskState });
   };
 
   const subTasksHandler = (subTaskValue: string) => {
