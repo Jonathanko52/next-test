@@ -130,7 +130,8 @@ export default function Page({
             </div>
           </div>
           <button
-            type="button"
+            role="button"
+            tabIndex={0}
             className="mt-4 text-white bg-warning box-border border border-transparent hover:bg-warning-strong focus:ring-4 focus:ring-warning-medium shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none"
             onClick={() => deleteItem(itemId)}>
             Delete
@@ -190,8 +191,9 @@ export default function Page({
             <span className="shrink-0 w-24">Repeatability:</span>
             {DAYS_OF_WEEK.map((cur, ind) => (
               <div key={cur} className="flex items-center gap-1">
-                <label>{cur}</label>
+                <label htmlFor={cur}>{cur}</label>
                 <input
+                  id={cur}
                   type="checkbox"
                   name={cur}
                   value={cur}
@@ -204,7 +206,8 @@ export default function Page({
             ))}
           </div>
           <button
-            type="button"
+            role="button"
+            tabIndex={0}
             className="mt-4 text-white bg-warning box-border border border-transparent hover:bg-warning-strong focus:ring-4 focus:ring-warning-medium shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none"
             onClick={() => {
               handlerEditMode(itemId);
@@ -212,13 +215,15 @@ export default function Page({
             Edit mode off
           </button>
           <button
-            type="button"
+            role="button"
+            tabIndex={0}
             className="mt-4 text-white bg-warning box-border border border-transparent hover:bg-warning-strong focus:ring-4 focus:ring-warning-medium shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none"
             onClick={() => deleteItem(itemId)}>
             Delete
           </button>
           <button
-            type="button"
+            role="button"
+            tabIndex={0}
             className="mt-4 text-white bg-warning box-border border border-transparent hover:bg-warning-strong focus:ring-4 focus:ring-warning-medium shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none"
             onClick={() => printState()}>
             Print State
