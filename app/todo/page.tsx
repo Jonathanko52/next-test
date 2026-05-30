@@ -97,6 +97,7 @@ export default function TodoMain() {
           <TaskItem
             key={item.id}
             data={item}
+            itemId={item.id}
             deleteItem={deleteItem}
             updateItemList={updateItemList}
           />
