@@ -97,9 +97,9 @@ export default function TodoMain() {
           <TaskItem
             key={item.id}
             data={item}
-            itemId={item.id}
             deleteItem={deleteItem}
-            updateItemList={updateItemList}></TaskItem>
+            updateItemList={updateItemList}
+          />
         ))
       ) : (
         <div>No Items in todo</div>
