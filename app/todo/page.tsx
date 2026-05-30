@@ -11,6 +11,7 @@ export default function TodoMain() {
 
   const createNewItem = () => {
     // HERE' S THE PROGLEM
+    if (!newTaskHeader.trim()) return;
     setToDoItemList([
       ...toDoItemList,
       { id: crypto.randomUUID(), taskHeader: newTaskHeader },
