@@ -70,6 +70,7 @@ export default function TodoMain() {
           onChange={(e) => {
             setNewTaskHeader(e.target.value);
           }}
+          onKeyDown={(e) => e.key === "Enter" && createNewItem()}
           className="flex-1 rounded px-2 py-1 text-black"
         />
         <button
