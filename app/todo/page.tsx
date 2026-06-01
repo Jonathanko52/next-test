@@ -28,7 +28,7 @@ export default function TodoMain() {
     );
   };
 
-  const updateItemList = (id, itemObject) => {
+  const updateItemList = (id: string, itemObject: Record<string, unknown>) => {
     setToDoItemList(
       toDoItemList.map((item) =>
         item.id === id ? { ...item, ...itemObject } : item,
