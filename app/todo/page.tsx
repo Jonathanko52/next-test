@@ -62,7 +62,7 @@ export default function TodoMain() {
         marginLeft: "2em",
       }}>
       <div className="flex items-center justify-between gap-4">
-        <header className="shrink-0 w-24">New Item Name:</header>
+        <label className="shrink-0 w-24">New Item Name:</label>
         <input
           type="text"
           value={newTaskHeader}
