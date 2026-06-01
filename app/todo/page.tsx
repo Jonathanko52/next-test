@@ -51,7 +51,7 @@ export default function TodoMain() {
   };
 
   useEffect(() => {
-    // retrieveItemList();
+    retrieveItemList();
   }, []);
   return (
     <div
