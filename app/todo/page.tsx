@@ -10,7 +10,6 @@ export default function TodoMain() {
   const [newTaskHeader, setNewTaskHeader] = useState("");
 
   const createNewItem = () => {
-    // HERE' S THE PROGLEM
     if (!newTaskHeader.trim()) return;
     setToDoItemList([
       ...toDoItemList,
