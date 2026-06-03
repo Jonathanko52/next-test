@@ -52,7 +52,17 @@ export default function TodoMain() {
 
   useEffect(() => {
     retrieveItemList();
+  }, [retrieveItemList]);
+
+  useEffect(() => {
+    const saved = localStorage.getItem("ToDoItemList");
+    if (saved) {
+      try {
+        setToDoItemList(JSON.parse(saved));
+      } catch {}
+    }
   }, []);
+
   return (
     <div className="w-full flex flex-col p-2 text-base m-4 ml-8">
       <div className="flex items-center justify-between gap-4">
