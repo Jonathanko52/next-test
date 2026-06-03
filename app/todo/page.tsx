@@ -54,6 +54,7 @@ export default function TodoMain() {
   useEffect(() => {
     const saved = localStorage.getItem("ToDoItemList");
     if (saved) {
+      // Guard against corrupted localStorage data
       try {
         setToDoItemList(JSON.parse(saved));
       } catch {}
