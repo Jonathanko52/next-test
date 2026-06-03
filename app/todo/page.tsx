@@ -54,16 +54,13 @@ export default function TodoMain() {
     retrieveItemList();
   }, []);
   return (
-    <div
-      className="w-full flex flex-col p-2"
-      style={{
-        fontSize: "1em",
-        margin: "1em",
-        marginLeft: "2em",
-      }}>
+    <div className="w-full flex flex-col p-2 text-base m-4 ml-8">
       <div className="flex items-center justify-between gap-4">
-        <label className="shrink-0 w-24">New Item Name:</label>
+        <label htmlFor="new-task-input" className="shrink-0 w-24">
+          New Item Name:
+        </label>
         <input
+          id="new-task-input"
           type="text"
           value={newTaskHeader}
           onChange={(e) => {
