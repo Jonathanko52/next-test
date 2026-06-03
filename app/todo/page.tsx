@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect } from "react";
-// import { Button } from "@/app/ui/button";
 import { useGlobalState } from "@/app/context/StateContext";
 import TaskItem from "./components/todoitem/page";
 
@@ -40,7 +39,6 @@ export default function TodoMain() {
   };
 
   const retrieveItemList = () => {
-    // try catch block added so if it only loads if saved.
     const saved = localStorage.getItem("ToDoItemList");
     if (saved) {
       try {
@@ -52,10 +50,6 @@ export default function TodoMain() {
   const printState = () => {
     console.log(toDoItemList);
   };
-
-  // useEffect(() => {
-  //   retrieveItemList();
-  // }, [retrieveItemList]);
 
   useEffect(() => {
     const saved = localStorage.getItem("ToDoItemList");
