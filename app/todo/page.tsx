@@ -40,9 +40,12 @@ export default function TodoMain() {
   };
 
   const retrieveItemList = () => {
+    // try catch block added so if it only loads if saved.
     const saved = localStorage.getItem("ToDoItemList");
     if (saved) {
-      setToDoItemList(JSON.parse(saved));
+      try {
+        setToDoItemList(JSON.parse(saved));
+      } catch {}
     }
   };
 
@@ -50,9 +53,9 @@ export default function TodoMain() {
     console.log(toDoItemList);
   };
 
-  useEffect(() => {
-    retrieveItemList();
-  }, [retrieveItemList]);
+  // useEffect(() => {
+  //   retrieveItemList();
+  // }, [retrieveItemList]);
 
   useEffect(() => {
     const saved = localStorage.getItem("ToDoItemList");
